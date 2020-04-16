@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import NavBar from './components/navBar'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Login from './views/login'
+import Register from './views/register'
+import Home from './views/Home'
+import nutritionistregister from './views/nutritionistregister'
+import personalTrainer from './views/personalTrainer'
+import Profile from './views/profile'
+import About from './views/About'
 
-function App() {
+
+const App = props => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <NavBar />
+      <Router>
+        <Switch>
+          <Route path='/home' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/nutri-register' component={nutritionistregister} />
+          <Route path='/pt-register' component={personalTrainer} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
+          <Route path='/profile' component={Profile} />
+        </Switch>
+      </Router>
+    </>
+
+  )
 }
 
-export default App;
+export default App
