@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContactCard from '../components/contacCard'
+import ContactCard from '../components/contactcard'
 
 const  Profile=props=> {
     return (
