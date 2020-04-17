@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function About() {
+const About =props=> {
     return (
         <div>
             <h1>About us</h1>
         </div>
     )
 }
+
+export default About

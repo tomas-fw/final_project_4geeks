@@ -1,12 +1,13 @@
 import React from 'react'
 
-export default function personalTrainer() {
+const PersonalTrainer =props => {
     return (
         <div>
-            <h1>PT register</h1>
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 offset-md-4">
+                    <h1>PT register</h1>
+
                         <form>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">User Name</label>
@@ -30,3 +31,5 @@ export default function personalTrainer() {
         </div>
     )
 }
+
+export default PersonalTrainer

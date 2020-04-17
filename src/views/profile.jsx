@@ -1,17 +1,17 @@
 import React from 'react'
-import Sidebar from '../components/sidebar'
+
 import ContactCard from '../components/contacCard'
-export default function Profile() {
+
+const  Profile=props=> {
     return (
         <div>
             {/* <!-- Side navigation --> */}
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-4">
-                        <Sidebar />
-
-                    </div>
-                    <div className="col-md-8 offset-md-4">
+                   
+                    <div className="col-md-8 ">
+                        <h3>Information about my Nutritionist and P.T</h3>
+                        <br/>
                         <ContactCard />
                         <ContactCard />
 
@@ -23,3 +23,5 @@ export default function Profile() {
 
     )
 }
+
+export default Profile

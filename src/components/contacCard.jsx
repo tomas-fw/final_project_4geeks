@@ -4,7 +4,7 @@ const ContactCard = props =>{
 
     return(
         <>
-        <li className="list-group-item">
+        <li className="list-group-item card">
 			<div className="row w-100">
 				<div className="col-12 col-sm-6 col-md-3 px-0">
 					<img src="https://via.placeholder.com/150" alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
@@ -14,14 +14,14 @@ const ContactCard = props =>{
 						<button className="btn">
 							<i className="fas fa-pencil-alt mr-3" />
 						</button>
-						<button className="btn" onClick={() => props.onDelete()}>
+						<button className="btn">
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
-					<label className="name lead">Name</label>
+					<p className="name lead text-light">Name</p>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3" />
-					<span className="text-muted">Personal Trainer</span>
+					<span className="text-light">Personal Trainer</span>
 					<br />
 					<span
 						className="fa fa-phone fa-fw text-muted mr-3"
@@ -29,7 +29,7 @@ const ContactCard = props =>{
 						title=""
 						data-original-title="(870) 288-4149"
 					/>
-					<span className="text-muted small">boxing, body building, crossfit</span>
+					<span className="text-light small">boxing, body building, crossfit</span>
 					<br />
                     
 					<span
@@ -38,7 +38,7 @@ const ContactCard = props =>{
 						data-original-title=""
 						title=""
 					/>
-					<span className="text-muted small text-truncate"> 5 years expirience</span>
+					<span className="text-light small text-truncate"> 5 years expirience</span>
 				</div>
 			</div>
 		</li>
