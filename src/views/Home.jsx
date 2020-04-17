@@ -1,4 +1,12 @@
-import React from 'react'
+import React from 'react';
+import nutritionImage from '../images/nutrition.jpg';
+import fitnessImage from '../images/fitness.jpg';
+import jumbotronImage from '../images/jumbotron.jpg';
+import person1Image from '../images/person1.jpg';
+import person2Image from '../images/person2.jpg';
+import person3Image from '../images/person3.jpg';
+import { Link } from 'react-router-dom';
+
 
 
 const Home = props => {
@@ -9,131 +17,75 @@ const Home = props => {
 
                 {/* Jumbotron */}
                 <div className="row">
-                    <div className="col-md-12">
-                        <div class="jumbotron jumbotron-fluid">
-                            <div class="container">
-                                <div className="row">
-
-                                    <h1 class="display-4">Fluid jumbotron</h1>
-                                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                                </div>
+                    <div className="col">
+                        <div className="card bg-dark text-dark border-0 rounded-0px-0">
+                            <img src={jumbotronImage} className="card-img" />
+                            <div className="card-img-overlay">
+                                <h1 className="card-title text-center display-2 text-white">Find your health team today</h1>
+                                <h1 className="card-text text-center display-4 text-white">Get your own exclusive team with a nutritionist and personal trainer</h1>
                             </div>
                         </div>
                     </div>
                 </div>
+                <h1 className="text-center">Two essential ingredients</h1>
                 <div className="row">
-                    <div className="col-md-4">
-                        <div className="card">
-                            <img class="card-img-top card-img" src="https://via.placeholder.com/150" alt="Card image cap" />
-                            <div class="card-body">
-                                <h5 class="card-title">Importance of a good Nutrition</h5>
-                                <p class="card-text">Ahealthy lifestyle starts in the kitchen</p>
-                                <a href="#" class="btn btn-primary">Ask a profesional!</a>
-                            </div>
-
-                        </div>
-                    </div>
                     {/* Cards */}
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <div className="card">
-                            <img class="card-img-top card-img" src='https://via.placeholder.com/150' alt="Card image cap" />
-                            <div class="card-body">
-                                <h5 class="card-title">We Are Made to Move</h5>
-                                <p class="card-text">Our body was made to be in constant movement, wanna know why?</p>
-                                <a href="#" class="btn btn-primary">Ask a profesional</a>
+                            <img className="card-img-top card-img" src={nutritionImage} alt="Card image cap" />
+                            <div className="card-body">
+                                <h5 className="card-title">Nutrition</h5>
+                                <p className="card-text">A healthy lifestyle starts in the kitchen</p>
+                                <Link to="/nutritional-education" className="btn btn-primary">Learn about nutrition</Link>
                             </div>
 
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <div className="card">
-                            <img class="card-img-top card-img" src="https://via.placeholder.com/150" alt="Card image cap" />
-                            <div class="card-body">
-                                <h5 class="card-title">Real cases?</h5>
-                                <p class="card-text">Would you like se some real life stories of people who change their life's with our help?</p>
-                                <a href="#" class="btn btn-primary">Check it out!</a>
+                            <img className="card-img-top card-img" src={fitnessImage} alt="Card image cap" />
+                            <div className="card-body">
+                                <h5 className="card-title">Physical training</h5>
+                                <p className="card-text">Our body is designed to be in constant movement</p>
+                                <Link to="/fitness-education" className="btn btn-primary">Learn about physical training</Link>
                             </div>
 
                         </div>
                     </div>
                 </div>
+                <h1 className="text-center">Real Cases</h1>
                 <div className="row">
-                    <div className="col-md-12">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a ante laoreet, porta lacus blandit, lacinia mi. Cras vitae lobortis nibh. In sagittis consectetur dui ut efficitur. Phasellus lacus lorem, finibus id mi eget, laoreet elementum sapien. Vestibulum vel nisl placerat, sagittis massa eget, efficitur libero. Quisque pulvinar elit risus, non scelerisque odio tempor vitae. Vestibulum facilisis mauris eget feugiat ultrices. Donec sodales volutpat felis placerat laoreet. Mauris tristique porta risus sit amet maximus. Morbi ut nibh ac lacus placerat tempus vitae ut erat. Nunc quis dapibus sem, sed tristique odio. Vestibulum ante ipsum primis in faucibus orci luctus et.</p>
-                    </div>
-                </div>
-                {/* Card Column */}
-                <div className="row">
-                    <div className="col-md-12">
-                        <div class="card-columns">
-                            <div class="card">
-                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap" />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title that wraps to a new line</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
+                    <div className="card-group">
+                    <div className="card">
+                            <img src={person2Image} className="card-img-top rounded-circle" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Anna</h5>
+                                <p className="card-text">"Best app ever"</p>
                             </div>
-                            <div class="card p-3">
-                                <blockquote class="blockquote mb-0 card-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    <footer class="blockquote-footer">
-                                        <small class="text-muted">
-                                            Someone famous in <cite title="Source Title">Source Title</cite>
-                                        </small>
-                                    </footer>
-                                </blockquote>
+                        </div>
+                        <div className="card">
+                            <img src={person1Image} className="card-img-top rounded-circle" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Ignacio</h5>
+                                <p className="card-text">"Since I started using FitGood, I've never felt healthier"</p>
+                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                             </div>
-                            <div class="card">
-                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap" />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap" />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="card text-center">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="card-img" src="https://via.placeholder.com/150" alt="Card image" />
-                            </div>
-                            <div class="card p-3 text-right card-img-top">
-                                <blockquote class="blockquote mb-0" >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    <footer class="blockquote-footer">
-                                        <small class="text-muted">
-                                            Someone famous in <cite title="Source Title">Source Title</cite>
-                                        </small>
-                                    </footer>
-                                </blockquote>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
+                        </div>
+                        <div className="card">
+                            <img src={person3Image} className="card-img-top rounded-circle" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Francisca</h5>
+                                <p className="card-text">"A friend suggested this app and it completely changed my lifestyle"</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+    
 
         </>
 
     )
 }
 
-export default Home
+export default Home;
