@@ -3,4 +3,5 @@
     height: 300px;
     object-fit: cover;
     border-radius: 100%;
+    margin: auto;
 }
