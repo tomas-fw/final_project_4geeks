@@ -21,10 +21,10 @@ const NavBar = props => {
                             store.currentUser === null &&
                             <>
                                 <li className="nav-item">
-                                    <a className="nav-link" href='/login'>Login</a>
+                                    <a className="nav-link" href="/register">Register</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/register">Register</a>
+                                    <a className="nav-link" href='/login'>Login</a>
                                 </li>
                             </>
 
@@ -35,39 +35,40 @@ const NavBar = props => {
                         <li className="nav-item">
                             <a className="nav-link" href='/about'>About us</a>
                         </li>
-
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                My profile
-                            </a>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="/profile">My account </a>
-                                <a className="dropdown-item" href="/profile/health-team">My health team</a>
-                                <a className="dropdown-item" href="/profile/health-plans">My health plans</a>
-                            </div>
-                        </li>
                         {
-                            !!store.currentUser  && store.currentUser.user.role.name !== 'client'                            
+                            !!store.currentUser && store.currentUser.user.role.name === 'client'
+                            &&
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    My profile
+                            </a>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a className="dropdown-item" href="/profile">My account </a>
+                                    <a className="dropdown-item" href="/profile/health-team">My health team</a>
+                                    <a className="dropdown-item" href="/profile/health-plans">My health plans</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        }
+                        {
+                            !!store.currentUser && store.currentUser.user.role.name !== 'client'
                             &&
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     My professional profile
-                            </a>
+                                </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a className="dropdown-item" href="/profile/professional">My account </a>
                                     <a className="dropdown-item" href="/profile/professional/clients">My clients</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
                                 </div>
                             </li>
-
                         }
-
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Database summary</a>
-                        </li>
                     </ul>
-
                 </div>
-            </nav>
+        </nav>
         </>
     )
 }
