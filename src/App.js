@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from './components/navbar.jsx'
+import NavBar from './components/navBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Login from './views/login.jsx'
 import Register from './views/register.jsx'
 import Profile from './views/profile.jsx'
 import About from './views/about.jsx'
-import OurTeam from './views/ourteam.jsx'
+import OurTeam from './views/ourTeam.jsx'
 import Home from './views/home.jsx'
 import Nutritionists from './components/nutritionists.jsx'
 import PersonalTrainers from './components/personaltrainers.jsx'
@@ -15,6 +15,7 @@ import HealthTeam from './components/healthteam.jsx'
 import HealthPlans from './components/healthplans.jsx'
 import ProfessionalProfile from './views/professionalprofile.jsx'
 import Clients from './components/clients.jsx'
+import injectContext from './store/appContext.js'
 
 
 const App = props => {
@@ -45,4 +46,4 @@ const App = props => {
   )
 }
 
-export default App;
+export default injectContext(App);

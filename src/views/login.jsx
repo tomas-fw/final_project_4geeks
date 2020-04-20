@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../store/appContext'
 
 const Login = props => {
-
+    const {store,actions} = useContext(Context)
     return (
         <>
 
@@ -9,21 +10,22 @@ const Login = props => {
                 <div className="row">
                     <div className="col-md-4 offset-md-4">
                         <h1>Login</h1>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">User Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                            </div>
+
+                        <form onSubmit={e =>actions.login(e,props.history,4)}>                            
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email"
+                                name='email'
+                                onChange={actions.handleChange} />
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                                name='password' 
+                                onChange={actions.handleChange}/>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </form>
 
                     </div>

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 
 import ContactCard from '../components/contactcard'
+import { Context } from '../store/appContext'
 
 const  Profile=props=> {
+    const {store, actions} = useContext(Context)
+    
     return (
         <>
         <div className="container">
