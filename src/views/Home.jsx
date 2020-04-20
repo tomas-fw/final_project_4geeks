@@ -57,22 +57,21 @@ const Home = props => {
                 <div className="row">
                     <div className="card-group">
                     <div className="card">
-                            <img src={person2Image} className="card-img-top rounded-circle" alt="..." />
+                            <img src={person2Image} className="card-img-top rounded-circle team-cards" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">Anna</h5>
                                 <p className="card-text">"Best app ever"</p>
                             </div>
                         </div>
                         <div className="card">
-                            <img src={person1Image} className="card-img-top rounded-circle" alt="..." />
+                            <img src={person1Image} className="card-img-top rounded-circle team-cards" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">Ignacio</h5>
                                 <p className="card-text">"Since I started using FitGood, I've never felt healthier"</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
                         <div className="card">
-                            <img src={person3Image} className="card-img-top rounded-circle" alt="..." />
+                            <img src={person3Image} className="card-img-top rounded-circle team-cards" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">Francisca</h5>
                                 <p className="card-text">"A friend suggested this app and it completely changed my lifestyle"</p>
