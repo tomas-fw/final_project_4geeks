@@ -16,6 +16,8 @@ import HealthPlans from './components/healthplans.jsx'
 import ProfessionalProfile from './views/professionalprofile.jsx'
 import Clients from './components/clients.jsx'
 import injectContext from './store/appContext.js'
+import AdminLogin from './components/adminlogin.jsx'
+import AdminProfile from './components/adminprofile.jsx'
 
 
 const App = props => {
@@ -39,6 +41,8 @@ const App = props => {
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
+          <Route exact path='/admin/login' component={AdminLogin} />
+          <Route exact path='/admin/profile' component={AdminProfile} />
         </Switch>
       </Router>
     </>
