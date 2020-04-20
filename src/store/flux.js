@@ -9,7 +9,8 @@ const getState = ({getStore, getActions, setStore}) => {
             name:null,
             lastname:null,
             errors:null,
-            photo:null
+            photo:null,
+            role: null
         },
         actions: {
             handleChange:e=>{
@@ -50,13 +51,51 @@ const getState = ({getStore, getActions, setStore}) => {
                             isAuthenticated : true,
                             email: null,
                             password:null,
-                            error: null
+                            error: null,
+                            role:null
                         })
                         sessionStorage.setItem('currentUser', JSON.stringify(data))
                         sessionStorage.setItem('isAuthenticated', true)
                         history.push('/profile')
                     }
                 })
+            },
+            register_client:(e,history)=>{
+                e.preventDefault();
+                const store = getStore();
+                
+                let formData = new FormData()
+                formData.append('email',store.email)
+                formData.append('password',store.password)
+                formData.append('name',store.name)
+                formData.append('lastname',store.lastname)
+
+                fetch(store.path + '/register/client',{
+                    method:'POST',
+                    body: formData
+                })
+                .then(resp => resp.json())
+                .then(data=>{
+                    if(data.msg){
+                        setStore({
+                            error:data
+                        })
+                    }else{
+                        setStore({
+                            currentUser: data,
+                            isAuthenticated: true,
+                            email: null,
+                            password:null,
+                            photo: null,
+                            error:null,
+                            role: null
+                        })
+                        sessionStorage.setItem('currentUser', JSON.stringify(data))
+                        sessionStorage.setItem('isAuthenticated', true)
+                        history.push('/profile')
+                    }
+                })
+
             }
         }
     }
