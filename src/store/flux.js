@@ -99,7 +99,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             adminLoadClients: (id = '') => {
                 const store = getStore()
-                fetch(store.path +  id, {
+                fetch(store.path + id, {
                     method: 'GET',
                     headers: {
                         "Content-type": 'aplication/json'
@@ -113,8 +113,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                             })
                         } else {
                             setStore({
-                                error:null,
-                                clients:data
+                                error: null,
+                                clients: data
                             })
                         }
                     })
@@ -153,15 +153,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            // logout: (history) => {
-            //     setStore({
-            //         currentUser: null,
-            //         isAuthenticated: false,
-            //     });
-            //     sessionStorage.removeItem('currentUser');
-            //     sessionStorage.removeItem('isAuthenticated');
-            //     // history.push('/)
-            // }
+            logout: (history) => {
+                setStore({
+                    currentUser: null,
+                    isAuthenticated: false,
+                });
+                sessionStorage.removeItem('currentUser');
+                sessionStorage.removeItem('isAuthenticated');
+                history.push('/login');
+            }
         }
     }
 }
