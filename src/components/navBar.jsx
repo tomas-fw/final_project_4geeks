@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Context } from '../store/appContext';
 
 
@@ -9,7 +9,7 @@ const NavBar = props => {
         <>
 
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a className="navbar-brand" href="/">Fit good</a>
+                <Link className="navbar-brand" href="/">Fit good</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,33 +21,33 @@ const NavBar = props => {
                             store.currentUser === null &&
                             <>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/register">Register</a>
+                                    <Link className="nav-link" href="/register">Register</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href='/login'>Login</a>
+                                    <Link className="nav-link" href='/login'>Login</Link>
                                 </li>
                             </>
 
                         }
                         <li className="nav-item active">
-                            <a className="nav-link" href="/team">Health professionals<span className="sr-only">(current)</span></a>
+                            <Link className="nav-link" href="/team">Health professionals<span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href='/about'>About us</a>
+                            <Link className="nav-link" href='/about'>About us</Link>
                         </li>
                         {
                             !!store.currentUser && store.currentUser.user.role.name === 'client'
                             &&
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <Link className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     My profile
-                            </a>
+                            </Link>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="/profile">My account </a>
-                                    <a className="dropdown-item" href="/profile/health-team">My health team</a>
-                                    <a className="dropdown-item" href="/profile/health-plans">My health plans</a>
+                                    <Link className="dropdown-item" href="/profile">My account </Link>
+                                    <Link className="dropdown-item" href="/profile/health-team">My health team</Link>
+                                    <Link className="dropdown-item" href="/profile/health-plans">My health plans</Link>
                                     <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <Link class="dropdown-item" href="#">Logout</Link>
                                 </div>
                             </li>
                         }
@@ -55,14 +55,14 @@ const NavBar = props => {
                             !!store.currentUser && store.currentUser.user.role.name !== 'client' && store.currentUser.user.role.name !== 'admin'
                             &&
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <Link className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     My professional profile
-                                </a>
+                                </Link>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="/profile/professional">My account </a>
-                                    <a className="dropdown-item" href="/profile/professional/clients">My clients</a>
+                                    <Link className="dropdown-item" href="/profile/professional">My account </Link>
+                                    <Link className="dropdown-item" href="/profile/professional/clients">My clients</Link>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <Link class="dropdown-item" href="#">Logout</Link>
                                 </div>
                             </li>
                         }
@@ -70,13 +70,13 @@ const NavBar = props => {
                             !!store.currentUser && store.currentUser.user.role.name === 'admin'
                             &&
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <Link className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     My Admin profile
-                                </a>
+                                </Link>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="/admin/profile">My Profile </a>
-                                    <a className="dropdown-item" href="/admin/client">All Clients </a>
-                                    <a className="dropdown-item" href="/admin/professionals">All Profesionals</a>
+                                    <Links className="dropdown-item" href="/admin/profile">My Profile </Links>
+                                    <Links className="dropdown-item" href="/admin/client">All Clients </Links>
+                                    <Links className="dropdown-item" href="/admin/professionals">All Profesionals</Links>
                                     <div class="dropdown-divider"></div>
                                     <button className="dropdown-item" >Logout</button>                                </div>
                             </li>
@@ -88,4 +88,4 @@ const NavBar = props => {
     )
 }
 
-export default NavBar;
+export default withRouter(NavBar);

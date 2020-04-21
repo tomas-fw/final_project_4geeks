@@ -27,8 +27,8 @@ const App = props => {
 
   return (
     <>
-      <NavBar />
       <Router>
+      <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/team' component={OurTeam} />

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter as Router, withRouter,Link } from 'react-router-dom'
 
 const AdminProfile = props => {
     const { store, actions } = useContext(Context)
