@@ -52,7 +52,7 @@ const NavBar = props => {
                             </li>
                         }
                         {
-                            !!store.currentUser && store.currentUser.user.role.name !== 'client'
+                            !!store.currentUser && store.currentUser.user.role.name !== 'client' && store.currentUser.user.role.name !== 'admin'
                             &&
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,6 +64,21 @@ const NavBar = props => {
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Logout</a>
                                 </div>
+                            </li>
+                        }
+                        {
+                            !!store.currentUser && store.currentUser.user.role.name === 'admin'
+                            &&
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    My Admin profile
+                                </a>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a className="dropdown-item" href="/admin/profile">My Profile </a>
+                                    <a className="dropdown-item" href="/admin/client">All Clients </a>
+                                    <a className="dropdown-item" href="/admin/professionals">All Profesionals</a>
+                                    <div class="dropdown-divider"></div>
+                                    <button className="dropdown-item" >Logout</button>                                </div>
                             </li>
                         }
                     </ul>

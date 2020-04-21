@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Login from './views/login.jsx'
 import Register from './views/register.jsx'
 import Profile from './views/profile.jsx'
-import About from './views/about.jsx'
-import OurTeam from './views/ourTeam.jsx'
-import Home from './views/home.jsx'
+import About from './views/About.jsx'
+import OurTeam from './views/OurTeam.jsx'
+import Home from './views/Home.jsx'
 import Nutritionists from './components/nutritionists.jsx'
 import PersonalTrainers from './components/personaltrainers.jsx'
 import NutritionalEducation from './components/nutrionaleducation.jsx'
@@ -16,8 +16,11 @@ import HealthPlans from './components/healthplans.jsx'
 import ProfessionalProfile from './views/professionalprofile.jsx'
 import Clients from './components/clients.jsx'
 import injectContext from './store/appContext.js'
-import AdminLogin from './components/adminlogin.jsx'
-import AdminProfile from './components/adminprofile.jsx'
+import AdminLogin from './views/adminlogin.jsx'
+import AdminProfile from './views/adminprofile.jsx'
+import AdminClients from './views/AdminClients.jsx'
+import AdminProfesionals from './views/AdminProfesionals.jsx'
+import ClientDetail from './views/AdminClientDetail.jsx'
 
 
 const App = props => {
@@ -43,6 +46,9 @@ const App = props => {
           <Route exact path='/profile' component={Profile} />
           <Route exact path='/admin/login' component={AdminLogin} />
           <Route exact path='/admin/profile' component={AdminProfile} />
+          <Route exact path='/admin/client' component={AdminClients} />
+          <Route exact path='/admin/client/:id' component={ClientDetail} />
+          <Route exact path='/admin/profesionals' component={AdminProfesionals} />
         </Switch>
       </Router>
     </>

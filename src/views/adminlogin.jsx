@@ -10,11 +10,11 @@ const AdminLogin = props => {
                     <div className="col-md-4 offset-md-4">
                         <h1>Login</h1>
 
-                        <form onSubmit={e => actions.login(e, props.history, store.role)}>
+                        <form onSubmit={e => actions.admin_login(e, props.history)}>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Username</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"
-                                    name='email'
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Username"
+                                    name='username'
                                     onChange={actions.handleChange} />
                             </div>
                             <div class="form-group">
