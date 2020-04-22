@@ -14,7 +14,7 @@ const Login = props => {
                         <form onSubmit={e => actions.login(e, props.history, store.role)}>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                                <input autoFocus type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"
                                     name='email'
                                     onChange={actions.handleChange} />
                             </div>

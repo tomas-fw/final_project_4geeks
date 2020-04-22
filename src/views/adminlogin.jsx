@@ -13,7 +13,7 @@ const AdminLogin = props => {
                         <form onSubmit={e => actions.admin_login(e, props.history)}>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Username</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Username"
+                                <input autoFocus type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Username"
                                     name='username'
                                     onChange={actions.handleChange} />
                             </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { Context } from '../store/appContext';
+import { Link } from 'react-router-dom';
 
 const AdminClients = props => {
     const { store, actions } = useContext(Context)
@@ -18,14 +19,14 @@ const AdminClients = props => {
 
                                     return (
                                         <div class="list-group" key={index}>
-                                            <a href={"/admin/client/"+elem.id} class={"list-group-item list-group-item-action " + (elem.is_active)}> ID : {elem.id}
-                                    &nbsp;Name : {elem.name + ' ' + elem.last_name} &nbsp; Total Plans : {elem.all_plans.length} &nbsp; Email : {elem.email}</a>
+                                            <Link to={"/admin/client/"+elem.id} className={"list-group-item list-group-item-action mt-1 " + (elem.is_active)}> ID : {elem.id}
+                                            &nbsp;Name : {elem.name + ' ' + elem.last_name} &nbsp; Total Plans : {elem.all_plans.length} &nbsp; Email : {elem.email}</Link>
                                         </div>
 
                                     )
                                 }) :
                                 <div class="alert alert-warning" role="alert">
-                                    {store.errors}
+                                    {store.error}
                                     You have no Clients in your database :(
                                 </div>
 

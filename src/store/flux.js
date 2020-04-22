@@ -10,14 +10,29 @@ const getState = ({ getStore, getActions, setStore }) => {
             name: null,
             lastname: null,
             error: null,
-            photo: null,
+            avatar: null,
             role: null,
-            clients: null
+            clients: null,
+            specialties: null,
+            age:null,
+            profesional_title:null,
+            nutritionist_title_validation:null,
+            background: null,
+            description:null,
+            gender:null,
+            profesionals:null,
+            is_active:null
+            
         },
         actions: {
             handleChange: e => {
                 setStore({
                     [e.target.name]: e.target.value
+                })
+            },
+            handleChangeFiles: e => {
+                setStore({
+                    [e.target.name]: e.target.files[0]
                 })
             },
             isAuthenticated: () => {
@@ -119,6 +134,73 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
+            adminLoadProfesionals: (role_id = '', id= '') => {
+                const store = getStore()
+                fetch(store.path + role_id +  id, {
+                    method: 'GET',
+                    headers: {
+                        "Content-type": 'aplication/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        }else if(!!role_id ){
+                            setStore({
+                                error:null,
+                                profesionals:data
+                            })
+                            
+                        }
+                        // else if(role_id == 2){
+                        //     setStore({
+                        //         profesionals:null,
+                        //         error:null,
+                        //         trainers:null,
+                        //         nutritionists:data,
+                        //         profesional_detail:null
+                        //     })
+                        // }else if(role_id == 3){
+                        //     setStore({
+                        //         profesionals:null,
+                        //         error:null,
+                        //         trainers:data,
+                        //         nutritionists:null,
+                        //         profesional_detail:null
+                        //     })
+                        // }
+                        // else if(!!role_id && !!id){
+                        //     setStore({
+                        //         profesionals:null,
+                        //         error:null,
+                        //         trainers:null,
+                        //         nutritionists:null,
+                        //         profesional_detail:data
+                        //     })
+                        // }                                                
+                        // else {
+                        //     setStore({
+                        //         error:null,
+                        //         clients:data
+                        //     })
+                        // }
+                    })
+            },
+            changeActiveStatus: (e,url) => {
+                e.preventDefault()
+                const store = getStore();
+                let formData = new FormData()
+                formData.append('active', store.is_active)
+
+                fetch( store.path + url, {
+                  method: "PUT",
+                  body: formData
+                })
+                  .then(resp => resp.json())
+                },
             register_client: (e, history) => {
                 e.preventDefault();
                 const store = getStore();
@@ -127,6 +209,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                 formData.append('password', store.password)
                 formData.append('name', store.name)
                 formData.append('lastname', store.lastname)
+                formData.append('avatar', store.avatar)
+                formData.append('gender', store.gender)
+
                 fetch(store.path + '/register/client', {
                     method: 'POST',
                     body: formData
@@ -153,15 +238,64 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            // logout: (history) => {
-            //     setStore({
-            //         currentUser: null,
-            //         isAuthenticated: false,
-            //     });
-            //     sessionStorage.removeItem('currentUser');
-            //     sessionStorage.removeItem('isAuthenticated');
-            //     // history.push('/)
-            // }
+            register_profesional:(e,role_id,history)=>{
+                e.preventDefault();
+                const store = getStore();
+                let formData = new FormData()
+                formData.append('email', store.email)
+                formData.append('password', store.password)
+                formData.append('name', store.name)
+                formData.append('lastname', store.lastname)
+                formData.append('avatar', store.avatar)
+                formData.append('background', store.background)
+                formData.append('title', store.profesional_title)
+                formData.append('title_validation', store.nutritionist_title_validation)
+                formData.append('specialties', store.specialties)
+                formData.append('description', store.description)
+                formData.append('gender', store.gender)
+                formData.append('age', store.age)
+                fetch(store.path + '/register/profesional/'+role_id, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                currentUser: data,
+                                isAuthenticated: true,
+                                email: null,
+                                password: null,
+                                avatar: null,
+                                error: null,
+                                role: null,
+                                specialties: null,
+                                age:null,
+                                profesional_title:null,
+                                nutritionist_title_validation:null,
+                                background: null,
+                                description:null,
+                                gender:null
+                            })
+                            sessionStorage.setItem('currentUser', JSON.stringify(data))
+                            sessionStorage.setItem('isAuthenticated', true)
+                            history.push('/profile/professional')
+                        }
+                    })
+            },
+            logout: (history) => {
+                setStore({
+                    currentUser: null,
+                    isAuthenticated: false,
+                });
+                sessionStorage.removeItem('currentUser');
+                sessionStorage.removeItem('isAuthenticated');
+                history.push('/')
+            }
         }
     }
 }

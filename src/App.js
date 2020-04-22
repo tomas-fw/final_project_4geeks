@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from './components/navBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Login from './views/login.jsx'
-import Register from './views/register.jsx'
+import Register from './views/Register.jsx'
 import Profile from './views/profile.jsx'
 import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'
@@ -21,6 +21,9 @@ import AdminProfile from './views/adminprofile.jsx'
 import AdminClients from './views/AdminClients.jsx'
 import AdminProfesionals from './views/AdminProfesionals.jsx'
 import ClientDetail from './views/AdminClientDetail.jsx'
+import FormRegNutri from './components/FormingRegNutri.jsx'
+import FormRegTrainer from './components/FormingRegTrainer.jsx'
+import ProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 
 
 const App = props => {
@@ -38,7 +41,9 @@ const App = props => {
           <Route path='/fitness-education' component={FitnessEducation} />
           <Route path='/about' component={About} />
           <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/register/profesional/2' component={FormRegNutri} />
+          <Route exact path='/register/profesional/3' component={FormRegTrainer} />
           <Route path='/profile/health-team' component={HealthTeam} />
           <Route path='/profile/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients' component={Clients} />
@@ -48,7 +53,8 @@ const App = props => {
           <Route exact path='/admin/profile' component={AdminProfile} />
           <Route exact path='/admin/client' component={AdminClients} />
           <Route exact path='/admin/client/:id' component={ClientDetail} />
-          <Route exact path='/admin/profesionals' component={AdminProfesionals} />
+          <Route exact path='/admin/profesional' component={AdminProfesionals} />
+          <Route  exact path='/admin/profesional/:role_id/:id' component={ProfesionalDetail} />
         </Switch>
       </Router>
     </>
