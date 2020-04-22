@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactCard from './contactcard';
+import ContactCard from './ContactCard';
 
 const PersonalTrainers = props => {
 
