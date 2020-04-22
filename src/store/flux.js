@@ -114,7 +114,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             adminLoadClients: (id = '') => {
                 const store = getStore()
-                fetch(store.path +  id, {
+                fetch(store.path + id, {
                     method: 'GET',
                     headers: {
                         "Content-type": 'aplication/json'
@@ -128,8 +128,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                             })
                         } else {
                             setStore({
-                                error:null,
-                                clients:data
+                                error: null,
+                                clients: data
                             })
                         }
                     })

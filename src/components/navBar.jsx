@@ -4,7 +4,8 @@ import { Context } from '../store/appContext';
 
 
 const NavBar = props => {
-    const { store, actions } = useContext(Context)
+    const { store, actions } = useContext(Context);
+
     return (
         <>
 
@@ -103,7 +104,6 @@ const NavBar = props => {
 
                 </div>
             </nav>
-
         </>
     )
 }
