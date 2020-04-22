@@ -11,7 +11,34 @@ const ClientDetail =props=>{
     return(
         <>
         {
-            !!store.clients && <h1>{store.clients[0].name}</h1>
+            !!store.clients &&
+            <>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-4 offset-md-4">
+
+                                <h1>{store.clients[0].name}</h1>
+                                <form onSubmit={(e) => actions.changeActiveStatus(e, props.location.pathname)}>
+                                    <div className="form-check" >
+                                        <input className="form-check-input" type="radio" name="is_active" id="exampleRadios1" value={!store.clients[0].is_active} onChange={actions.handleChange} />
+                                        <label className="form-check-label" htmlFor="exampleRadios1">
+                                            Active
+                                        </label>
+                                    </div>
+                                    <div className="form-check">
+                                        <input className="form-check-input" type="radio" name="is_active" id="exampleRadios2" value={!store.clients[0].is_active}
+                                            onChange={actions.handleChange} />
+                                        <label className="form-check-label" htmlFor="exampleRadios2">
+                                            Inactive
+                                        </label>
+                                    </div>
+                                    <button type="submit" className="btn btn-primary btn-block">Change active status</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </>
         }   
         </>
     )

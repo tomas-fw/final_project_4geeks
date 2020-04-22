@@ -190,7 +190,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
             },
             changeActiveStatus: (e,url) => {
-                e.preventDefault()
                 const store = getStore();
                 let formData = new FormData()
                 formData.append('active', store.is_active)
