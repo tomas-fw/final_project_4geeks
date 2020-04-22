@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 
-import ContactCard from '../components/contactcard'
+import ContactCard from '../components/ContactCard'
 import { Context } from '../store/appContext'
 
 const Profile = props => {
