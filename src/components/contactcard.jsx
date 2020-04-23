@@ -1,50 +1,80 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../store/appContext';
+import { Link, useLocation } from 'react-router-dom';
 
-const ContactCard = props =>{
+const ContactCard = props => {
+	const location = useLocation();
+	const { store, actions } = useContext(Context);
+	const { professional } = props;
+	return (
+		<>
 
-    return(
-        <>
-        <li className="list-group-item card">
-			<div className="row w-100">
-				<div className="col-12 col-sm-6 col-md-3 px-0">
-					<img src="https://via.placeholder.com/150" alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
-				</div>
-				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-					<div className="float-right">
-						<button className="btn">
-							<i className="fas fa-pencil-alt mr-3" />
-						</button>
-						<button className="btn">
-							<i className="fas fa-trash-alt" />
-						</button>
+			<div className="card mb-3 d-block contact-card">
+				<div className="row no-gutters">
+					<div className="col-md-4">
+						<img src="https://via.placeholder.com/150" className="card-img" alt="..." />
 					</div>
-					<p className="name lead">Name</p>
-					<br />
-					<i className="fas fa-map-marker-alt text-muted mr-3" />
-					<span>Personal Trainer</span>
-					<br />
-					<span
-						className="fa fa-phone fa-fw text-muted mr-3"
-						data-toggle="tooltip"
-						title=""
-						data-original-title="(870) 288-4149"
-					/>
-					<span className="small">boxing, body building, crossfit</span>
-					<br />
-                    
-					<span
-						className="fa fa-envelope fa-fw text-muted mr-3"
-						data-toggle="tooltip"
-						data-original-title=""
-						title=""
-					/>
-					<span className="small text-truncate"> 5 years experience</span>
+					<div className="col-md-8">
+						<div className="card-body">
+						<div className="float-right">
+							{
+								!!store.currentUser && store.currentUser.user.role.name === 'client' &&
+								<Link to={location.pathname + '/' + professional.role_id + '/' + professional.id} className="btn">
+									Ver más información <i className="fas fa-plus"></i>
+								</Link>
+							}
+						</div>
+							<h5 className="card-title">{professional.name} {professional.lastname}</h5>
+							<p className="card-text">{professional.specialties}</p>
+							{
+							!!store.currentUser && store.currentUser.user.role.name === 'client' &&
+							<>
+								<p className="small">{professional.description}</p>
+							</>
+							}
+						</div>
+					</div>
 				</div>
 			</div>
-		</li>
-        </>
 
-    )
+
+
+
+
+
+{/* 
+
+			<li className="list-group-item card contact-card">
+				<div className="row d-block">
+					<div className="col-12 col-sm-6 col-md-3 px-0">
+						<img src="https://via.placeholder.com/150" alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
+					</div>
+					<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+						<div className="float-right">
+							{
+								!!store.currentUser && store.currentUser.user.role.name === 'client' &&
+								<Link to={location.pathname + "/details"} className="btn">
+									Ver más información <i className="fas fa-info"></i>
+								</Link>
+							}
+						</div>
+						<p className="name lead">{professional.name} {professional.lastname}</p>
+						<p className="small">{professional.specialties}</p>
+						{
+							!!store.currentUser && store.currentUser.user.role.name === 'client' &&
+							<>
+								<p> ID del profesional: {professional.id}</p>
+								<p className="small">{professional.description}</p>
+							</>
+						}
+
+						<br />
+					</div>
+				</div>
+			</li> */}
+		</>
+
+	)
 }
 
 export default ContactCard;
