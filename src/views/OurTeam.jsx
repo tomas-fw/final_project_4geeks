@@ -14,7 +14,7 @@ const OurTeam = props => {
                     <div className="card bg-dark text-dark border-0 rounded-0px-0">
                     <h5 class="card-title">Dietitian</h5>
                         <img src={nutritionistImage} className="card-img" />
-                        <Link className="card-link" to="/nutrionists" class="stretched-link">Meet our nutrionists</Link>
+                        <Link className="card-link" to="/nutritionists" class="stretched-link">Meet our nutrionists</Link>
                     </div>
                 </div>
                 <div className="col-md-6">
