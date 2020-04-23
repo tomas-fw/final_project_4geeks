@@ -25,7 +25,7 @@ const PersonalTrainers = props => {
                                 :
                                 <li className="alert alert-warning" role="alert">
                                     {store.error}
-                                    There are no active nutritionists at the moment :(
+                                    There are no active personal trainers at the moment :(
                                 </li>
                         }
                     </ul>
