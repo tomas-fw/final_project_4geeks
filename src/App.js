@@ -1,29 +1,29 @@
 import React from 'react'
 import NavBar from './components/NavBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import Login from './views/Login.jsx'
-import Register from './views/Register.jsx'
-import Profile from './views/Profile.jsx'
 import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'
 import Home from './views/Home.jsx'
-import Nutritionists from './components/Nutritionists.jsx'
-import PersonalTrainers from './components/PersonalTrainers.jsx'
 import NutritionalEducation from './components/NutritionalEducation.jsx'
 import FitnessEducation from './components/FitnessEducation.jsx'
-import HealthTeam from './components/HealthTeam.jsx'
-import HealthPlans from './components/HealthPlans.jsx'
-import ProfessionalProfile from './views/ProfessionalProfile.jsx'
 import Clients from './components/Clients.jsx'
 import injectContext from './store/appContext.js'
-import AdminLogin from './views/AdminLogin.jsx'
-import AdminProfile from './views/AdminProfile.jsx'
 import AdminClients from './views/AdminClients.jsx'
 import AdminProfesionals from './views/AdminProfesionals.jsx'
 import ClientDetail from './views/AdminClientDetail.jsx'
 import FormRegNutri from './components/FormingRegNutri.jsx'
 import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import ProfesionalDetail from './views/AdminProfesionalDetail.jsx'
+import AdminLogin from './views/AdminLogin.jsx'
+import AdminProfile from './views/AdminProfile.jsx'
+import HealthPlans from './components/HealthPlans.jsx'
+import HealthTeam from './components/HealthTeam.jsx'
+import Login from './views/Login.jsx'
+import Nutritionists from './components/Nutritionists.jsx'
+import PersonalTrainers from './components/PersonalTrainers.jsx'
+import ProfessionalProfile from './views/ProfessionalProfile.jsx'
+import Profile from './views/Profile.jsx'
+import Register from './views/Register.jsx'
 
 
 const App = props => {
@@ -58,7 +58,6 @@ const App = props => {
         </Switch>
       </Router>
     </>
-
   )
 }
 
