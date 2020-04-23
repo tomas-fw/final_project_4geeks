@@ -13,7 +13,7 @@ import AdminProfesionals from './views/AdminProfesionals.jsx'
 import ClientDetail from './views/AdminClientDetail.jsx'
 import FormRegNutri from './components/FormingRegNutri.jsx'
 import FormRegTrainer from './components/FormingRegTrainer.jsx'
-import ProfesionalDetail from './views/AdminProfesionalDetail.jsx'
+import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 import AdminLogin from './views/AdminLogin.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
@@ -24,6 +24,7 @@ import PersonalTrainers from './components/PersonalTrainers.jsx'
 import ProfessionalProfile from './views/ProfessionalProfile.jsx'
 import Profile from './views/Profile.jsx'
 import Register from './views/Register.jsx'
+import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 
 
 const App = props => {
@@ -34,18 +35,20 @@ const App = props => {
       <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/team' component={OurTeam} />
-          <Route path='/nutrionists' component={Nutritionists}/>
-          <Route path='/personal-trainers' component={PersonalTrainers}/>
-          <Route path='/nutritional-education' component={NutritionalEducation} />
-          <Route path='/fitness-education' component={FitnessEducation} />
-          <Route path='/about' component={About} />
-          <Route path='/login' component={Login} />
+          <Route exact path='/team' component={OurTeam} />
+          <Route exact path='/personal-trainers/:role_id/:id' component={ProfessionalDetails}/>
+          <Route exact path='/nutritionists/:role_id/:id' component={ProfessionalDetails}/>
+          <Route exact path='/nutritionists' component={Nutritionists}/>
+          <Route exact path='/personal-trainers' component={PersonalTrainers}/>
+          <Route exact path='/nutritional-education' component={NutritionalEducation} />
+          <Route exact path='/fitness-education' component={FitnessEducation} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/register/profesional/2' component={FormRegNutri} />
           <Route exact path='/register/profesional/3' component={FormRegTrainer} />
-          <Route path='/profile/health-team' component={HealthTeam} />
-          <Route path='/profile/health-plans' component={HealthPlans} />
+          <Route exact path='/profile/health-team' component={HealthTeam} />
+          <Route exact path='/profile/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
@@ -54,7 +57,7 @@ const App = props => {
           <Route exact path='/admin/client' component={AdminClients} />
           <Route exact path='/admin/client/:id' component={ClientDetail} />
           <Route exact path='/admin/profesional' component={AdminProfesionals} />
-          <Route  exact path='/admin/profesional/:role_id/:id' component={ProfesionalDetail} />
+          <Route exact path='/admin/profesional/:role_id/:id' component={AdminProfesionalDetail} />
         </Switch>
       </Router>
     </>
