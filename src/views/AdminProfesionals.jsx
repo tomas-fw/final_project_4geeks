@@ -9,25 +9,28 @@ const AdminProfesionals = props => {
     }, [])
 
     return (
+    <div class="container mt-4" id="adminprofile">         
+
         <>
             <Link to='/admin/profile' class="btn btn-danger mt-3 ml-4">Volver a Administrador</Link>
-            <div className="container">
+            <Link to='/admin/client' class="btn btn-primary mt-3 ml-4">Ir a Clientes</Link>
+
+                <br />
                 <br />
                 <div className="row">
-                    <div className="col-md-5">
+                    <div className="col-md-5 ml-5">
                         <h1 class="text-center">Personal Trainer</h1>
-                        {
+                                                {
                             !!store.profesionals && !!store.profesionals.trainers && store.profesionals.trainers.length > 0 ?
                                 store.profesionals.trainers.map((elem, index) => {
                                     return (
-
                                         <div class="card border-info mt-4" key={index}>
                                             <div class="card-header border-info">{elem.name + ' ' + elem.lastname}</div>
                                             <div class="card-body">
+                                                <p class="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p>
                                                 <p class="card-text ml-3">ID : {elem.id}</p>
                                                 <p class="card-text ml-3">Planes totales : {elem.all_plans.length} </p>
                                                 <p class="card-text ml-3">Email : {elem.email}</p>
-                                                <p class="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p>
                                                 <a href={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-info text-white text-center list-group-item-action" + (elem.is_active == true ? 'active' : '')}>Más información</a>
                                                 
                                                 <p></p>
@@ -42,10 +45,9 @@ const AdminProfesionals = props => {
                             </div>
                         }
                     </div>
+                    <div className="col-md-1 ml-1"></div>
                     
-                <div className="col-md-1"></div>
-                    
-                    <div className="col-md-6">
+                    <div className="col-md-5 ">
                     <h1 class="text-center">Nutritionists</h1>
                         {
                             !!store.profesionals && !!store.profesionals.nutritionists && store.profesionals.nutritionists.length > 0 ?
@@ -55,10 +57,10 @@ const AdminProfesionals = props => {
                                         <div class="card border-success mt-4" key={index}>
                                             <div class="card-header border-success">{elem.name + ' ' + elem.lastname}</div>
                                             <div class="card-body">
+                                                <p class="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p>
                                                 <p class="card-text ml-3">ID : {elem.id}</p>
                                                 <p class="card-text ml-3">Planes totales : {elem.all_plans.length} </p>
                                                 <p class="card-text ml-3">Email : {elem.email}</p>
-                                                <p class="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p>
                                                 <a href={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-success text-white text-center list-group-item-action " + (elem.is_active == true ? 'active' : '')}>Más información</a>
                                                 <p></p>
                                             </div>
@@ -114,11 +116,10 @@ const AdminProfesionals = props => {
                             <button type="submit" className="btn btn-primary">Search</button>
                         </form>
                     </div> */}
-                </div>
             </div>
-
-
         </>
+        </div>
+
     )
 }
 

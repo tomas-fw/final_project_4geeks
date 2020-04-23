@@ -3,6 +3,8 @@ import { Context } from '../store/appContext';
 
 const HealthTeam = props => {
     const { store, actions } = useContext(Context)
+
+    /* linea 26 llama al ultimo nutri*/
     return (
         <>
             {
@@ -23,7 +25,7 @@ const HealthTeam = props => {
                                 <div className="col-md-6 card">
                                     <img src="..." className="card-img-top" alt="..." />
                                     <div className="card-body">
-                                        <h5 className="card-title">{store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name}</h5>
+                                        <h5 className="card-title">{store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name}</h5> 
                                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                         <a href="#" className="btn btn-primary">Contact my nutritionist</a>
                                     </div>

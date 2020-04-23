@@ -12,11 +12,14 @@ const AdminClients = props => {
     }, [])
 
     return (
+    <div class="container mt-4" id="adminprofile">         
         <>
-            <Link to='/admin/profile' class="btn btn-danger ml-3 mt-2">Volver a Administrador</Link>
-            <h1 class="text-center">Lista total de clientes </h1>
+         <Link to='/admin/profile' class="btn btn-danger mt-3 ml-5">Volver a Administrador</Link>
+         <Link to='/admin/profesional' class="btn btn-warning mt-3 ml-4">Ir Profesionales</Link>
+
+            <h1 class="text-center" >Lista total de clientes </h1>
             <br />
-            <div className="cointainer">
+            <div className="cointainer" >
                 <div className="row">
                     <div className="container">
                         <div class="card-deck">
@@ -47,6 +50,8 @@ const AdminClients = props => {
                 </div>
             </div>
         </>
+            </div>
+  
     )
 }
 

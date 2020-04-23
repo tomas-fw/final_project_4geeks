@@ -5,9 +5,15 @@
     border-radius: 100%;
     margin: auto;
 }
+ 
+
+#adminprofile{
+    background-color: rgb(243, 240, 236);
+
 .contact-card {
     height:300px;
     width: 800px;
     margin: auto;
 
+ 
 }
