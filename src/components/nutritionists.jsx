@@ -16,8 +16,8 @@ const Nutritionists = props => {
                 <h1 className="text-center">Nutritionists</h1>
                 <ul className="list-group pull-down" id="contact-list">
                         {
-                            !!store.profesionals && !!store.profesionals.nutritionists && store.profesionals.nutritionists.length > 0 ?
-                                store.profesionals.nutritionists.map((elem, index) => {
+                           !!store.profesionals && !!store.profesionals.nutritionists  && store.profesionals.nutritionists.length > 0 ?
+                                store.profesionals.nutritionists.filter((elem) => elem.is_active).map((elem, index) => {
                                     return (
                                         <ContactCard professional={elem}/>
                                     )

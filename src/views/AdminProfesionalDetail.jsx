@@ -50,7 +50,7 @@ const ProfesionalDetail = props => {
                                                     </div>
 
                                                     <div class="card-header">
-                                                        <form onSubmit={(e) => actions.changeActiveStatus(e, props.location.pathname)}>
+                                                        <form onSubmit={() => actions.changeActiveStatus(props.location.pathname)}>
                                                             <div class="form-check-inline" >
                                                                 <input class="form-check-input ml-4" type="radio" name="is_active" id="exampleRadios1" value={!store.profesionals[0].is_active} onChange={actions.handleChange} />
                                                                 <label class="form-check-label ml-2 mr-5" htmlFor="exampleRadios1">
