@@ -17,7 +17,7 @@ const PersonalTrainers = props => {
                     <ul className="list-group pull-down" id="contact-list">
                         {
                             !!store.profesionals && !!store.profesionals.trainers && store.profesionals.trainers.length > 0 ?
-                                store.profesionals.trainers.map((elem, index) => {
+                                store.profesionals.trainers.filter((elem) => elem.is_active).map((elem, index) => {
                                     return (
                                         <ContactCard professional={elem}/>
                                     )
