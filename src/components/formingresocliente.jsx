@@ -1,25 +1,25 @@
 import React from "react"
-
+/* RESPONSIVE LISTO*/
 const FormIngresoClient = props => {
     return (
         <>
             <form>
-                <h1 class="text-center mt-3">Formulario de ingreso</h1>
-                <a href='/profile/' type="button" class="btn btn-info ml-5 mb-3">Volver a Mi Perfíl</a>
-
-
+                <a href='/profile/' type="button" class="btn btn-info mt-2 ml-5">Volver a Mi Perfíl</a>
+                <h1 class="text-center">Formulario para contratar un nuevo plan</h1>
+                <br />
                 <div class="container">
-                    <div class="card">
+                    {/* <div class="card">
                         <div class="card-header">
-                            <h3>Antecedentes sociales</h3></div>
+                            <h3>Antecedentes sociales</h3>
+                        </div>
                     </div>
-                    <br />
+                    <br /> */}
 
-                    <fieldset class="form-group" name="género">
+                    <fieldset class="form-group" /*género*/>
                         <div class="row">
                             <legend class="col-form pt-0">Indique su género</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-10 col-xs-10">
                                 <div class="custom-control custom-switch">
                                     <input type="radio" checked id="customRadio1" name="niveleduc" class="custom-control-input" />
                                     <label class="custom-control-label" for="customRadio1">Femenino</label>
@@ -32,14 +32,14 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <div class="form-group row" name="Objetivo">
+                    <div class="form-group row" /*Objetivo*/>
                         <legend class="col-form pt-0">Objetivo</legend>
-                        <div class="col-sm-10">
-                            <input required type="password" class="form-control" id="inputPassword3" />
+                        <div class="col-md-10 col-xs-10">
+                            <input required type="text" class="form-control" id="objetivo" />
                         </div>
                     </div>
 
-                    <fieldset class="form-group" name="nivel educacional">
+                    {/* <fieldset class="form-group" >
                         <div class="row">
                             <legend class="col-form pt-0">Nivel educacional</legend>
                             <div class="col-sm-1"></div>
@@ -64,26 +64,29 @@ const FormIngresoClient = props => {
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+                    </fieldset> */}
 
-                    <div class="form-group row" name="Trabajo">
+                    {/* <div class="form-group row" name="Trabajo">
                         <legend class="col-form pt-0">Trabajo / Ocupación</legend>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="inputPassword3" />
                         </div>
                     </div>
+                    */}
+
                     <br />
                     <div class="card">
                         <div class="card-header">
-                            <h3>Antecedentes clínicos</h3></div>
+                            <h3>Antecedentes clínicos</h3>
+                        </div>
                     </div>
 
-                    <fieldset class="form-group" name="embarazo">
+                    <fieldset class="form-group" /*embarazo*/>
                         <legend class="col-form pt-0">Si usted es mujer, ¿está embarazada?</legend>
                         <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-4">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-4 col-xs-4">
                                 <div class="custom-control custom-switch">
                                     <input type="radio" checked id="emb1" name="emb" class="custom-control-input" />
                                     <label class="custom-control-label" for="emb1">No</label>
@@ -93,22 +96,26 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="emb2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 col-xs-4">
                                 <input type="text" class="form-control" id="enf"
                                     placeholder="Indique en qué semana gestacional se encuentra" />
-                                <input type="text" class="form-control" id="enf" placeholder="Fecha posible de parto" />
+                                <input type="text" class="form-control" id="emb" placeholder="Fecha posible de parto" />
                             </div>
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="enfermedades">
+                    <fieldset class="form-group" /*enfermedades*/>
                         <legend class="col-form pt-0">¿Presenta alguna de estas enfermedades?</legend>
                         <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-4">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-4 col-xs-4">
                                 <div class="custom-control custom-switch">
                                     <input type="radio" id="enf1" checked name="enf" class="custom-control-input" />
-                                    <label class="custom-control-label" for="enf1">Diabetes Mellitus 1</label>
+                                    <label class="custom-control-label" for="enf1">Ninguna</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="radio" id="enf7" name="enf" class="custom-control-input" />
+                                    <label class="custom-control-label" for="enf7">Diabetes Mellitus 1</label>
                                 </div>
                                 <div class="custom-control custom-switch">
                                     <input type="radio" id="enf2" name="enf" class="custom-control-input" />
@@ -132,7 +139,7 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="enf5">Insuficiencia renal</label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 col-xs-4">
                                 <input type="text" class="form-control" id="enf" placeholder="¿presenta otra enfermedad?" />
                                 <input type="text" class="form-control" id="enf" placeholder="¿presenta otra enfermedad?" />
                                 <input type="text" class="form-control" id="enf" placeholder="¿presenta otra enfermedad?" />
@@ -141,10 +148,10 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <div class="form-group" name="medicamentos">
+                    <div class="form-group" /*medicamentos*/>
                         <legend class="col-form pt-0">¿Toma algún medicamento?</legend>
                         <div class="row">
-                            <div class="col-sm-1">
+                            <div class="col-md-1 col-xs-1">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="med1" checked name="medicamentos" class="custom-control-input" />
                                     <label class="custom-control-label" for="med1">No</label>
@@ -154,19 +161,19 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="med2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-3 col-xs-3">
                                 <input type="text" class="form-control" id="medicamentos" placeholder="Qué medicamento toma?" />
                                 <input type="text" class="form-control" id="medicamentos" placeholder="Qué medicamento toma?" />
                                 <input type="text" class="form-control" id="medicamentos" placeholder="Qué medicamento toma?" />
                                 <input type="text" class="form-control" id="medicamentos" placeholder="Qué medicamento toma?" />
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-3 col-xs-3">
                                 <input type="text" class="form-control" id="medicamentos" placeholder="¿Cuántas veces al día?" />
                                 <input type="text" class="form-control" id="medicamentos" placeholder="¿Cuántas veces al día?" />
                                 <input type="text" class="form-control" id="medicamentos" placeholder="¿Cuántas veces al día?" />
                                 <input type="text" class="form-control" id="medicamentos" placeholder="¿Cuántas veces al día?" />
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-3 col-xs-3">
                                 <input type="text" class="form-control" id="medicamentos"
                                     placeholder="¿De cuantos miligramos es el medicamento?" />
                                 <input type="text" class="form-control" id="medicamentos"
@@ -179,10 +186,10 @@ const FormIngresoClient = props => {
                         </div>
                     </div>
 
-                    <fieldset class="form-group" name="operaciones">
+                    <fieldset class="form-group" /*operaciones*/>
                         <legend class="col-form pt-0">¿Le han realizado alguna operación o operaciones?</legend>
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-md-2 col-xs-2">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="op1" checked name="op" class="custom-control-input" />
                                     <label class="custom-control-label" for="op1">No</label>
@@ -192,12 +199,12 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="op2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-dm-4 col-xs-4">
                                 <input type="text" class="form-control" id="op" placeholder="¿Qué operación fue?" />
                                 <input type="text" class="form-control" id="op" placeholder="¿Qué operación fue?" />
                                 <input type="text" class="form-control" id="op" placeholder="¿Qué operación fue?" />
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 col-xs-4">
                                 <input type="text" class="form-control" id="op" placeholder="¿Cuándo fue?" />
                                 <input type="text" class="form-control" id="op" placeholder="¿Cuándo fue?" />
                                 <input type="text" class="form-control" id="op" placeholder="¿Cuándo fue?" />
@@ -205,11 +212,11 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="orina">
+                    <fieldset class="form-group" /*orina*/>
                         <div class="row">
-                            <legend class="col-form pt-0">Orina</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
+                            <legend class="col-form pt-0">Los últimos 7 días, ¿cómo ha notado su orina?</legend>
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-10 col-xs-10">
                                 <div class="custom-control custom-switch">
                                     <input type="radio" checked id="orina1" name="orina" class="custom-control-input" />
                                     <label class="custom-control-label" for="orina1">Color amarillo claro</label>
@@ -234,25 +241,25 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="digestion">
+                    <fieldset class="form-group" /*digestion*/>
                         <div class="row">
-                            <legend class="col-form pt-0">Digestion</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
+                            <legend class="col-form pt-0">Los últimos 7 días, ¿cómo ha notado sus heces</legend>
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-10 col-xs-10">
                                 <div class="custom-control custom-switch">
-                                    <input type="radio" checked id="dig1" name="customRadio" class="custom-control-input" />
+                                    <input type="radio" checked id="dig1" name="dg" class="custom-control-input" />
                                     <label class="custom-control-label" for="dig1">Normal</label>
                                 </div>
                                 <div class="custom-control custom-switch">
-                                    <input type="radio" id="dig2" name="customRadio" class="custom-control-input" />
+                                    <input type="radio" id="dig2" name="dg" class="custom-control-input" />
                                     <label class="custom-control-label" for="dig2">Estítica</label>
                                 </div>
                                 <div class="custom-control custom-switch">
-                                    <input type="radio" id="dig3" name="customRadio" class="custom-control-input" />
+                                    <input type="radio" id="dig3" name="dg" class="custom-control-input" />
                                     <label class="custom-control-label" for="dig3">Diarrea</label>
                                 </div>
                                 <div class="custom-control custom-switch">
-                                    <input type="radio" id="dig4" name="customRadio" class="custom-control-input" />
+                                    <input type="radio" id="dig4" name="dg" class="custom-control-input" />
                                     <label class="custom-control-label" for="dig4">Presencia de sangre en las
                             heces</label>
                                 </div>
@@ -260,13 +267,13 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="signosysintomas">
+                    <fieldset class="form-group" /*signosysintomas*/>
                         <div class="row">
                             <legend class="col-form pt-0">¿Presenta alguno de estos síntomas?</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-4">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-4 col-xs-4">
                                 <div class="custom-control custom-switch">
-                                    <input type="checkbox" checked id="sys13" name="sys" class="custom-control-input" />
+                                    <input type="checkbox" checked id="sys" name="sys" class="custom-control-input" />
                                     <label class="custom-control-label" for="sys13">Ninguno</label>
                                 </div>
                                 <div class="custom-control custom-switch">
@@ -294,7 +301,7 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="sys6">Polifagia</label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 col-xs-4">
                                 <div class="custom-control custom-switch">
                                     <input type="checkbox" id="sys7" name="sys" class="custom-control-input" />
                                     <label class="custom-control-label" for="sys7">Reflujo gástrico</label>
@@ -323,35 +330,35 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="ayunos">
+                    <fieldset class="form-group" /*ayunos*/>
                         <div class="row">
-                            <legend class="col-form pt-0">Ayunos</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-1">
+                            <legend class="col-form pt-0">¿Realizas ayunos?</legend>
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-1 col-xs-1">
                                 <div class="form-check custom-switch">
                                     <input type="radio" checked id="ayunos1" name="ayunos" class="custom-control-input" />
                                     <label class="custom-control-label" for="ayunos1">No</label>
                                 </div>
                             </div>
-                            <div class="col-sm-1">
+                            <div class="col-md-1 col-xs-1">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="ayunos2" name="ayunos" class="custom-control-input" />
                                     <label class="custom-control-label" for="ayunos2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id=""
+                            <div class="col-md-8 col-xs-8">
+                                <input type="text" class="form-control" id="ayunos"
                                     placeholder="¿Cuánto dura su ayuno y cada cuantos días ayuna?" />
                             </div>
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="apetito">
+                    <fieldset class="form-group" /*apetito*/>
                         <div class="row">
                             <legend class="col-form pt-0">¿Cómo ha presentado su apetito los últimos 7 días?</legend>
-                            <div class="col-sm-1">
+                            <div class="col-md-1 col-xs-1">
                             </div>
-                            <div class="col-sm-10">
+                            <div class="col-md-10 col-xs-10">
                                 <div class="form-check custom-switch">
                                     <input type="radio" checked id="apetito1" name="apetito" class="custom-control-input" />
                                     <label class="custom-control-label" for="apetito1">Normal</label>
@@ -368,12 +375,12 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="ansiedad">
+                    <fieldset class="form-group" /*ansiedad*/>
                         <div class="row">
                             <legend class="col-form pt-0">En escala del 0 al 5, ¿qué nivel ansiedad presenta al comer?
                 </legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-10 col-xs-10">
                                 <div class=" custom-switch form-check">
                                     <input type="radio" checked id="ansiedad1" name="ansiedad" class="custom-control-input" />
                                     <label class="custom-control-label" for="ansiedad1">0</label>
@@ -402,13 +409,13 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="tabaco">
+                    <fieldset class="form-group" /*tabaco*/>
                         <div class="row">
                             <legend class="col-form pt-0">¿Fuma tabaco? ¿Cuántas veces a la semana?</legend>
-                            <div class="col-sm-1"> </div>
-                            <div class="col-sm-10">
+                            <div class="col-md-1 col-xs-1"> </div>
+                            <div class="col-md-10 col-xs-10">
                                 <div class="form-check custom-switch">
-                                    <input type="radio" checked id="tabaco1" name="tabaco" class="custom-control-input" />
+                                    <input type="radio" checked id="tabaco" name="tabaco" class="custom-control-input" />
                                     <label class="custom-control-label" for="tabaco1">No fumo</label>
                                 </div>
                                 <div class="form-check custom-switch">
@@ -427,11 +434,11 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="alcohol">
+                    <fieldset class="form-group" /*alcohol*/>
                         <div class="row">
                             <legend class="col-form pt-0">¿Consume alcohol? ¿Cuántas veces a la semana?</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-10">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-10 col-xs-10">
                                 <div class="form-check custom-switch">
                                     <input type="radio" checked id="alcohol1" name="alcohol" class="custom-control-input" />
                                     <label class="custom-control-label" for="alcohol1">No consumo alcohol</label>
@@ -452,11 +459,11 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="actividad_fisica">
+                    <fieldset class="form-group" /*actividad_fisica*/>
                         <div class="row">
                             <legend class="col-form pt-0">¿Hace Actividad física? ¿Cuántas veces a la semana?</legend>
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-4">
+                            <div class="col-md-1 col-xs-1"></div>
+                            <div class="col-md-4 col-xs-4">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="af1" checked name="af" class="custom-control-input" />
                                     <label class="custom-control-label" for="af1">Ninguna</label>
@@ -474,7 +481,7 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="af4">5 o más veces por semana </label>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-md-4 col-xs-4">
                                 <input type="text" class="form-control" id="actfis"
                                     placeholder="¿Qué actividad o ejervicio reaiza?" />
                                 <input type="text" class="form-control" id="actfis"
@@ -483,15 +490,14 @@ const FormIngresoClient = props => {
                                     placeholder="¿Qué actividad o ejervicio reaiza?" />
                                 <input type="text" class="form-control" id="actfis"
                                     placeholder="¿Qué actividad o ejervicio reaiza?" />
-
                             </div>
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="supl_nut">
+                    <fieldset class="form-group" /*supl_nut*/>
                         <div class="row">
                             <legend class="col-form pt-0">¿Toma algún suplemento nutricional?</legend>
-                            <div class="col-sm-2">
+                            <div class="col-dm-2 col-xs-2">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="supl_nut1" checked name="supl_nut" class="custom-control-input" />
                                     <label class="custom-control-label" for="supl_nut1">No</label>
@@ -501,13 +507,13 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="supl_nut2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-3 col-xs-3">
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Qué suplemento toma?" />
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Qué suplemento toma?" />
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Qué suplemento toma?" />
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Qué suplemento toma?" />
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-3 col-xs-3">
                                 <input type="text" class="form-control" id="supl_nut"
                                     placeholder="¿Cuántas medidas o pastillas?" />
                                 <input type="text" class="form-control" id="supl_nut"
@@ -517,7 +523,7 @@ const FormIngresoClient = props => {
                                 <input type="text" class="form-control" id="supl_nut"
                                     placeholder="¿Cuántas medidas o pastillas?" />
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-md-3 col-xs-3">
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Cuántas veces al día?" />
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Cuántas veces al día?" />
                                 <input type="text" class="form-control" id="supl_nut" placeholder="¿Cuántas veces al día?" />
@@ -526,10 +532,10 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="lesiones">
+                    <fieldset class="form-group" /*lesiones*/>
                         <legend class="col-form pt-0">¿Presenta alguna lesión o molestia?</legend>
                         <div class="row justify-center">
-                            <div class="col-sm-2">
+                            <div class="col-md-2 col-xs-2">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="lesiones1" checked name="lesiones" class="custom-control-input" />
                                     <label class="custom-control-label" for="lesiones1">No</label>
@@ -539,50 +545,48 @@ const FormIngresoClient = props => {
                                     <label class="custom-control-label" for="lesiones2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-7">
+                            <div class="col-md-7 col-xs-7">
                                 <input type="text" class="form-control" id="lesiones" placeholder="¿Qué lesión presenta?" />
                                 <input type="text" class="form-control" id="lesiones" placeholder="¿Qué lesión presenta?" />
                                 <input type="text" class="form-control" id="lesiones" placeholder="¿Qué lesión presenta?" />
                                 <input type="text" class="form-control" id="lesiones" placeholder="¿Qué lesión presenta?" />
                             </div>
-
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="alergiaAlim">
+                    <fieldset class="form-group" /*alergiaAlim*/>
                         <legend class="col-form pt-0">¿Presenta alguna alergia o intolerancia alimentaria?</legend>
                         <div class="row justify-center">
-                            <div class="col-sm-2">
+                            <div class="col-md-2 col-xs-2">
                                 <div class="form-check custom-switch">
                                     <input type="radio" id="alergiaAlim1" checked name="alergiaAlim"
                                         class="custom-control-input" />
                                     <label class="custom-control-label" for="alergiaAlim1">No</label>
                                 </div>
                                 <div class="form-check custom-switch">
-                                    <input type="radio" id="alergiaAlim" name="alergiaAlim" class="custom-control-input" />
+                                    <input type="radio" id="alergiaAlim2" name="alergiaAlim" class="custom-control-input" />
                                     <label class="custom-control-label" for="alergiaAlim2">Si</label>
                                 </div>
                             </div>
-                            <div class="col-sm-7">
+                            <div class="col-md-7 col-xs-7">
                                 <input type="text" class="form-control" id="alergiaAlim" placeholder="¿A qué alimento?" />
                                 <input type="text" class="form-control" id="alergiaAlim" placeholder="¿A qué alimento?" />
                                 <input type="text" class="form-control" id="alergiaAlim" placeholder="¿A qué alimento?" />
                                 <input type="text" class="form-control" id="alergiaAlim" placeholder="¿A qué alimento?" />
                             </div>
-
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="peso">
+                    <fieldset class="form-group" /*peso*/>
                         <legend class="col-form pt-0">Cuál es su peso actual?</legend>
                         <div class="row justify-center">
-                            <div class="col-sm-7">
+                            <div class="col-md-7 col-xs-7">
                                 <input required type="text" class="form-control" id="peso" placeholder="Indique el peso" />
                             </div>
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="talla">
+                    <fieldset class="form-group" /*talla*/>
                         <legend class="col-form pt-0">Cuál es su altura actual?</legend>
                         <div class="row justify-center">
                             <div class="col-sm-7">
@@ -591,10 +595,28 @@ const FormIngresoClient = props => {
                         </div>
                     </fieldset>
 
-                    <fieldset class="form-group" name="ccintura">
+                    <fieldset class="form-group" /*ccintura*/ >
                         <legend class="col-form pt-0">Cuál es su circunferencia de cintura?</legend>
                         <div class="row justify-center">
-                            <div class="col-sm-7">
+                            <div class="col-md-7 col-xs-7">
+                                <input required type="text" class="form-control" id="ccintura" placeholder="Indique su circunferencia de cintura en centimetros" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group" /*Personal trainer*/ >
+                        <legend class="col-form pt-0">Ingresa el ID del Personal Trainer que elegiste</legend>
+                        <div class="row justify-center">
+                            <div class="col-md-7 col-xs-7">
+                                <input required type="text" class="form-control" id="ccintura" placeholder="Indique su circunferencia de cintura en centimetros" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group" /*Nutricionista*/ >
+                        <legend class="col-form pt-0">Ingresa el ID del Nutricionista que elegiste</legend>
+                        <div class="row justify-center">
+                            <div class="col-md-7 col-xs-7">
                                 <input required type="text" class="form-control" id="ccintura" placeholder="Indique su circunferencia de cintura en centimetros" />
                             </div>
                         </div>
@@ -604,19 +626,15 @@ const FormIngresoClient = props => {
                         <div class="form-check">
                             <input required class="form-check-input" type="checkbox" id="gridCheck" />
                             <label class="form-check-label" for="gridCheck">
-                                Acepto los terminos de confidencialidad
-                </label>
+                                Acepto los terminos de confidencialidad</label>
                         </div>
                     </div>
 
                     <a href="#" type="submit" class="btn btn-primary">Enviar formulario</a>
                 </div>
             </form>
-
         </>
     )
-
-
 }
 
 export default FormIngresoClient;

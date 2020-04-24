@@ -19,13 +19,14 @@ import HealthPlans from './components/HealthPlans.jsx'
 import Login from './views/Login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
 import ProfessionalProfile from './views/ProfessionalProfile.jsx'
-import Profile from './views/Profile.jsx'
 import Register from './views/Register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile2 from './components/check/profile2.jsx'
+import Profile from './views/Profile.jsx'
+import ClientPlans from './components/ClientPlans.jsx'
+import FormIngresoClient from './components/formingresocliente.jsx'
 
 
 const App = props => {
@@ -48,12 +49,13 @@ const App = props => {
           <Route exact path='/register' component={Register} />
           <Route exact path='/register/profesional/2' component={FormRegNutri} />
           <Route exact path='/register/profesional/3' component={FormRegTrainer} />
-          <Route exact path='/profile/health-team' component={HealthTeam} />
-          <Route exact path='/profile/health-plans' component={HealthPlans} />
+          <Route exact path='/profile/client/health-team' component={HealthTeam} />
+          <Route exact path='/profile/client/nuevo-plan' component={FormIngresoClient} />
+          <Route exact path='/profile/client/plans' component={ClientPlans} />
+          <Route exact path='/profile/client/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
-          <Route exact path='/profile2' component={Profile2} />
           <Route exact path='/admin/login' component={AdminLogin} />
           <Route exact path='/admin/profile' component={AdminProfile} />
           <Route exact path='/admin/client' component={AdminClients} />

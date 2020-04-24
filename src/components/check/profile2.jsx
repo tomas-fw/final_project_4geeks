@@ -14,12 +14,12 @@ const Profile2 = props => {
 
                                 <div class="row" name="superior">
                                     <div class="col-md" name="imagen de perfil cliente">
-                                        <img src={store.currentUser.user.avatar} class="img-top ml-4 mt-3" alt="..." width="150" height="150" />
+                                        <img src={store.path + /avatar/ + store.currentUser.user.role.id + '/' + store.currentUser.user.avatar} class="img-top ml-4 mt-3" alt="..." width="150" height="150" />
                                     </div>
                                     <div class="col-md" name="saludo">
                                         <h1 class="card-title mt-5">Hola {store.currentUser.user.name}!</h1>
                                     </div>
-                                    <div class="col-xs-md-3 mr-3" name="imagen extra">
+                                    <div class="col-xs-md-3 mr-4" name="imagen extra">
                                         <img src="https://picsum.photos/200/300" class="ml-4 mt-3" alt="..." width="150" height="150" />
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ const Profile2 = props => {
                                                 <h5 class="card-text">Tu Nutricionista es: </h5>
                                             </div>
                                             <div class="col-md-4">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name} {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_lastname}
+                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name} {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_last_name}
                                             </div>
                                         </div>
                                         <br />
@@ -81,14 +81,14 @@ const Profile2 = props => {
                                 </div>
                                 <br />
 
-                                {/* <div class="row">
+                                 <div class="row">
+                                    <div class="col-3">
+                                        <h5 class="card-text mt-2">Contactar a mi equipo de salud </h5>
+                                        <a href='/profile/health-team' type="button" class="btn btn-primary">Aquí</a>
+                                    </div>
                                     <div class="col-3">
                                         <h5 class="card-text ml-2 mt-2">Planes anteriores </h5>
                                         <a href='/profile/client/plans' type="button" class="btn btn-warning">Historial</a>
-                                    </div>
-                                    <div class="col-3">
-                                        <h5 class="card-text mt-2">Contactar a mi nutricionista </h5>
-                                        <a href='#' type="button" class="btn btn-primary">Contactar</a>
                                     </div>
                                     <div class="col-3">
                                         <h5 class="card-text mt-2">Contactar a mi entrenador </h5>
@@ -98,7 +98,7 @@ const Profile2 = props => {
                                         <h5 class="card-text ml-4 mt-2">Nuevo plan</h5>
                                         <a href='/profile/fichaingreso' type="button" class="btn btn-success ml-4">Completar formulario</a>
                                     </div>
-                                </div> */}
+                                </div> 
                                 <br />
                             </div>
                         </div>
