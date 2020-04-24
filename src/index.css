@@ -15,4 +15,11 @@
     height:300px;
     width: 800px;
     margin: auto;
+
+ 
+}
+img{
+    width: 100px !important;
+    border-radius: 50% !important;
+    
 }

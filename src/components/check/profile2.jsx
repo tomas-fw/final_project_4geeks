@@ -1,5 +1,7 @@
 import React, { useEffect, useContext } from 'react'
-import { Context } from '../../store/appContext'
+import sinimagenImage from '../images/sinImagen.jpg';
+import ContactCard from '../components/ContactCard.jsx'
+import { Context } from '../store/appContext'
 
 const Profile2 = props => {
     const { store, actions } = useContext(Context)

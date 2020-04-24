@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
-            path: 'http://localhost:5000',
+            path: 'http://127.0.0.1:5000',
             username: null,
             currentUser: null,
             isAuthenticated: false,

@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react'
-import ContactCard from '../components/ContactCard'
+
+import ContactCard from '../components/ContactCard.jsx'
 import { Context } from '../store/appContext'
 
 const Profile = props => {
@@ -19,7 +20,9 @@ const Profile = props => {
                                 
                                 <img src={store.currentUser.user.avatar}  class="card-img-top" alt="..." />
                                 <div class="card-body">
+                                    <img src={store.path + /avatar/ + store.currentUser.user.role.id + '/' + store.currentUser.user.avatar} class="card-img-top" alt="..."  />
                                     <h5 class="card-title">Bienvenido {store.currentUser.user.name}</h5>
+
                                     {
                                         store.currentUser.user.planes_id.length > 0
                                         &&
@@ -41,8 +44,8 @@ const Profile = props => {
                                             </p>
                                         </>
                                     }
-
                                 </div>
+
                             </div>
                             <button type="submit" className="btn btn-primary">Edit profile</button>
                         </div>
