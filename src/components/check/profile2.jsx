@@ -1,9 +1,7 @@
 import React, { useEffect, useContext } from 'react'
-import sinimagenImage from '../images/sinImagen.jpg';
-import ContactCard from '../components/contactcard'
-import { Context } from '../store/appContext'
+import { Context } from '../../store/appContext'
 
-const Profile = props => {
+const Profile2 = props => {
     const { store, actions } = useContext(Context)
     console.log(props)
     return (
@@ -13,74 +11,77 @@ const Profile = props => {
                     <div className="container mt-3">
                         <div className="row">
                             <div class="col-md-12 card">
-                                <div class="row">
-                                    <div class="col">
-                                        <img src={sinimagenImage} class="img-top ml-4 mt-3" alt="avatar" width="150" height="150" />
+
+                                <div class="row" name="superior">
+                                    <div class="col-md" name="imagen de perfil cliente">
+                                        <img src={store.currentUser.user.avatar} class="img-top ml-4 mt-3" alt="..." width="150" height="150" />
                                     </div>
-                                    <div class="col">
-                                        <br />
-                                        <br />
-                                        <h1 class="card-title ">Hola {store.currentUser.user.name}!</h1>
+                                    <div class="col-md" name="saludo">
+                                        <h1 class="card-title mt-5">Hola {store.currentUser.user.name}!</h1>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-xs-md-3 mr-3" name="imagen extra">
                                         <img src="https://picsum.photos/200/300" class="ml-4 mt-3" alt="..." width="150" height="150" />
                                     </div>
                                 </div>
-                                <br />
-                                <br />
 
-                                <div class="card">
+                                <div class="container">
+                                    <div class="col-md mt-3 text-center alert alert-info" >
+                                        Sabemos que en estos momentos te encuentras realizando cambios
+                                        en tu estilo de vida y queremos ayudarte a que estos cambios sean rapido y efectivos!
+                                    </div>
+
                                     <div class="card-header">
-                                        <h5>Tu plan actual es el siguiente</h5></div>
+                                        <h5>Tu plan actual es el siguiente</h5>
+                                    </div>
+
                                     <div class="card-body ">
-                                        <div class="row">
-                                            <div class="col-3"></div>
-                                            <div class="col-3">
-                                                <h5 class="card-text">Fecha inicio: </h5>
-                                            </div>
-                                            <div class="col-4">
+                                        <div class="row" /*Fecha inicio*/>
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3">
+                                                <h5 class="card-text">Fecha inicio de inicio: </h5></div>
+                                            <div class="col-md-4">
                                                 {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.created}
                                             </div>
                                         </div>
                                         <br />
 
-                                        <div class="row">
-                                            <div class="col-3"></div>
-                                            <div class="col-3">
-                                                <h5 class="card-text">El Objetivo es: </h5>
+                                        <div class="row" /*Objetivo*/>
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3">
+                                                <h5 class="card-text">Tu Objetivo es: </h5>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-md-4">
                                                 {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.objective}
                                             </div>
                                         </div>
                                         <br />
-                                        <div class="row">
-                                            <div class="col-3"></div>
-                                            <div class="col-3">
+
+                                        <div class="row" /*Nutricionsita */> 
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3">
                                                 <h5 class="card-text">Tu Nutricionista es: </h5>
                                             </div>
-                                            <div class="col-4">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name}
+                                            <div class="col-md-4">
+                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name} {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_lastname}
                                             </div>
                                         </div>
                                         <br />
 
-                                        <div class="row">
-                                            <div class="col-3"></div>
-                                            <div class="col-3">
+                                        <div class="row" /*personal trainer*/>
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3">
                                                 <h5 class="card-text">Tu Personal Trainer es: </h5>
                                             </div>
-                                            <div class="col-4">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name}
+                                            <div class="col-md-4">
+                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name} {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_lastname}
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <br />
 
-
-
-                                <div class="row">
+                                {/* <div class="row">
                                     <div class="col-3">
                                         <h5 class="card-text ml-2 mt-2">Planes anteriores </h5>
                                         <a href='/profile/client/plans' type="button" class="btn btn-warning">Historial</a>
@@ -93,12 +94,11 @@ const Profile = props => {
                                         <h5 class="card-text mt-2">Contactar a mi entrenador </h5>
                                         <a href='#' type="button" class="btn btn-secondary">Contactar</a>
                                     </div>
-
                                     <div class="col-3">
                                         <h5 class="card-text ml-4 mt-2">Nuevo plan</h5>
                                         <a href='/profile/fichaingreso' type="button" class="btn btn-success ml-4">Completar formulario</a>
                                     </div>
-                                </div>
+                                </div> */}
                                 <br />
                             </div>
                         </div>
@@ -115,4 +115,4 @@ const Profile = props => {
     )
 }
 
-export default Profile
+export default Profile2

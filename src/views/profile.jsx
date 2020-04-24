@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react'
-
 import ContactCard from '../components/ContactCard'
 import { Context } from '../store/appContext'
 
@@ -14,18 +13,18 @@ const Profile = props => {
                         <span class="sr-only">Loading...</span>
                     </div>
                     :
-                    <div className="container">
+                    <div className="container mt-3">
                         <div className="row">
-                            <div class="col-md-6 card">
-                                <img src="..." class="card-img-top" alt="..." />
+                            <div class="col-md-12 card">
+                                
+                                <img src={store.currentUser.user.avatar}  class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title">Bienvenido {store.currentUser.user.name}</h5>
                                     {
                                         store.currentUser.user.planes_id.length > 0
                                         &&
                                         <>
-                                            <p class="card-text">Sabemos que en estos momentos te encuentras realizando cambios
-                                            en tu estilo de vida y queremos ayudarte a que estos cambios sean rapido y efectivos!</p>
+                                            <p class="card-text">Sa</p>
                                             <br />
                                             <p class="card-text">Actualmente tienes un plan activo con el objetivo de : &nbsp;
                                             {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.objective}</p>
