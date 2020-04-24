@@ -9,7 +9,7 @@ const PlansCard = props => {
             <div class="card col-sm-5 ml-5 mt-3">
                 <div class="card-header">
                     <h5>Plan 1</h5></div>
-                <div class="card-body ">
+                    <div class="card-body ">
                     <h5 class="card-title text-primary">Profesionales</h5>
                     <small>id : {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.id}</small>
                     <p class="card-text">Nutricionista =  {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name}</p>

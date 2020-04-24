@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 const Home = props => {
-
+      
     return (
         <>
             <div className="container-fluid">
