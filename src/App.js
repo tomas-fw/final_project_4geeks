@@ -15,16 +15,17 @@ import FormRegNutri from './components/FormingRegNutri.jsx'
 import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 import AdminLogin from './views/AdminLogin.jsx'
-import AdminProfile from './views/AdminProfile.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
-import HealthTeam from './components/HealthTeam.jsx'
 import Login from './views/Login.jsx'
-import Nutritionists from './components/Nutritionists.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
 import ProfessionalProfile from './views/ProfessionalProfile.jsx'
 import Profile from './views/Profile.jsx'
 import Register from './views/Register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
+import AdminProfile from './views/AdminProfile.jsx'
+import HealthTeam from './components/HealthTeam.jsx'
+import Nutritionists from './components/Nutritionists.jsx'
+import Profile2 from './components/check/profile2.jsx'
 
 
 const App = props => {
@@ -52,6 +53,7 @@ const App = props => {
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
+          <Route exact path='/profile2' component={Profile2} />
           <Route exact path='/admin/login' component={AdminLogin} />
           <Route exact path='/admin/profile' component={AdminProfile} />
           <Route exact path='/admin/client' component={AdminClients} />
