@@ -31,6 +31,26 @@ const ProfessionalDetails = props => {
                                                 <h5 className="card-text">Descripción:</h5>
                                                 <p className="card-text">{store.profesionals[0].description}</p>
                                                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                                {
+                                                   role_id==2 && store.nutritionist_email !== null && store.nutritionist_email == store.profesionals[0].email ?
+                                                        <div class="alert alert-success" role="alert">
+                                                            { 'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
+                                                        </div>
+                                                            :                                                            
+                                                            role_id == 3 && store.trainer_email !==null && store.trainer_email == store.profesionals[0].email ?
+                                                            <div class="alert alert-success" role="alert">
+                                                            { 'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
+                                                        </div>
+                                                        : ''
+
+                                                }
+
+                                                <div class="form-check-inline" >
+
+                                                    <input class="form-check-input ml-4" type="radio" name={role_id == 2 ? 'nutritionist_email' : 'trainer_email'} id="exampleRadios1" value={store.profesionals[0].email} onChange={actions.handleChange} />
+                                                    <label class="form-check-label ml-2 mr-5" htmlFor="exampleRadios1">
+                                                        Add to Plan    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

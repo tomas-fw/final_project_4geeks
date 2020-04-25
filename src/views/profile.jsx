@@ -1,12 +1,15 @@
 import React, { useEffect, useContext } from 'react'
 import { Context } from '../store/appContext'
+import { Link } from 'react-router-dom'
+
+
 /* RESPONSIVE LISTO*/
 const Profile = props => {
     const { store, actions } = useContext(Context)
     console.log(props)
     return (
         <>
- {
+            {
                 !!store.currentUser ?
                     <div className="container mt-3">
                         <div className="row">
@@ -40,7 +43,7 @@ const Profile = props => {
                                             <div class="col-md-3 col-xs-3">
                                                 <h5 class="card-text">Fecha inicio de inicio: </h5></div>
                                             <div class="col-md-4 col-xs-4 ">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.created}
+                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.created : ''}
                                             </div>
                                         </div>
                                         <br />
@@ -51,18 +54,18 @@ const Profile = props => {
                                                 <h5 class="card-text">Tu Objetivo es: </h5>
                                             </div>
                                             <div class="col-md-4 col-xs-4">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.objective}
+                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.objective : ''}
                                             </div>
                                         </div>
                                         <br />
 
-                                        <div class="row" /*Nutricionsita */> 
+                                        <div class="row" /*Nutricionsita */>
                                             <div class="col-md-3 col-xs-3"></div>
                                             <div class="col-md-3 col-xs-3">
                                                 <h5 class="card-text">Tu Nutricionista es: </h5>
                                             </div>
                                             <div class="col-md-4 col-xs-4">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name} {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_last_name}
+                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name + store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_last_name : ''}
                                             </div>
                                         </div>
                                         <br />
@@ -73,7 +76,7 @@ const Profile = props => {
                                                 <h5 class="card-text">Tu Personal Trainer es: </h5>
                                             </div>
                                             <div class="col-md-4 col-xs-4">
-                                                {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name} {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_lastname}
+                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name + store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_lastname : ''}
                                             </div>
                                         </div>
 
@@ -81,21 +84,21 @@ const Profile = props => {
                                 </div>
                                 <br />
 
-                                 <div class="row">
+                                <div class="row">
                                     <div class="col-md-5 col-xs-4">
-                                        <a href='/profile/client/health-team' type="button" class="btn btn-primary ml-4">Contactar a mi equipo de salud</a>
+                                        <Link to='/profile/client/health-team' type="button" class="btn btn-primary ml-4">Contactar a mi equipo de salud</Link>
                                     </div>
                                     <div class="col-md-4 col-xs-4">
-                                        <a href='/profile/client/plans' type="button" class="btn btn-warning ">Ver mis planes anteriores</a>
+                                        <Link to='/profile/client/plans' type="button" class="btn btn-warning ">Ver mis planes anteriores</Link>
                                     </div>
                                     {/* <div class="col-md-3 col-xs-3">
                                         <h5 class="card-text mt-2">Contactar a mi entrenador </h5>
-                                        <a href='#' type="button" class="btn btn-secondary">Contactar</a>
+                                        <Link to='#' type="button" class="btn btn-secondary">Contactar</Link>
                                     </div> */}
                                     <div class="col-md-3 col-xs-4">
-                                        <a href='/profile/client/nuevo-plan' type="button" class="btn btn-success ml-2">Contratar un nuevo plan</a>
+                                        <Link to='/profile/client/crear-plan' type="button" class="btn btn-success ml-2">Contratar un nuevo plan</Link>
                                     </div>
-                                </div> 
+                                </div>
                                 <br />
                             </div>
                         </div>
