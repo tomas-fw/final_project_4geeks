@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../store/appContext';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const ProfessionalDetails = props => {
     const { store, actions } = useContext(Context);
@@ -32,18 +32,19 @@ const ProfessionalDetails = props => {
                                                 <p className="card-text">{store.profesionals[0].description}</p>
                                                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                                 {
-                                                   role_id==2 && store.nutritionist_email !== null && store.nutritionist_email == store.profesionals[0].email ?
+                                                    role_id == 2 && store.nutritionist_email !== null && store.nutritionist_email == store.profesionals[0].email ?
                                                         <div class="alert alert-success" role="alert">
-                                                            { 'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
+                                                            {'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
                                                         </div>
-                                                            :                                                            
-                                                            role_id == 3 && store.trainer_email !==null && store.trainer_email == store.profesionals[0].email ?
+                                                        :
+                                                        role_id == 3 && store.trainer_email !== null && store.trainer_email == store.profesionals[0].email ?
                                                             <div class="alert alert-success" role="alert">
-                                                            { 'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
-                                                        </div>
-                                                        : ''
+                                                                {'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
+                                                            </div>
+                                                            : ''
 
                                                 }
+
 
                                                 <div class="form-check-inline" >
 
@@ -59,6 +60,9 @@ const ProfessionalDetails = props => {
                                 <div class="spinner-border text-info" role="status">
                                     <span class="sr-only">Loading...</span>
                                 </div>
+                        }
+                        {
+                            !!store.trainer_email && !!store.nutritionist_email && <small>Haz añadido un nutritionista y un entrenador a tu proximo plan, continuar, haz click <Link to='/profile/client/crear-plan'>Aqui </Link></small>  
                         }
 
                     </div>
