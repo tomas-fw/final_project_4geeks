@@ -13,6 +13,27 @@ const getState = ({ getStore, getActions, setStore }) => {
             avatar: null,
             role: null,
             clients: null,
+            id_client: null,
+            objective: null,
+            actividad_fisica: null,
+            alcohol: null,
+            alergias: null,
+            altura: null,
+            ansiedad: null,
+            apetito: null,
+            ayuno: null,
+            cintura: null,
+            ciruguias: null,
+            digestion: null,
+            embarazo: null,
+            enfermedad: null,
+            lesiones: null,
+            medicamentos: null,
+            orina: null,
+            peso: null,
+            sintomas: null,
+            suplementos: null,
+            tabaco: null,
             specialties: null,
             age:null,
             profesional_title:null,
@@ -21,7 +42,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             description:null,
             gender:null,
             profesionals:null,
-            is_active:null
+            is_active:null,
+            trainer_email:null,
+            nutritionist_email:null
             
         },
         actions: {
@@ -30,6 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     [e.target.name]: e.target.value
                 })
             },
+           
             handleChangeFiles: e => {
                 setStore({
                     [e.target.name]: e.target.files[0]
