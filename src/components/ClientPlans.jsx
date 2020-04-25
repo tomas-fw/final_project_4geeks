@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import PlansCard from "./PlansCard";
+import { Link } from "react-router-dom";
 
 
 const ClientPlans = props => {
@@ -10,7 +11,7 @@ const ClientPlans = props => {
         <>
             <div className="container">
                 <h1 classname="text" class="mt-3 text-center" >Planes anteriores</h1>
-                <a href='/profile/' type="button" class="btn btn-info ml-5">Volver a Mi Perfíl</a>
+                <Link to='/profile/' type="button" class="btn btn-info ml-5">Volver a Mi Perfíl</Link>
                 <br />
                 {
                     !!store.currentUser && store.currentUser.length > 0 ?

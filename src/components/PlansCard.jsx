@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Context } from '../store/appContext';
+import { Link } from 'react-router-dom';
 /* RESPONSIVE LISTA*/
 const PlansCard = props => {
     const { store, actions } = useContext(Context)
@@ -18,8 +19,8 @@ const PlansCard = props => {
                     <p class="card-text"> {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.objective}</p>
                     <h5 class="card-title text-danger">Fecha inicio</h5>
                     <p class="card-text"> {store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.created}</p>
-                    <a href='#' type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</a>
-                    <a href='#' type="button" class="btn btn-warning">Pauta de ejercicios</a>
+                    <Link to='#' type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
+                    <Link to='#' type="button" class="btn btn-warning">Pauta de ejercicios</Link>
                 </div>
             </div>
         </>

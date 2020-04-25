@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from "react-router-dom";
 /* RESPONSIVE LISTO*/
 const FormIngresoClient = props => {
     return (
         <>
             <form>
-                <a href='/profile/' type="button" class="btn btn-info mt-2 ml-5">Volver a Mi Perfíl</a>
+                <Link to='/profile/' type="button" class="btn btn-info mt-2 ml-5">Volver a Mi Perfíl</Link>
                 <h1 class="text-center">Formulario para contratar un nuevo plan</h1>
                 <br />
                 <div class="container">
@@ -630,7 +631,7 @@ const FormIngresoClient = props => {
                         </div>
                     </div>
 
-                    <a href="#" type="submit" class="btn btn-primary">Enviar formulario</a>
+                    <Link to="#" type="submit" class="btn btn-primary">Enviar formulario</Link>
                 </div>
             </form>
         </>
