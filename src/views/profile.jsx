@@ -93,7 +93,7 @@ const Profile = props => {
                                         <a href='#' type="button" class="btn btn-secondary">Contactar</a>
                                     </div> */}
                                     <div class="col-md-3 col-xs-4">
-                                        <a href='/profile/client/nuevo-plan' type="button" class="btn btn-success ml-2">Contratar un nuevo plan</a>
+                                        <a href='/profile/client/crear-plan' type="button" class="btn btn-success ml-2">Contratar un nuevo plan</a>
                                     </div>
                                 </div> 
                                 <br />
