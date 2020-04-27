@@ -96,7 +96,11 @@ const Profile = props => {
                                         <Link to='#' type="button" class="btn btn-secondary">Contactar</Link>
                                     </div> */}
                                     <div class="col-md-3 col-xs-4">
+
+                                        
+
                                         <Link to='/profile/client/crear-plan' type="button" class="btn btn-success ml-2">Contratar un nuevo plan</Link>
+
                                     </div>
                                 </div>
                                 <br />
