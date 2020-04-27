@@ -8,7 +8,7 @@ const ContactCard = props => {
 	const { professional } = props;
 	return (
 		<>
-			<div className="card mb-3 d-block contact-card">
+			<div className="card mb-3 contact-card m-3 p-3">
 				<div className="row no-gutters">
 					<div className="col-md-4">
 						<img src="https://via.placeholder.com/150" className="card-img" alt="..." />
