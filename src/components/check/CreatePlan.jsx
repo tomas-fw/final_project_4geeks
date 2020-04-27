@@ -371,7 +371,7 @@ const CreatePlan = props => {
 
 
 
-                            <button type="submit" className="btn btn-primary btn-block">Crear Plan</button>
+                            <button type="submit" className="btn btn-primary btn-block">Crear Nuevo Plan</button>
 
                         </form>
                         </>
