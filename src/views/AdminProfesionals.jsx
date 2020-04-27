@@ -31,7 +31,7 @@ const AdminProfesionals = props => {
                                                 <p class="card-text ml-3">ID : {elem.id}</p>
                                                 <p class="card-text ml-3">Planes totales : {elem.all_plans.length} </p>
                                                 <p class="card-text ml-3">Email : {elem.email}</p>
-                                                <a href={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-info text-white text-center list-group-item-action" + (elem.is_active == true ? 'active' : '')}>Más información</a>
+                                                <Link to={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-info text-white text-center list-group-item-action" + (elem.is_active == true ? 'active' : '')}>Más información</Link>
                                                 
                                                 <p></p>
                                             </div>
@@ -61,7 +61,7 @@ const AdminProfesionals = props => {
                                                 <p class="card-text ml-3">ID : {elem.id}</p>
                                                 <p class="card-text ml-3">Planes totales : {elem.all_plans.length} </p>
                                                 <p class="card-text ml-3">Email : {elem.email}</p>
-                                                <a href={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-success text-white text-center list-group-item-action " + (elem.is_active == true ? 'active' : '')}>Más información</a>
+                                                <Link to={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-success text-white text-center list-group-item-action " + (elem.is_active == true ? 'active' : '')}>Más información</Link>
                                                 <p></p>
                                             </div>
                                         </div>
