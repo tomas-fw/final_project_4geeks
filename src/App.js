@@ -29,6 +29,7 @@ import ClientPlans from './components/ClientPlans.jsx'
 import FormIngresoClient from './components/FormIngresoCliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
+import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
 
 
 
@@ -57,6 +58,7 @@ const App = props => {
           <Route exact path='/profile/client/crear-plan' component={CreatePlan}/*Crear plan, opcion por Tomas*/ />
           <Route exact path='/profile/client/plans' component={ClientPlans} /> 
           <Route exact path='/profile/client/health-plans' component={HealthPlans} />
+          <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} />
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
