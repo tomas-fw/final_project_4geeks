@@ -16,14 +16,14 @@ const Profile = props => {
                             <div class="col-md-12 col-xs-12 card">
 
                                 <div class="row" name="superior">
-                                    <div class="col-md col-xs" name="imagen de perfil cliente">
-                                        <img src={store.path + /avatar/ + store.currentUser.user.role.id + '/' + store.currentUser.user.avatar} class="img-top ml-4 mt-3" alt="..." width="150" height="150" />
+                                    <div class="col-md col-xs" /*imagen de perfil*/>
+                                        <img src={store.path + /avatar/ + store.currentUser.user.role.id + '/' + store.currentUser.user.avatar} class="img-top ml-4 mt-3" alt="..." width="150" height="190" />
                                     </div>
-                                    <div class="col-md col-xs" name="saludo">
+                                    <div class="col-md col-xs" /*saludo */>
                                         <h1 class="card-title mt-5">Hola {store.currentUser.user.name}!</h1>
                                     </div>
-                                    <div class="col-md-3 col-xs-3 " name="imagen extra">
-                                        <img src="https://picsum.photos/200/300" class="ml-4 mt-3" alt="..." width="150" height="150" />
+                                    <div class="col-md-3 col-xs-3 " /*imagen extra*/>
+                                        <img src="https://picsum.photos/200/300" class="ml-5 mt-4" alt="..." width="150" height="150" />
                                     </div>
                                 </div>
 

@@ -47,7 +47,7 @@ const CreatePlan = props => {
                                     onChange={actions.handleChange} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="exampleInputEmail1">Tomas algun medicamento? Con que frecuencia?</label>
+                                <label htmlFor="exampleInputEmail1">Toma algun medicamento? Con que frecuencia?</label>
                                 <textarea rows='3' className="form-control" id="exampleInputEmail1" placeholder="Escriba aqui el medicamento que toma y con que frecuencia"
                                     name='medicamentos'
                                     onChange={actions.handleChange} />
@@ -184,7 +184,7 @@ const CreatePlan = props => {
                             </fieldset>
                             <fieldset className="form-group" /*ayunos*/>
                                 <div className="row">
-                                    <legend className="col-form pt-0">¿Realizas ayunos?</legend>
+                                    <legend className="col-form pt-0">¿Realiza ayunos?</legend>
 
                                     <div className="col-md-8 col-xs-8">
                                         <input type="text" className="form-control" id="ayunos" name='ayuno'

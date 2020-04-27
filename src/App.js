@@ -16,7 +16,7 @@ import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 import AdminLogin from './views/AdminLogin.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
-import Login from './views/Login.jsx'
+import Login from './views/login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
 import ProfessionalProfile from './views/ProfessionalProfile.jsx'
 import Register from './views/Register.jsx'
@@ -24,14 +24,15 @@ import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile from './views/Profile.jsx'
+import Profile from './views/profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-
-import FormIngresoCliente from './components/FormIngresoCliente.jsx'
-
+import FormIngresoCliente from './components/formingresocliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
 import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
+import ProfesionalClienteFicha from './views/profesionalClienteFicha.jsx'
+import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
+import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
 
 
 
@@ -56,15 +57,14 @@ const App = props => {
           <Route exact path='/register/profesional/2' component={FormRegNutri} />
           <Route exact path='/register/profesional/3' component={FormRegTrainer} />
           <Route exact path='/profile/client/health-team' component={HealthTeam} />
-
           <Route exact path='/profile/client/nuevo-plan' component={FormIngresoCliente} /*Crear plan, opcion por Javiera*//>
-
-          
-
           <Route exact path='/profile/client/crear-plan' component={CreatePlan}/*Crear plan, opcion por Tomas*/ />
           <Route exact path='/profile/client/plans' component={ClientPlans} /> 
           <Route exact path='/profile/client/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} />
+          <Route exact path='/profile/professional/clients/:id/ficha' component={ProfesionalClienteFicha} />
+          <Route exact path='/profile/professional/clients/:id/dieta' component={ProfesionalClienteDieta} />
+          <Route exact path='/profile/professional/clients/:id/ejercicio' component={ProfesionalClienteEjercicio} />
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
