@@ -2,16 +2,27 @@ import React, { useContext } from 'react'
 import { Context } from '../store/appContext';
 import { Link, useLocation } from 'react-router-dom';
 
+const roleIdToString = professional => {
+	if(professional.role_id === 2) {
+		return "nutritionist/";
+	}
+	if(professional.role_id === 3) {
+		return "trainer/";
+	}
+	return "";
+}
+
 const ContactCard = props => {
 	const location = useLocation();
 	const { store } = useContext(Context);
 	const { professional } = props;
+	console.log(professional);
 	return (
 		<>
 			<div className="card mb-3 contact-card m-3 p-3">
 				<div className="row no-gutters">
 					<div className="col-md-4">
-						<img src="https://via.placeholder.com/150" className="card-img" alt="..." />
+						<img src={`${store.path}/static/images/avatar/${roleIdToString(professional)}${professional.avatar}`} className="card-img" alt="..." />
 					</div>
 					<div className="col-md-8">
 						<div className="card-body">
