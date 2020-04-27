@@ -14,7 +14,7 @@ const ClientPlans = props => {
                 <Link to='/profile/' type="button" class="btn btn-info ml-5">Volver a Mi Perfíl</Link>
                 <br />
                 {
-                    !!store.currentUser && store.currentUser.length > 0 ?
+                    !!store.currentUser && store.currentUser.user.planes_id.length > 0 ?
                         <div class="container">
                             <div class="row">
                                 <PlansCard />

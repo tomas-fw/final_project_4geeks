@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../store/appContext';
 import ContactCard from './ContactCard';
+import { Link } from 'react-router-dom';
 
 const Clients = props => {
     const { store, actions } = useContext(Context);
@@ -23,15 +24,15 @@ const Clients = props => {
                             !!store.clients ?
                                 filteredClients().map((client, i) => {
                                     return (
-                                        <div class="card border-dark m-3 p-3">
-                                            <div class="row no-gutters">
-                                                <div class="col-md-4">
-                                                    <img src="https://via.placeholder.com/50" class="card-img" alt="..." />
+                                        <div key={client.id} className="card border-dark m-3 p-3">
+                                            <div className="row no-gutters">
+                                                <div className="col-md-4">
+                                                    <img src="https://via.placeholder.com/50" className="card-img" alt="..." />
                                                 </div>
-                                                <div class="col-md-8">
-                                                    <div class="card-body">
-                                                        <a href="#" className="btn btn-outline-dark float-right">Ver planes de cliente</a>
-                                                        <h5 class="card-title">{client.name + ' ' + client.last_name}</h5>
+                                                <div className="col-md-8">
+                                                    <div className="card-body">
+                                                        <Link to={`/profile/professional/clients/${client.id}`} className="btn btn-outline-dark float-right">Ver planes de cliente</Link>
+                                                        <h5 className="card-title">{client.name + ' ' + client.last_name}</h5>
                                                     </div>
                                                 </div>
                                             </div>
