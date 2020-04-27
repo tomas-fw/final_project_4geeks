@@ -26,7 +26,10 @@ import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
 import Profile from './views/Profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-import FormIngresoClient from './components/formingresocliente.jsx'
+import FormIngresoCliente from './components/FormIngresoCliente.jsx'
+import CreatePlan from './components/check/CreatePlan.jsx'
+import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
+
 
 
 const App = props => {
@@ -50,8 +53,9 @@ const App = props => {
           <Route exact path='/register/profesional/2' component={FormRegNutri} />
           <Route exact path='/register/profesional/3' component={FormRegTrainer} />
           <Route exact path='/profile/client/health-team' component={HealthTeam} />
-          <Route exact path='/profile/client/nuevo-plan' component={FormIngresoClient} />
-          <Route exact path='/profile/client/plans' component={ClientPlans} />
+          <Route exact path='/profile/client/nuevo-plan' component={FormIngresoCliente} /*Crear plan, opcion por Javiera*//>
+          <Route exact path='/profile/client/crear-plan' component={CreatePlan}/*Crear plan, opcion por Tomas*/ />
+          <Route exact path='/profile/client/plans' component={ClientPlans} /> 
           <Route exact path='/profile/client/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
@@ -62,6 +66,7 @@ const App = props => {
           <Route exact path='/admin/client/:id' component={ClientDetail} />
           <Route exact path='/admin/profesional' component={AdminProfesionals} />
           <Route exact path='/admin/profesional/:role_id/:id' component={AdminProfesionalDetail} />
+          <Route exact path='/client/plan/confirmation' component={AvisoEnvioFormClient} />
         </Switch>
       </Router>
     </>

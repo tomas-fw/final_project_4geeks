@@ -13,16 +13,40 @@ const getState = ({ getStore, getActions, setStore }) => {
             avatar: null,
             role: null,
             clients: null,
+            id_client: null,
+            objective: null,
+            actividad_fisica: null,
+            alcohol: null,
+            alergias: null,
+            altura: null,
+            ansiedad: null,
+            apetito: null,
+            ayuno: null,
+            cintura: null,
+            ciruguias: null,
+            digestion: null,
+            embarazo: null,
+            enfermedad: null,
+            lesiones: null,
+            medicamentos: null,
+            orina: null,
+            peso: null,
+            sintomas: null,
+            suplementos: null,
+            tabaco: null,
             specialties: null,
-            age:null,
-            profesional_title:null,
-            nutritionist_title_validation:null,
+            age: null,
+            profesional_title: null,
+            nutritionist_title_validation: null,
             background: null,
-            description:null,
-            gender:null,
-            profesionals:null,
-            is_active:null
-            
+            description: null,
+            gender: null,
+            profesionals: null,
+            is_active: null,
+            trainer_email: null,
+            nutritionist_email: null,
+
+
         },
         actions: {
             handleChange: e => {
@@ -30,6 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     [e.target.name]: e.target.value
                 })
             },
+
             handleChangeFiles: e => {
                 setStore({
                     [e.target.name]: e.target.files[0]
@@ -134,9 +159,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            adminLoadProfesionals: (role_id = '', id= '') => {
+            adminLoadProfesionals: (role_id = '', id = '') => {
                 const store = getStore()
-                fetch(store.path + role_id +  id, {
+                fetch(store.path + role_id + id, {
                     method: 'GET',
                     headers: {
                         "Content-type": 'aplication/json'
@@ -148,12 +173,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                             setStore({
                                 error: data
                             })
-                        }else if(!!role_id ){
+                        } else if (!!role_id) {
                             setStore({
-                                error:null,
-                                profesionals:data
+                                error: null,
+                                profesionals: data
                             })
-                            
+
                         }
                         // else if(role_id == 2){
                         //     setStore({
@@ -194,12 +219,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                 let formData = new FormData()
                 formData.append('active', store.is_active)
 
-                fetch( store.path + url, {
-                  method: "PUT",
-                  body: formData
+                fetch(store.path + url, {
+                    method: "PUT",
+                    body: formData
                 })
-                  .then(resp => resp.json())
-                },
+                    .then(resp => resp.json())
+            },
             register_client: (e, history) => {
                 e.preventDefault();
                 const store = getStore();
@@ -237,7 +262,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            register_profesional:(e,role_id,history)=>{
+            register_profesional: (e, role_id, history) => {
                 e.preventDefault();
                 const store = getStore();
                 let formData = new FormData()
@@ -253,7 +278,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 formData.append('description', store.description)
                 formData.append('gender', store.gender)
                 formData.append('age', store.age)
-                fetch(store.path + '/register/profesional/'+role_id, {
+                fetch(store.path + '/register/profesional/' + role_id, {
                     method: 'POST',
                     body: formData
                 })
@@ -273,12 +298,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                                 error: null,
                                 role: null,
                                 specialties: null,
-                                age:null,
-                                profesional_title:null,
-                                nutritionist_title_validation:null,
+                                age: null,
+                                profesional_title: null,
+                                nutritionist_title_validation: null,
                                 background: null,
-                                description:null,
-                                gender:null
+                                description: null,
+                                gender: null
                             })
                             sessionStorage.setItem('currentUser', JSON.stringify(data))
                             sessionStorage.setItem('isAuthenticated', true)
@@ -294,7 +319,83 @@ const getState = ({ getStore, getActions, setStore }) => {
                 sessionStorage.removeItem('currentUser');
                 sessionStorage.removeItem('isAuthenticated');
                 history.push('/')
-            }
+            },
+            createPlan: (e, client_id, client_mail, trainer_mail, nutritionist_mail, history) => {
+                e.preventDefault()
+                const store = getStore();
+                fetch(store.path + '/client/plan/' + client_id + '/' + client_mail + '/' + trainer_mail + '/' + nutritionist_mail, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        objective: store.objective,
+                        client_id: store.currentUser.user.client_id,
+                        client_email: store.currentUser.user.email,
+                        trainer_email: store.trainer_email,
+                        nutritionist_email: store.nutritionist_email,
+                        actividad_fisica: store.actividad_fisica,
+                        alcohol: store.alcohol,
+                        alergias: store.alergias,
+                        altura: store.altura,
+                        ansiedad: store.ansiedad,
+                        apetito: store.apetito,
+                        ayunos: store.ayuno,
+                        cintura: store.cintura,
+                        ciruguias: store.ciruguias,
+                        comment: store.description,
+                        digestion: store.digestion,
+                        embarazo: store.embarazo,
+                        enfermedades: store.enfermedad,
+                        lesiones: store.lesiones,
+                        medicamento: store.medicamentos,
+                        orina: store.orina,
+                        peso: store.peso,
+                        sintomas: store.sintomas,
+                        suplementos: store.suplementos,
+                        tabaco: store.tabaco,
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                objective: null,
+                                trainer_email: null,
+                                nutritionist_email: null,
+                                actividad_fisica: null,
+                                alcohol: null,
+                                alergias: null,
+                                altura: null,
+                                ansiedad: null,
+                                apetito: null,
+                                ayunos: null,
+                                cintura: null,
+                                ciruguias: null,
+                                comment: null,
+                                digestion: null,
+                                embarazo: null,
+                                enfermedades: null,
+                                lesiones: null,
+                                medicamento: null,
+                                orina: null,
+                                peso: null,
+                                sintomas: null,
+                                suplementos: null,
+                                tabaco: null
+                            })
+                            // window.location.reload()
+                            history.push('/client/plan/confirmation')
+                            // sessionStorage.setItem('currentUser', JSON.stringify(data))
+                            // sessionStorage.setItem('isAuthenticated', true)
+                            
+                        }
+                    })
+            },
         }
     }
 }
