@@ -68,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
                 }
             },
-            login: (e, history, role_id) => {
+            login: (e, history, role_id, re_route) => {
                 e.preventDefault()
                 const store = getStore();
                 fetch(store.path + '/login/' + role_id, {
@@ -98,7 +98,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                             })
                             sessionStorage.setItem('currentUser', JSON.stringify(data))
                             sessionStorage.setItem('isAuthenticated', true)
-                            history.push('/profile')
+                            history.push('/'+re_route)
                         }
                     })
             },
