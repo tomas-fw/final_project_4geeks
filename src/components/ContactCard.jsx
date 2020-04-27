@@ -22,7 +22,7 @@ const ContactCard = props => {
 			<div className="card mb-3 contact-card m-3 p-3">
 				<div className="row no-gutters">
 					<div className="col-md-4">
-						<img src={`${store.path}/static/images/avatar/${roleIdToString(professional)}${professional.avatar}`} className="card-img" alt="..." />
+						<img src={`${store.path}/static/images/avatar/${roleIdToString(professional)}${professional.avatar}`} className="card-img square" alt="..." />
 					</div>
 					<div className="col-md-8">
 						<div className="card-body">
