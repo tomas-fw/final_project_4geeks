@@ -10,16 +10,15 @@ const Nutritionists = props => {
 
     return (
         <div className="container">
-        <div className="row">
-
-            <div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
-                <h1 className="text-center">Nutritionists</h1>
-                <ul className="list-group pull-down" id="contact-list">
+            <div className="row">
+                <div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
+                    <h1 className="text-center">Nutritionists</h1>
+                    <ul className="list-group pull-down" id="contact-list">
                         {
-                           !!store.profesionals && !!store.profesionals.nutritionists  && store.profesionals.nutritionists.length > 0 ?
+                            !!store.profesionals && !!store.profesionals.nutritionists && store.profesionals.nutritionists.length > 0 ?
                                 store.profesionals.nutritionists.filter((elem) => elem.is_active).map((elem, index) => {
                                     return (
-                                        <ContactCard professional={elem}/>
+                                        <ContactCard professional={elem} />
                                     )
                                 })
                                 :
