@@ -9,18 +9,18 @@ const AdminProfesionals = props => {
     }, [])
 
     return (
-    <div class="container mt-4" id="adminprofile">         
+        <div class="container mt-4" id="adminprofile">
 
-        <>
-            <Link to='/admin/profile' class="btn btn-danger mt-3 ml-4">Volver a Administrador</Link>
-            <Link to='/admin/client' class="btn btn-primary mt-3 ml-4">Ir a Clientes</Link>
+            <>
+                <Link to='/admin/profile' class="btn btn-danger mt-3 ml-4">Volver a Administrador</Link>
+                <Link to='/admin/client' class="btn btn-primary mt-3 ml-4">Ir a Clientes</Link>
 
                 <br />
                 <br />
                 <div className="row">
                     <div className="col-md-5 ml-5">
                         <h1 class="text-center">Personal Trainer</h1>
-                                                {
+                        {
                             !!store.profesionals && !!store.profesionals.trainers && store.profesionals.trainers.length > 0 ?
                                 store.profesionals.trainers.map((elem, index) => {
                                     return (
@@ -32,7 +32,7 @@ const AdminProfesionals = props => {
                                                 <p class="card-text ml-3">Planes totales : {elem.all_plans.length} </p>
                                                 <p class="card-text ml-3">Email : {elem.email}</p>
                                                 <Link to={'/admin/profesional/' + elem.role_id + '/' + elem.id} class={"btn btn-info text-white text-center list-group-item-action" + (elem.is_active == true ? 'active' : '')}>Más información</Link>
-                                                
+
                                                 <p></p>
                                             </div>
                                         </div>
@@ -46,9 +46,9 @@ const AdminProfesionals = props => {
                         }
                     </div>
                     <div className="col-md-1 ml-1"></div>
-                    
+
                     <div className="col-md-5 ">
-                    <h1 class="text-center">Nutritionists</h1>
+                        <h1 class="text-center">Nutritionists</h1>
                         {
                             !!store.profesionals && !!store.profesionals.nutritionists && store.profesionals.nutritionists.length > 0 ?
                                 store.profesionals.nutritionists.map((elem, index) => {
@@ -116,8 +116,8 @@ const AdminProfesionals = props => {
                             <button type="submit" className="btn btn-primary">Search</button>
                         </form>
                     </div> */}
-            </div>
-        </>
+                </div>
+            </>
         </div>
 
     )

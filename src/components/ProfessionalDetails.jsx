@@ -42,9 +42,7 @@ const ProfessionalDetails = props => {
                                                                 {'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
                                                             </div>
                                                             : ''
-
                                                 }
-
 
                                                 <div class="form-check-inline" >
 

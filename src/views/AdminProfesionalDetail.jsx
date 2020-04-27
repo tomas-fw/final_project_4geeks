@@ -33,7 +33,7 @@ const ProfesionalDetail = props => {
                                                     <div class="card-deck">
                                                         <div class="col-md-8 mt-3 mb-3 ml-3">
                                                             <h5>Nombre: {store.profesionals[0].name}</h5>
-                                                            <h5>Nombre: {store.profesionals[0].lastname}</h5>
+                                                            <h5>Apellido: {store.profesionals[0].lastname}</h5>
                                                             <h5>Descripción: {store.profesionals[0].description ? " " : "Sin información"}</h5>
                                                             <h5>Usuario: {store.profesionals[0].email}</h5>
                                                             <h5>ID: {store.profesionals[0].id}</h5>

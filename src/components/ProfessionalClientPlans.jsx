@@ -30,7 +30,7 @@ const ProfessionalClientPlans = props => {
                     {
                         !!client ? (
                             <>
-                                <h4 className="ml-2 mt-3">Nombre del cliente: {client.name} {client.last_name}</h4>
+                                <h3 className="ml-2 mt-3">Nombre del cliente: {client.name} {client.last_name}</h3>
 
                                 {
                                 client.all_plans.map((plan) =>
@@ -47,8 +47,9 @@ const ProfessionalClientPlans = props => {
                                             <p className="card-text">{plan.detail.objective}</p>
                                             <h5>Fecha de inicio:</h5>
                                             <p className="card-text">{plan.detail.created}</p>
-                                            <Link to='#' type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
-                                            <Link to='#' type="button" class="btn btn-warning">Pauta de ejercicios</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/dieta"} type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/ejercicio"} type="button" class="btn btn-warning mr-5">Pauta de ejercicios</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/ficha"} type="button" class="btn btn-danger">Ficha del cliente</Link>
                                         </div>
                                     </div>
                                 )}
