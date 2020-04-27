@@ -11,7 +11,7 @@ const Login = props => {
                     <div className="col-md-4 offset-md-4">
                         <h1>Login</h1>
 
-                        <form onSubmit={e => actions.login(e, props.history, store.role)}>
+                        <form onSubmit={e => actions.login(e, props.history, store.role, store.role == 4 ? 'profile' : 'profile/professional' )}>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input autoFocus type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"
