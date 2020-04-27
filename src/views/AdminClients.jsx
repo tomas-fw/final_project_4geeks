@@ -35,7 +35,7 @@ const AdminClients = props => {
                                                     <p class="card-text ml-3">Inscripción : {elem.date_created}</p>
                                                     <p class="card-text ml-3">Email : {elem.email}</p>
                                                     <p class="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p>
-                                                    <a href={"/admin/client/" + elem.id} class={"btn btn-info text-white text-center list-group-item-action " + (elem.is_active)}> Más información</a>
+                                                    <Link to={"/admin/client/" + elem.id} class={"btn btn-info text-white text-center list-group-item-action " + (elem.is_active)}> Más información</Link>
                                                 </div>
                                             </div>
                                         )
