@@ -26,7 +26,7 @@ const Clients = props => {
                                         <div key={client.id} className="card border-dark m-3 p-3">
                                             <div className="row no-gutters">
                                                 <div className="col-md-4">
-                                                    <img src={`${store.path}/static/images/avatar/clients/${client.avatar}`} className="card-img" alt="..." />
+                                                    <img src={`${store.path}/static/images/avatar/clients/${client.avatar}`} className="card-img square" alt="..." />
                                                 </div>
                                                 <div className="col-md-8">
                                                     <div className="card-body">
