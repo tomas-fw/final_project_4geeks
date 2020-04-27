@@ -41,8 +41,7 @@ const ProfesionalClienteDieta = props => {
                                                 <h4>Detalles del plan</h4>
                                             </div>
                                             <div className="card-body">
-                                                <p >{plan.detail.dieta}</p>
-
+                                                <img src={plan.detail.dieta}></img>
                                             </div>
                                         </div>
                                     )}
@@ -53,18 +52,17 @@ const ProfesionalClienteDieta = props => {
                             </div>
                     }
                     <form /* DANI DEBE COMPLETAR ESTA FUNCION*/>
-
-                        <div className="form-group row" >
-                            <label for="input" >Plan Alimentación</label>
+                        <div className="container" >
+                        <br/>
+                            <div className="row"><h4> Plan de Alimentación</h4></div> 
                             <div className="form-group row">
                                 <input type="file" className="form-control-file" id="exampleFormControlFile1"
                                     onChange={actions.handleChangeFiles}
                                     name="dieta" />
                                 <br />
-                                <br />
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Cargar plan alimentario</button>
+                        <button type="submit" class="btn btn-primary btn-inline" >Cargar plan alimentario</button>
                     </form>
                 </div>
             </div>

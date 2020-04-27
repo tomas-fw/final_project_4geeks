@@ -37,12 +37,12 @@ const ProfesionalClienteEjercicio = props => {
 
                                 {
                                     client.all_plans.map((plan) =>
-                                        <div className="card ">
+                                        <div className="card">
                                             <div className="card-header">
                                                 <h4>Detalles del plan</h4>
                                             </div>
                                             <div className="card-body">
-                                                <p>{plan.detail.entrenamiento}</p>
+                                                <img src={plan.detail.entrenamiento}></img>
                                             </div>
                                         </div>
                                     )}
@@ -52,15 +52,16 @@ const ProfesionalClienteEjercicio = props => {
                                 <span className="sr-only">Loading...</span>
                             </div>
                     }
-                    <form /* DANI DEBE COMPLETAR ESTA FUNCION*/>
 
-                        <div className="form-group row" >
-                            <label for="input" >Plan de Ejercicio</label>
+
+                    <form /* DANI DEBE COMPLETAR ESTA FUNCION*/>
+                        <div className="container" >
+                        <br/>
+                            <div className="row"><h4> Plan de Ejercicio</h4></div> 
                             <div className="form-group row">
                                 <input type="file" className="form-control-file" id="exampleFormControlFile1"
                                     onChange={actions.handleChangeFiles}
                                     name="workout" />
-                                <br />
                                 <br />
                             </div>
                         </div>
