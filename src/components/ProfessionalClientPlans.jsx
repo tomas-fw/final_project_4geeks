@@ -47,8 +47,8 @@ const ProfessionalClientPlans = props => {
                                             <p className="card-text">{plan.detail.objective}</p>
                                             <h5>Fecha de inicio:</h5>
                                             <p className="card-text">{plan.detail.created}</p>
-                                            <Link to={"/profile/professional/clients/" + client.id + "/dieta"} type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
-                                            <Link to={"/profile/professional/clients/" + client.id + "/ejercicio"} type="button" class="btn btn-warning mr-5">Pauta de ejercicios</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/plans/" + plan.detail.id + "/diet"} type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/plans/" + plan.detail.id + "/training"} type="button" class="btn btn-warning mr-5">Pauta de ejercicios</Link>
                                             <Link to={"/profile/professional/clients/" + client.id + "/ficha"} type="button" class="btn btn-danger">Ficha del cliente</Link>
                                         </div>
                                     </div>

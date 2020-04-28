@@ -1,11 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
+import PdfViewer from "./PdfViewer";
 
 const ProfesionalClienteDieta = props => {
     const [client, setClient] = useState();
-    const { store, actions } = useContext(Context);
-    const { id } = useParams();
+    const {store} = useContext(Context);
+    const { id, plan_id } = useParams();
+    const history = useHistory();
+    
 
     useEffect(() => {
         fetch(store.path + "/admin/client/" + id, {
@@ -22,48 +25,51 @@ const ProfesionalClienteDieta = props => {
             })
 
     }, [])
-
-
+    const filteredPlanById = () => {
+        if (!!client && !!plan_id) {
+            let planById = client.all_plans.filter((plan) => plan.detail.id === parseInt(plan_id));
+            return planById[0];
+        }
+    }
+    const plan = filteredPlanById();
+    const file = !!plan && `${store.path}/static/diets/${plan.detail.dieta}`;
     return (
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-12">
                     {
                         !!client ? (
                             <>
-                                <Link to={"/profile/professional/clients/" + client.id} type="button" class="btn btn-secondary ml-4 mr-5">Volver al cliente</Link>
-                                <h2 className="text-center mb-4">Pauta de Alimentación</h2>
-
+                                <button className="btn btn-outline-info m-2 mb-3 float-left" onClick={() => history.goBack()}>Volver</button>
+                                <h2 className="text-center my-3">Pauta de Alimentación</h2>
                                 {
-                                    client.all_plans.map((plan) =>
-                                        <div className="card ">
-                                            <div className="card-header">
-                                                <h4>Detalles del plan</h4>
-                                            </div>
-                                            <div className="card-body">
-                                                <img src={plan.detail.dieta}></img>
-                                            </div>
+                                    !!plan.detail.dieta ?
+                                        <PdfViewer file={file} />
+                                        :
+                                        <div class="alert alert-info" role="alert">
+                                            Aún no tiene un plan alimenticio
                                         </div>
-                                    )}
+                                }
                             </>
                         ) :
                             <div className="spinner-border text-info" role="status">
                                 <span className="sr-only">Loading...</span>
                             </div>
                     }
-                    <form /* DANI DEBE COMPLETAR ESTA FUNCION*/>
-                        <div className="container" >
-                        <br/>
-                            <div className="row"><h4> Plan de Alimentación</h4></div> 
-                            <div className="form-group row">
-                                <input type="file" className="form-control-file" id="exampleFormControlFile1"
-                                    onChange={actions.handleChangeFiles}
-                                    name="dieta" />
-                                <br />
+                    {/* <div className="container" >
+                        <div className="row">
+                            <div className="col-8">
+                                <form>
+                                    <div className="form-group row">
+                                        <input type="file" className="form-control-file" id="exampleFormControlFile1"
+                                            onChange={actions.handleChangeFiles}
+                                            name="dieta" />
+                                    </div>
+                                    <button type="submit" className="btn btn-outline-info m-2 float-left" >Cargar plan alimentario</button>
+                                </form>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-inline" >Cargar plan alimentario</button>
-                    </form>
+                    </div> */}
                 </div>
             </div>
         </div>

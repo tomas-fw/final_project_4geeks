@@ -18,7 +18,7 @@ import AdminLogin from './views/AdminLogin.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
 import Login from './views/Login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
-import ProfessionalProfile from './views/professionalprofile.jsx'
+import ProfessionalProfile from './views/ProfessionalProfile.jsx'
 import Register from './views/Register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
@@ -63,8 +63,8 @@ const App = props => {
           <Route exact path='/profile/client/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} />
           <Route exact path='/profile/professional/clients/:id/ficha' component={ProfesionalClienteFicha} />
-          <Route exact path='/profile/professional/clients/:id/dieta' component={ProfesionalClienteDieta} />
-          <Route exact path='/profile/professional/clients/:id/ejercicio' component={ProfesionalClienteEjercicio} />
+          <Route exact path='/profile/professional/clients/:id/plans/:plan_id/diet' component={ProfesionalClienteDieta} />
+          <Route exact path='/profile/professional/clients/:id/plans/:plan_id/training' component={ProfesionalClienteEjercicio} />
           <Route exact path='/profile/professional/clients' component={Clients} />
           <Route exact path='/profile/professional' component={ProfessionalProfile} />
           <Route exact path='/profile' component={Profile} />
