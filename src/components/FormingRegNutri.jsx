@@ -5,9 +5,9 @@ const FormRegNutri = props => {
     const {store, actions} = useContext(Context)
     return (
         <>
-            <div className="container">
+            <div className="container font2">
                 <br />
-                <h1 classname="text-justify-center" >Formulario Registro Nutricionista</h1>
+                <h1 classname="text-justify-center" >Formulario de registro para nutricionista</h1>
                 <br />
                 <form id="loginForm" onSubmit={(e)=>actions.register_profesional(e,2,props.history)}>
                     <div classname="form-group row" >
@@ -19,7 +19,7 @@ const FormRegNutri = props => {
                     </div>
 
                     <div classname="form-group row" >
-                        <label for="input">Lastname</label>
+                        <label for="input">Apellido</label>
                         <input required type="text" class="form-control" id="lastnameprof" aria-describedby="lastname"
                         onChange={actions.handleChange} 
                         name="lastname"/>
@@ -28,7 +28,7 @@ const FormRegNutri = props => {
                     </div>
 
                     <div classname="form-group row" >
-                        <label for="inputEmail3" >Email</label>
+                        <label for="inputEmail3" >Correo electronico</label>
                         <input required type="email" class="form-control" id="emailprof" aria-describedby="emailprof"
                         onChange={actions.handleChange} 
                         name="email"/>
@@ -37,7 +37,7 @@ const FormRegNutri = props => {
                     </div>
 
                     <div classname="form-group row" >
-                        <label for="input" >Password</label>
+                        <label for="input" >Contraseña</label>
                         <input required type="password" class="form-control" id="passordprof" aria-describedby="passordprof" 
                         onChange={actions.handleChange}
                         name="password"/>
@@ -56,7 +56,7 @@ const FormRegNutri = props => {
                     </div>
 
                     <div classname="form-group row" >
-                        <label for="input">Specialties</label>
+                        <label for="input">Especialidades</label>
                         <input type="text" class="form-control" id="specialties" 
                         onChange={actions.handleChange}
                         name="specialties"/>
@@ -74,7 +74,7 @@ const FormRegNutri = props => {
                     </div>
 
                     <div classname="form-group row" >
-                        <label for="input">Description</label>
+                        <label for="input">Descripción</label>
                         <textarea required class="form-control" id="description" rows="3"
                         onChange={actions.handleChange} name="description"></textarea>
                         <br />
@@ -111,7 +111,7 @@ const FormRegNutri = props => {
                         <label class="form-check-label" for="exampleCheck1">Acepto términos y contratos</label>
                     </div>
 
-                    <button  type="submit" class="btn btn-primary">Enviar formulario</button>
+                    <button  type="submit" class="btn btn-info">Enviar formulario</button>
                 </form>
             </div>
             <br />

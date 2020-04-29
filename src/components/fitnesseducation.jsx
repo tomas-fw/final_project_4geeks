@@ -1,7 +1,9 @@
 import React from 'react'
 import fitnesseducationtImage from '../images/fitnesseducation.jpg';
+import { useHistory } from 'react-router-dom';
 
 const FitnessEducation = props => {
+    const history = useHistory();
 
     return (
         <>
@@ -21,6 +23,8 @@ const FitnessEducation = props => {
                         </div>
                     </div>
                 </div>
+                <button className="btn btn-outline-info m-2 mb-3 float-right" onClick={() => history.goBack()}>Volver</button>
+                <br/>
             </div>
         </>
 
