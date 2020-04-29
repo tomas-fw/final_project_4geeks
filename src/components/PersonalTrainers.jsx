@@ -13,7 +13,7 @@ const PersonalTrainers = props => {
             <div className="row">
 
                 <div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
-                    <h1 className="text-center">Personal Trainers</h1>
+                    <h1 className="text-center font my-3">Personal Trainers</h1>
                     <ul className="list-group pull-down" id="contact-list">
                         {
                             !!store.profesionals && !!store.profesionals.trainers && store.profesionals.trainers.length > 0 ?

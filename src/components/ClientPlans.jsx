@@ -10,24 +10,26 @@ const ClientPlans = props => {
     return (
         <>
             <div className="container">
-                <h1 classname="text" class="mt-3 text-center" >Planes anteriores</h1>
-                <Link to='/profile/' type="button" class="btn btn-info ml-5">Volver a Mi Perfíl</Link>
-                <br />
-                {
-                    !!store.currentUser && store.currentUser.user.planes_id.length > 0 ?
-                        <div class="container">
-                            <div class="row">
-                                <PlansCard />
-                            </div>
-                        </div>
-                        :
-                        <div class="alert alert-danger m-4" role="alert">
-                            No tienes planes anteriores
-                        </div>
-                    //     <div class="spinner-border" role="status">
-                    //     <span class="sr-only">Loading...</span>
-                    // </div>
-                }
+                <div className="row">
+                    <div className="col-12">
+                        <h1 classname="text" className="mt-3 text-center font2" >Planes anteriores</h1>
+                        <Link to='/profile/' type="button" className="btn btn-outline-info ml-5 font2">Volver a mi perfil</Link>
+                        <br />
+                        {
+                            !!store.currentUser && store.currentUser.user.planes_id.length > 0 ?
+                                store.currentUser.user.planes_id.map((plan) => {
+                                    return <PlansCard plan={plan} />
+                                })
+                                :
+                                <div className="alert alert-danger m-4" role="alert">
+                                    No tienes planes anteriores
+                                </div>
+                            //     <div className="spinner-border" role="status">
+                            //     <span className="sr-only">Loading...</span>
+                            // </div>
+                        }
+                    </div>
+                </div>
             </div>
         </>
     )
