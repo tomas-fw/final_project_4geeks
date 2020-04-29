@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora&family=Raleway:wght@900&display=swap');
+
 .team-cards {
     width: 300px;
     height: 300px;
@@ -21,4 +23,29 @@
     height: 200px;
     margin: auto;
     object-fit: cover;
+}
+.font {
+    font-family: 'Dancing Script', cursive;
+}
+.font2 {
+    font-family: 'Lora', serif;
+}
+.font3 {
+    font-family: 'Raleway', sans-serif;
+}
+body {
+    background-color: aliceblue;
+}
+.homeImg {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border: none;
+    border-radius: 10%;
+}
+.homeCard {
+    border: none;
+}
+.navColor {
+    background-color:rgb(30, 155, 177);
 }

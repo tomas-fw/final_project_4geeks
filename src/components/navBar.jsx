@@ -10,8 +10,8 @@ const NavBar = props => {
         <>
 
 
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <Link className="navbar-brand" to="/">Fit good</Link>
+            <nav className="navbar navbar-expand-lg navbar-light navColor">
+                <Link className="navbar-brand font3 ml-3" to="/">Fit good</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -23,21 +23,21 @@ const NavBar = props => {
                             store.currentUser === null &&
                             <>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/register">Register</Link>
+                                    <Link className="nav-link font2" to="/register">Registrate</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to='/login'>Login</Link>
                                 </li>
                                 <li className="nav-item active">
-                                    <Link className="nav-link" to="/team">Our Health professionals<span className="sr-only">(current)</span></Link>
+                                    <Link className="nav-link font2" to="/team">Nuestros especialistas<span className="sr-only">(current)</span></Link>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <Link className="nav-link dropdown-toggle" to="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Profesionals
+                                    <Link className="nav-link dropdown-toggle font2" to="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Trabaja con nosotros
                                     </Link>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <Link className="dropdown-item" to="/register/profesional/3">Register as Trainer </Link>
-                                        <Link className="dropdown-item" to="/register/profesional/2">Register as Nutririonist </Link>
+                                        <Link className="dropdown-item font2" to="/register/profesional/3">Registrate como entrenador </Link>
+                                        <Link className="dropdown-item font2" to="/register/profesional/2">Registrate como nutricionista </Link>
                                     </div>
                                 </li>
                             </>
@@ -46,7 +46,7 @@ const NavBar = props => {
 
                         
                         <li className="nav-item">
-                            <Link className="nav-link" to='/about'>About us</Link>
+                            <Link className="nav-link" to='/about'>Quienes somos</Link>
                         </li>
 
                         {
