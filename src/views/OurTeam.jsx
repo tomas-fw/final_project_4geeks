@@ -1,13 +1,16 @@
 import React from 'react'
 import nutritionistImage from '../images/nutritionist.jpg';
 import personalImage from '../images/personal.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const OurTeam = props => {
+    const history = useHistory();
     
     return (
         <>
         <div className="container">
+        <button className="btn btn-outline-info m-2 mb-3 float-left" onClick={() => history.goBack()}>Volver</button>
+                <br/>
             <h1 className="font my-4">Obtén tu equipo especializado hoy</h1>
             <div className="row">
                 <div className="card col-md-6 bg-transparent homeCard">

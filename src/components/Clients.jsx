@@ -19,7 +19,7 @@ const Clients = props => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12 col-xs-12">
-                        <h1 className="text-center">Mis clientes</h1>
+                        <h1 className="text-center font2">Mis clientes</h1>
                         {
                             !!store.clients ?
                                 filteredClients().map((client, i) => {
