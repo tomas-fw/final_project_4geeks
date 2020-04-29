@@ -373,7 +373,7 @@ const CreatePlan = props => {
                                 </>
                                 :
                                 <>
-                                <div className="alert alert-info my-3" role="alert">
+                                <div className="alert alert-warning my-3" role="alert">
                                     Para crear un plan, porfavor elige tu equipo de salud primero
                                 </div>
                                 <div>

@@ -26,7 +26,7 @@ const NavBar = props => {
                                     <Link className="nav-link font2" to="/register">Registrate</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to='/login'>Login</Link>
+                                    <Link className="nav-link" to='/login'>Iniciar sesión</Link>
                                 </li>
                                 <li className="nav-item active">
                                     <Link className="nav-link font2" to="/team">Nuestros especialistas<span className="sr-only">(current)</span></Link>

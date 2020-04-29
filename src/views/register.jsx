@@ -8,8 +8,8 @@ const Register = props => {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4 offset-md-4">
-                        <h1>Register</h1>
+                    <div className="col-md-4 offset-md-4 font2">
+                        <h1 className="my-2">Registro</h1>
                         <form onSubmit={(e)=>actions.register_client(e,props.history)}>
 
                             <div class="form-group">
@@ -63,7 +63,7 @@ const Register = props => {
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button type="submit" class="btn btn-info btn-block mb-3">Submit</button>
                         </form>
 
                     </div>

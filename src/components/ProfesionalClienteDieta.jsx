@@ -46,7 +46,7 @@ const ProfesionalClienteDieta = props => {
                                     !!plan.detail.dieta ?
                                         <PdfViewer file={file} />
                                         :
-                                        <div class="alert alert-info" role="alert">
+                                        <div class="alert alert-warning" role="alert">
                                             Aún no tiene un plan alimenticio
                                         </div>
                                 }
