@@ -49,3 +49,10 @@ body {
 .navColor {
     background-color:rgb(30, 155, 177);
 }
+
+#imagen-carrucel-1{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    
+}
