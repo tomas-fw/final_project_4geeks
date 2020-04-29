@@ -62,7 +62,7 @@ const NavBar = props => {
                                     </Link>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <Link className="dropdown-item" to="/profile">My account </Link>
-                                        <Link className="dropdown-item" to="/profile/health-team">My health team</Link>
+                                        <Link className="dropdown-item" to="/profile/client/health-team">My health team</Link>
                                         <div className="dropdown-divider"></div>
                                         <Link className="dropdown-item" onClick={() => actions.logout(props.history)}>Logout</Link>
                                     </div>
