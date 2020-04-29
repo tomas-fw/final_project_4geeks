@@ -11,72 +11,69 @@ const Profile = props => {
         <>
             {
                 !!store.currentUser ?
-                    <div className="container mt-3">
+                    <div className="container my-3">
                         <div className="row">
-                            <div class="col-md-12 col-xs-12 card">
+                            <div className="col-md-12 col-xs-12 card">
 
-                                <div class="row" name="superior">
-                                    <div class="col-md col-xs" /*imagen de perfil*/>
-                                        <img src={store.path + /avatar/ + store.currentUser.user.role.id + '/' + store.currentUser.user.avatar} class="img-top ml-4 mt-3" alt="..." width="150" height="190" />
+                                <div className="row" name="superior">
+                                    <div className="col-md col-xs" /*imagen de perfil*/>
+                                        <img src={store.path + /avatar/ + store.currentUser.user.role.id + '/' + store.currentUser.user.avatar} className="img-top ml-4 mt-3" width="200" height="190" />
                                     </div>
-                                    <div class="col-md col-xs" /*saludo */>
-                                        <h1 class="card-title mt-5">Hola {store.currentUser.user.name}!</h1>
-                                    </div>
-                                    <div class="col-md-3 col-xs-3 " /*imagen extra*/>
-                                        <img src="https://picsum.photos/200/300" class="ml-5 mt-4" alt="..." width="150" height="150" />
+                                    <div className="col-md col-xs" /*saludo */>
+                                        <h1 className="card-title mt-5 font2">Hola {store.currentUser.user.name}!</h1>
                                     </div>
                                 </div>
 
-                                <div class="container">
-                                    <div class="col-md col-xs mt-3 text-center alert alert-info" >
+                                <div className="container">
+                                    <div className="col-md col-xs mt-3 text-center alert alert-info font2" >
                                         Sabemos que en estos momentos te encuentras realizando cambios
-                                        en tu estilo de vida y queremos ayudarte a que estos cambios sean rapido y efectivos!
+                                        en tu estilo de vida y queremos ayudarte a que estos cambios sean rápidos y efectivos!
                                     </div>
 
-                                    <div class="card-header" /* titulo detalles del plan */>
+                                    <div className="card-header font2" /* titulo detalles del plan */>
                                         <h5>Tu plan actual es el siguiente</h5>
                                     </div>
 
-                                    <div class="card-body ">
-                                        <div class="row" /*Fecha inicio*/>
-                                            <div class="col-md-3 col-xs-3"></div>
-                                            <div class="col-md-3 col-xs-3">
-                                                <h5 class="card-text">Fecha inicio de inicio: </h5></div>
-                                            <div class="col-md-4 col-xs-4 ">
+                                    <div className="card-body font2">
+                                        <div className="row" /*Fecha inicio*/>
+                                            <div className="col-md-3 col-xs-3"></div>
+                                            <div className="col-md-3 col-xs-3">
+                                                <h5 className="card-text">Fecha de inicio: </h5></div>
+                                            <div className="col-md-4 col-xs-4 ">
                                                 {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.created : ''}
                                             </div>
                                         </div>
                                         <br />
 
-                                        <div class="row" /*Objetivo*/>
-                                            <div class="col-md-3 col-xs-3"></div>
-                                            <div class="col-md-3 col-xs-3">
-                                                <h5 class="card-text">Tu Objetivo es: </h5>
+                                        <div className="row" /*Objetivo*/>
+                                            <div className="col-md-3 col-xs-3"></div>
+                                            <div className="col-md-3 col-xs-3">
+                                                <h5 className="card-text">Tu objetivo es: </h5>
                                             </div>
-                                            <div class="col-md-4 col-xs-4">
+                                            <div className="col-md-4 col-xs-4">
                                                 {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.objective : ''}
                                             </div>
                                         </div>
                                         <br />
 
-                                        <div class="row" /*Nutricionsita */>
-                                            <div class="col-md-3 col-xs-3"></div>
-                                            <div class="col-md-3 col-xs-3">
-                                                <h5 class="card-text">Tu Nutricionista es: </h5>
+                                        <div className="row" /*Nutricionsita */>
+                                            <div className="col-md-3 col-xs-3"></div>
+                                            <div className="col-md-3 col-xs-3">
+                                                <h5 className="card-text">Tu nutricionista es: </h5>
                                             </div>
-                                            <div class="col-md-4 col-xs-4">
-                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name + store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_last_name : ''}
+                                            <div className="col-md-4 col-xs-4">
+                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name + " " + store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_last_name : ''}
                                             </div>
                                         </div>
                                         <br />
 
-                                        <div class="row" /*personal trainer*/>
-                                            <div class="col-md-3 col-xs-3"></div>
-                                            <div class="col-md-3 col-xs-3">
-                                                <h5 class="card-text">Tu Personal Trainer es: </h5>
+                                        <div className="row" /*personal trainer*/>
+                                            <div className="col-md-3 col-xs-3"></div>
+                                            <div className="col-md-3 col-xs-3">
+                                                <h5 className="card-text">Tu personal trainer es: </h5>
                                             </div>
-                                            <div class="col-md-4 col-xs-4">
-                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name + store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_lastname : ''}
+                                            <div className="col-md-4 col-xs-4">
+                                                {store.currentUser.user.planes_id.length > 0 ? store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name + " " + store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_last_name : ''}
                                             </div>
                                         </div>
 
@@ -84,23 +81,15 @@ const Profile = props => {
                                 </div>
                                 <br />
 
-                                <div class="row">
-                                    <div class="col-md-5 col-xs-4">
-                                        <Link to='/profile/client/health-team' type="button" class="btn btn-primary ml-4">Contactar a mi equipo de salud</Link>
+                                <div className="row">
+                                    <div className="col-md-5 col-xs-4">
+                                        <Link to='/profile/client/health-team' type="button" className="btn btn-outline-info ml-4">Contactar a mi equipo de salud</Link>
                                     </div>
-                                    <div class="col-md-4 col-xs-4">
-                                        <Link to='/profile/client/plans' type="button" class="btn btn-warning ">Ver mis planes anteriores</Link>
+                                    <div className="col-md-4 col-xs-4">
+                                        <Link to='/profile/client/plans' type="button" className="btn btn-outline-info ">Ver mis planes anteriores</Link>
                                     </div>
-                                    {/* <div class="col-md-3 col-xs-3">
-                                        <h5 class="card-text mt-2">Contactar a mi entrenador </h5>
-                                        <Link to='#' type="button" class="btn btn-secondary">Contactar</Link>
-                                    </div> */}
-                                    <div class="col-md-3 col-xs-4">
-
-                                        
-
-                                        <Link to='/profile/client/crear-plan' type="button" class="btn btn-success ml-2">Contratar un nuevo plan</Link>
-
+                                    <div className="col-md-3 col-xs-4">
+                                        <Link to='/profile/client/crear-plan' type="button" className="btn btn-outline-info ml-2">Contratar un nuevo plan</Link>
                                     </div>
                                 </div>
                                 <br />
@@ -108,8 +97,8 @@ const Profile = props => {
                         </div>
                     </div>
                     :
-                    <div class="spinner-border" role="status">
-                        <span class="sr-only">Loading...</span>
+                    <div className="spinner-border" role="status">
+                        <span className="sr-only">Loading...</span>
                     </div>
             }
 

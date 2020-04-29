@@ -12,7 +12,7 @@ const Nutritionists = props => {
         <div className="container">
             <div className="row">
                 <div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
-                    <h1 className="text-center">Nutritionists</h1>
+                    <h1 className="text-center font my-3">Nutricionistas</h1>
                     <ul className="list-group pull-down" id="contact-list">
                         {
                             !!store.profesionals && !!store.profesionals.nutritionists && store.profesionals.nutritionists.length > 0 ?
@@ -24,7 +24,7 @@ const Nutritionists = props => {
                                 :
                                 <li className="alert alert-warning" role="alert">
                                     {store.error}
-                                    There are no active nutritionists at the moment :(
+                                     No hay nutricionistas activos en este momento 
                                 </li>
                         }
                     </ul>
