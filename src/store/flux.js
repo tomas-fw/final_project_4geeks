@@ -45,6 +45,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             is_active: null,
             trainer_email: null,
             nutritionist_email: null,
+            comment: null,
+            plan:null
+
 
 
         },
@@ -155,6 +158,28 @@ const getState = ({ getStore, getActions, setStore }) => {
                             setStore({
                                 error: null,
                                 clients: data
+                            })
+                        }
+                    })
+            },
+            loadPlans: (id_client = '', id_plan='') => {
+                const store = getStore()
+                fetch(store.path + '/client/plan/'+id_client+'/'+id_plan, {
+                    method: 'GET',
+                    headers: {
+                        "Content-type": 'aplication/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                error: null,
+                                plan: data
                             })
                         }
                     })
@@ -396,6 +421,60 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
+            loadChatConversation: (role_id = '', plan_id = '') => {
+                const store = getStore()
+                fetch(store.path + '/contact/profesional/' + role_id + '/' + plan_id, {
+                    method: 'GET',
+                    headers: {
+                        "Content-type": 'aplication/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                error: null,
+                                chat: data
+                            })
+                        }
+                    })
+            },
+            clientSendMessage: (e, plan_id,sender_role_id,reciever_role_id, client_email, profesional_email) => {
+                e.preventDefault()
+                const store = getStore();
+                fetch(store.path + '/contact/profesional/'+sender_role_id+'/'+reciever_role_id+'/'+plan_id, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        comment : store.comment,
+                        plan_id: plan_id,
+                        client_email : client_email,
+                        trainer_email: profesional_email,
+                        nutritionist_email:profesional_email
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                comment:null,
+                                error:null
+                                
+                            })
+                        }
+                        window.location.reload()
+                    })
+                },
         }
     }
 }

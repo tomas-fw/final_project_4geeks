@@ -16,7 +16,7 @@ import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 import AdminLogin from './views/AdminLogin.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
-import Login from './views/login.jsx'
+import Login from './views/Login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
 import ProfessionalProfile from './views/ProfessionalProfile.jsx'
 import Register from './views/Register.jsx'
@@ -24,15 +24,17 @@ import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile from './views/profile.jsx'
+import Profile from './views/Profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-import FormIngresoCliente from './components/formingresocliente.jsx'
+import FormIngresoCliente from './components/FormIngresoCliente'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
-import ProfesionalClienteFicha from './views/profesionalClienteFicha.jsx'
+import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
 import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
 import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
-import ProfessionalClientPlans from './components/professionalClientPlans.jsx'
+import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
+import ChatTrainer from './components/ChatTrainer.jsx'
+import ChatNutritionist from './components/ChatNutritionist.jsx'
 
 
 
@@ -75,6 +77,8 @@ const App = props => {
           <Route exact path='/admin/profesional' component={AdminProfesionals} />
           <Route exact path='/admin/profesional/:role_id/:id' component={AdminProfesionalDetail} />
           <Route exact path='/client/plan/confirmation' component={AvisoEnvioFormClient} />
+          <Route exact path='/profile/professional/clients/contact/nutritionist/:id/:plan_id' component={ChatNutritionist} />
+          <Route exact path='/profile/professional/clients/contact/trainer/:id/:plan_id' component={ChatTrainer} />
         </Switch>
       </Router>
     </>

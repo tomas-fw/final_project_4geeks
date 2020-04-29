@@ -26,9 +26,11 @@ const HealthTeam = props => {
                                 <div className="col-md-6 card">
                                     <img src="..." className="card-img-top" alt="..." />
                                     <div className="card-body">
-                                        <h5 className="card-title">{store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name}</h5> 
+                                        <h5 className="card-title">{store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_name}</h5>
                                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <Link to="#" className="btn btn-primary">Contact my nutritionist</Link>
+                                        <Link to={"/profile/professional/clients/contact/nutritionist/" +
+                                            store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.client_id + '/'+
+                                            store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.id} className="btn btn-primary">Contactar a mi nutricionista</Link>
                                     </div>
                                 </div>
                                 <div className="col-md-6 card">
@@ -36,7 +38,9 @@ const HealthTeam = props => {
                                     <div className="card-body">
                                         <h5 className="card-title">{store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.trainer_name}</h5>
                                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <Link to="#" className="btn btn-primary">Contact my personal</Link>
+                                        <Link to={"/profile/professional/clients/contact/trainer/" +
+                                            store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.client_id +'/'+
+                                            store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.id} className="btn btn-primary">Contactar a mi entrenador</Link>
                                     </div>
                                 </div>
 
