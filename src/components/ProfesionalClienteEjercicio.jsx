@@ -45,7 +45,7 @@ const ProfesionalClienteEjercicio = props => {
                                     !!plan.detail.workouts ?
                                         <PdfViewer file={file} />
                                         :
-                                        <div class="alert alert-info" role="alert">
+                                        <div class="alert alert-warning" role="alert">
                                             Aún no tiene un plan de ejercicio
                                         </div>
                                 }
