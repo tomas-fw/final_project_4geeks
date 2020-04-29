@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 const Home = props => {
-      
+
     return (
         <>
             <div className="container-fluid">
@@ -18,69 +18,64 @@ const Home = props => {
                 {/* Jumbotron */}
                 <div className="row">
                     <div className="col">
-                        <div className="card bg-dark text-dark border-0 rounded-0px-0">
-                            <img src={jumbotronImage} className="card-img" />
-                            <div className="card-img-overlay">
-                                <h1 className="card-title text-center display-2 text-white">Find your health team today</h1>
-                                <h1 className="card-text text-center display-4 text-white">Get your own exclusive team with a nutritionist and personal trainer</h1>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
-                <h1 className="text-center">Two essential ingredients</h1>
+                <h1 className="font m-5">Dos ingredientes esenciales...</h1>
                 <div className="row">
                     {/* Cards */}
                     <div className="col-md-6">
-                        <div className="card">
-                            <img className="card-img-top card-img" src={nutritionImage} alt="Card image cap" />
+                        <div className="card bg-transparent homeCard ml-5">
+                            <img className="card-img-top card-img homeImg" src={nutritionImage} alt="Card image cap" />
                             <div className="card-body">
-                                <h5 className="card-title">Nutrition</h5>
-                                <p className="card-text">A healthy lifestyle starts in the kitchen</p>
-                                <Link to="/nutritional-education" className="btn btn-primary">Learn about nutrition</Link>
+                                <h2 className="card-title font">Nutrición</h2>
+                                <p className="card-text font2">Una vida saludable comieza en la cocina</p>
+                                <Link to="/nutritional-education" className="btn btn-outline-info">Por qué necesitamos una dieta especializada? </Link>
                             </div>
 
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="card">
-                            <img className="card-img-top card-img" src={fitnessImage} alt="Card image cap" />
+                        <div className="card bg-transparent homeCard">
+                            <img className="card-img-top card-img bg-transparent homeImg" src={fitnessImage} alt="Card image cap" />
                             <div className="card-body">
-                                <h5 className="card-title">Physical training</h5>
-                                <p className="card-text">Our body is designed to be in constant movement</p>
-                                <Link to="/fitness-education" className="btn btn-primary">Learn about physical training</Link>
+                                <h2 className="card-title font">Entrenamiento fisico</h2>
+                                <p className="card-text font2">Nuestro cuerpo está diseñado para estar en movimiento</p>
+                                <Link to="/fitness-education" className="btn btn-outline-info">Aprende la mejor manera de cuidar de el</Link>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <h1 className="text-center">Real Cases</h1>
+                <h1 className="font m-5">Que dicen nuestros clientes?</h1>
                 <div className="row">
                     <div className="card-group">
-                    <div className="card">
+                        <div className="card bg-transparent homeCard ml-4">
                             <img src={person2Image} className="card-img-top rounded-circle team-cards" alt="..." />
                             <div className="card-body">
-                                <h5 className="card-title">Anna</h5>
-                                <p className="card-text">"Best app ever"</p>
+                                <h5 className="card-title font2">Anna</h5>
+                                <p className="card-text font2">"Muy buena experiencia con mi equipo. Recomendado!"</p>
                             </div>
                         </div>
-                        <div className="card">
+                        <div className="card bg-transparent homeCard">
                             <img src={person1Image} className="card-img-top rounded-circle team-cards" alt="..." />
                             <div className="card-body">
-                                <h5 className="card-title">Ignacio</h5>
-                                <p className="card-text">"Since I started using FitGood, I've never felt healthier"</p>
+                                <h5 className="card-title font2">Ignacio</h5>
+                                <p className="card-text font2">"Desde que empecé a usar esta app, he visto resultados positivos en mi cuerpo"</p>
                             </div>
                         </div>
-                        <div className="card">
+                        <div className="card bg-transparent homeCard">
                             <img src={person3Image} className="card-img-top rounded-circle team-cards" alt="..." />
                             <div className="card-body">
-                                <h5 className="card-title">Francisca</h5>
-                                <p className="card-text">"A friend suggested this app and it completely changed my lifestyle"</p>
+                                <h5 className="card-title font2">Francisca</h5>
+                                <p className="card-text font2">"Tener un plan personalizado ha cambiado mi estilo de vida"</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
 
         </>
 

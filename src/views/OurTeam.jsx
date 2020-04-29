@@ -7,21 +7,23 @@ const OurTeam = props => {
     
     return (
         <>
-        <div className="container-fluid">
-            <h1>Get the best team for you</h1>
+        <div className="container">
+            <h1 className="font my-4">Obtén tu equipo especializado hoy</h1>
             <div className="row">
-                <div className="col-md-6">
-                    <div className="card bg-dark text-dark border-0 rounded-0px-0">
-                    <h5 class="card-title">Dietitian</h5>
-                        <img src={nutritionistImage} className="card-img" />
-                        <Link className="card-link" to="/nutritionists" class="stretched-link">Meet our nutrionists</Link>
+                <div className="card col-md-6 bg-transparent homeCard">
+                    <div className="card text-dark bg-transparent rounded-0 homeCard">
+                        <img src={nutritionistImage} className="card-img homeImg" />
+                        <div className="col-8 m-auto">
+                        <Link className="btn btn-outline-info my-3" to="/nutritionists">Conoce nuestros nutricionistas</Link>
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-6">
-                    <div className="card bg-dark text-dark border-0 rounded-0px-0">
-                    <h5 class="card-title">Personal trainers</h5>
-                        <img src={personalImage} className="card-img" />
-                        <Link className="card-link" to="/personal-trainers" class="stretched-link">Meet our personal trainers</Link>
+                <div className="card col-md-6 bg-transparent homeCard mb-4">
+                    <div className="card text-dark bg-transparent rounded-0 homeCard">
+                        <img src={personalImage} className="card-img homeImg" />
+                        <div className="col-8 m-auto">
+                        <Link className="btn btn-outline-info my-3" to="/personal-trainers">Conoce nuestros entrenadores</Link>
+                        </div>
                     </div>
                 </div>
             </div>
