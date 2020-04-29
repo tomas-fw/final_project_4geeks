@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
 import { useParams, Link } from 'react-router-dom'
-
+/* RESPONSIVE LISTO*/
 
 const ChatTrainer = props => {
     const { store, actions } = useContext(Context)
@@ -63,7 +63,7 @@ const ChatTrainer = props => {
                                             name='comment'
                                             onChange={actions.handleChange} />
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Enviar mensaje al Entrenador</button>
+                                    <button type="submit" className="btn btn-warning">Enviar mensaje al Entrenador</button>
                                 </form>
 
                             </div>
