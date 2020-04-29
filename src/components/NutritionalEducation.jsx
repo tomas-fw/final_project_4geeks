@@ -5,20 +5,19 @@ const NutritionalEducation = props => {
 
     return (
         <>
-            <div className="container-fluid">
-                <div className="card mb-3">
+            <div className="container">
+                <div className="card my-3 bg-transparent homeCard">
                     <div className="row no-gutters">
                         <div className="col-md-4">
-                            <img src={nutritioneducation} className="card-img" alt="..." />
+                            <img src={nutritioneducation} className="card-img" width="250px" height="400px" />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">3 reasons a good diet is ESSENTIAL</h5>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Prevents diseases and infections. When you eat the full range of vitamins, minerals and other nutrients you improve your immune system and your healthy diet may even help prevent diseases like cancer, heart disease, diabetes, and stroke.</li>
-                                    <li class="list-group-item">Helps you control your weight. Most people at some point want to lose weight or gain weight – eating a balanced diet helps you control your weight and maintain it over time. It is not feasible to be on a weight-loss diet forever – a balanced diet is the only way to healthily control your weight in the long term.</li>
-                                    <li class="list-group-item">Improves your mental health. Getting the right mix of nutrients can help to ease symptoms of depression and anxiety – looking after yourself by eating well is essential as you take steps to good mental health.</li>
-                                </ul>
+                                <h3 className="card-title font">Deberia obtener una dieta personalizada?</h3>
+                                <p className="font2">Lo que comemos todos los días afecta a nuestra salud más de lo que pudiéramos pensar. Afecta a cómo nos sentimos hoy, mañana y en el futuro más lejano. Una buena dieta con los valores nutricionales correctos es uno de los elementos más importantes para llevar un estilo de vida saludable.</p>
+                                    <p className="font2">Sin embargo, por las prisas propias de las grandes ciudades como Santiago, en ocasiones nos es complicado comer de manera sana. Compaginar el trabajo con la elaboración de una dieta sana diaria puede resultar difícil, aunque ahora ya te puedes olvidar de eso gracias a <bold>FitGood</bold>.
+                                    En combinación con el ejercicio, nuestra dieta puede ayudarnos a alcanzar y mantener un peso saludable, reducir el riesgo de enfermedades crónicas y promover nuestra salud en general.</p>
+                                    <p className="font2">Además, con nuestra una personalizada, hoy en día hasta las personas más ocupadas pueden mantener una dieta extremadamente saludable, ya que tendrán una dieta con todos los valores nutricionales necesarios y con el número de carbohidratos exactos. </p>
                             </div>
                         </div>
                     </div>
