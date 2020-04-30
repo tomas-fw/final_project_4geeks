@@ -47,12 +47,12 @@ const ProfessionalClientPlans = props => {
                                             <p className="card-text">{plan.detail.objective}</p>
                                             <h5>Fecha de inicio:</h5>
                                             <p className="card-text">{plan.detail.created}</p>
-                                            <Link to={"/profile/professional/clients/" + client.id + "/plans/" + plan.detail.id + "/diet"} type="button" class="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
-                                            <Link to={"/profile/professional/clients/" + client.id + "/plans/" + plan.detail.id + "/training"} type="button" class="btn btn-warning mr-5">Pauta de ejercicios</Link>
-                                            <Link to={"/profile/professional/clients/" + client.id + "/ficha"} type="button" class="btn btn-danger">Ficha del cliente</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/plans/" + plan.detail.id + "/diet"} type="button" className="btn btn-primary ml-4 mr-5">Pauta alimentaria</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/plans/" + plan.detail.id + "/training"} type="button" className="btn btn-warning mr-5">Pauta de ejercicios</Link>
+                                            <Link to={"/profile/professional/clients/" + client.id + "/ficha"} type="button" className="btn btn-danger">Ficha del cliente</Link>
                                             <Link to={ store.currentUser.user.role.id == 2 ?
                                              "/profile/professional/clients/contact/nutritionist/"+id +'/'+plan.detail.id :
-                                             "/profile/professional/clients/contact/trainer/"+id+'/'+plan.detail.id  } type="button" class="btn btn-primary mr-5">Contactar al cliente</Link>
+                                             "/profile/professional/clients/contact/trainer/"+id+'/'+plan.detail.id  } type="button" className="btn btn-primary ml-5">Contactar al cliente</Link>
                                         </div>
                                     </div>
                                 )}

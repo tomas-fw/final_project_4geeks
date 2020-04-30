@@ -46,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             trainer_email: null,
             nutritionist_email: null,
             comment: null,
-            plan:null
+            plan: null
 
 
 
@@ -101,7 +101,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                             })
                             sessionStorage.setItem('currentUser', JSON.stringify(data))
                             sessionStorage.setItem('isAuthenticated', true)
-                            history.push('/'+re_route)
+                            history.push('/' + re_route)
                         }
                     })
             },
@@ -162,9 +162,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            loadPlans: (id_client = '', id_plan='') => {
+            loadPlans: (id_client = '', id_plan = '') => {
                 const store = getStore()
-                fetch(store.path + '/client/plan/'+id_client+'/'+id_plan, {
+                fetch(store.path + '/client/plan/' + id_client + '/' + id_plan, {
                     method: 'GET',
                     headers: {
                         "Content-type": 'aplication/json'
@@ -417,7 +417,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                             history.push('/client/plan/confirmation')
                             // sessionStorage.setItem('currentUser', JSON.stringify(data))
                             // sessionStorage.setItem('isAuthenticated', true)
-                            
+
                         }
                     })
             },
@@ -443,17 +443,17 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            clientSendMessage: (e, plan_id,sender_role_id,reciever_role_id, client_email, profesional_email) => {
+            clientSendMessage: (e, plan_id, sender_role_id, reciever_role_id, client_email, profesional_email) => {
                 e.preventDefault()
                 const store = getStore();
-                fetch(store.path + '/contact/profesional/'+sender_role_id+'/'+reciever_role_id+'/'+plan_id, {
+                fetch(store.path + '/contact/profesional/' + sender_role_id + '/' + reciever_role_id + '/' + plan_id, {
                     method: 'POST',
                     body: JSON.stringify({
-                        comment : store.comment,
+                        comment: store.comment,
                         plan_id: plan_id,
-                        client_email : client_email,
+                        client_email: client_email,
                         trainer_email: profesional_email,
-                        nutritionist_email:profesional_email
+                        nutritionist_email: profesional_email
                     }),
                     headers: {
                         'Content-Type': 'application/json'
@@ -467,14 +467,68 @@ const getState = ({ getStore, getActions, setStore }) => {
                             })
                         } else {
                             setStore({
-                                comment:null,
-                                error:null
-                                
+                                comment: null,
+                                error: null
+
                             })
                         }
                         window.location.reload()
                     })
-                },
+            },
+            editProfesionalProfile: (e, role_id, id) => {
+                e.preventDefault();
+                const store = getStore();
+                let formData = new FormData()
+                formData.append('specialties', store.specialties)
+                formData.append('description', store.description)
+                formData.append('age', store.age)
+
+                fetch(store.path + '/edit/profesional/' + role_id + '/' + id, {
+                    method: 'PUT',
+                    body: formData
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                error: null,
+                                specialties: null,
+                                age: null,
+                                description: null,
+                            })
+                            window.location.reload()
+                        }
+                    })
+            },
+            editAvatar: (e, role_id, id) => {
+                e.preventDefault();
+                const store = getStore();
+                let formData = new FormData()
+                formData.append('avatar', store.avatar)
+                formData.append('oldfilename', String(store.currentUser.user.avatar))
+
+                fetch(store.path + '/avatar/edit/' + role_id + '/' + id, {
+                    method: 'PUT',
+                    body: formData
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                error: null,
+                                avatar: null
+                            })
+                        }
+                    })
+            }
         }
     }
 }

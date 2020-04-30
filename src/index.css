@@ -56,3 +56,8 @@ body {
     object-fit: cover;
     
 }
+
+#profile-edit-avatar{
+    border: none;
+    background-color: rgba(1, 1, 1, 0)
+}
