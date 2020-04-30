@@ -1,9 +1,8 @@
 import React, { useEffect, useContext } from 'react'
 import { Context } from '../store/appContext'
 import { Link } from 'react-router-dom'
+/* RESPONSIVE*/
 
-
-/* RESPONSIVE LISTO*/
 const Profile = props => {
     const { store, actions } = useContext(Context)
     console.log(props)
@@ -86,13 +85,13 @@ const Profile = props => {
                                     <br />
 
                                     <div className="row">
-                                        <div className="col-md-5 col-xs-4">
+                                        <div className="col-md-5 col-xs-5">
                                             <Link to='/profile/client/health-team' type="button" className="btn btn-outline-info ml-4">Contactar a mi equipo de salud</Link>
                                         </div>
                                         <div className="col-md-4 col-xs-4">
                                             <Link to='/profile/client/plans' type="button" className="btn btn-outline-info ">Ver mis planes anteriores</Link>
                                         </div>
-                                        <div className="col-md-3 col-xs-4">
+                                        <div className="col-md-3 col-xs-3">
                                             <Link to='/profile/client/crear-plan' type="button" className="btn btn-outline-info ml-2">Contratar un nuevo plan</Link>
                                         </div>
                                     </div>

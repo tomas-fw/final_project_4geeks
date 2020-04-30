@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
-
+/* RESPONSIVE */
 const AdminLogin = props => {
     const {store, actions} = useContext(Context);
     return (
         <>
          <div className="container">
                 <div className="row">
-                    <div className="col-md-4 offset-md-4">
+                    <div className="col-md-4 col-xs-4 offset-md-4">
                         <h1>Login</h1>
 
                         <form onSubmit={e => actions.admin_login(e, props.history)}>

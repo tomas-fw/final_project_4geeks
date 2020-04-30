@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { BrowserRouter as Router, withRouter, Link } from 'react-router-dom'
-/* Responsive LISTA */
+/* RESPOSIVE */
 const AdminProfile = props => {
     const { store, actions } = useContext(Context)
     return (
@@ -12,12 +12,12 @@ const AdminProfile = props => {
                         <>
                             <div class="container mt-4" id="adminprofile" >
                                 <div className="row" >
-                                    <div class="col-md container">
+                                    <div class="col-md col-xs container">
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 col-xs-4">
                                                 <img src="https://picsum.photos/200/300" class="img-top ml-3 mt-3" alt="avatar" width="200" height="200" />
                                             </div>
-                                            <div class="col">
+                                            <div class="col-md col-xs">
                                                 <br />
                                                 <br />
                                                 <br />
@@ -34,12 +34,12 @@ const AdminProfile = props => {
                                         <br />
 
                                         <div class="row">
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-5">
+                                            <div class="col-md-2 col-xs-2"></div>
+                                            <div class="col-md-5 col-xs-5">
                                                 <h5 class="card-text mt-2">Ver todos los clientes</h5>
                                                 <Link to='/admin/client' class="btn btn-primary ml-5">Clientes</Link>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-4 col-xs-4">
                                                 <h5 class="card-text mt-2">Ver todos los Profesionales </h5>
                                                 <Link to='/admin/profesional' class="btn btn-warning ml-5">Profesionales</Link>
                                             </div>

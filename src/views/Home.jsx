@@ -1,13 +1,12 @@
 import React from 'react';
 import nutritionImage from '../images/nutrition.jpg';
 import fitnessImage from '../images/fitness.jpg';
-import jumbotronImage from '../images/jumbotron.jpg';
 import person1Image from '../images/person1.jpg';
 import person2Image from '../images/person2.jpg';
 import person3Image from '../images/person3.jpg';
 import { Link } from 'react-router-dom';
 
-
+/* RESPOSIVE */
 
 const Home = props => {
 
@@ -48,31 +47,16 @@ const Home = props => {
                         <span className="sr-only">Next</span>
                     </a>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {/* Jumbotron */}
                 <div className="row">
-                    <div className="col">
-
-
+                    <div className="col-md col-xs">
                     </div>
                 </div>
+
                 <h1 className="font m-5">Dos ingredientes esenciales...</h1>
                 <div className="row">
                     {/* Cards */}
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-xs-6">
                         <div className="card bg-transparent homeCard ml-5">
                             <img className="card-img-top card-img homeImg" src={nutritionImage} alt="Card image cap" />
                             <div className="card-body">
@@ -83,7 +67,7 @@ const Home = props => {
 
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-xs-6">
                         <div className="card bg-transparent homeCard">
                             <img className="card-img-top card-img bg-transparent homeImg" src={fitnessImage} alt="Card image cap" />
                             <div className="card-body">
@@ -122,7 +106,6 @@ const Home = props => {
                     </div>
                 </div>
             </div>
-
 
         </>
 

@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Context } from '../store/appContext';
 import { useParams, Link } from 'react-router-dom';
 import uid from 'uid'
+/* RESPONSIVE */
 
 const ProfessionalClientPlans = props => {
     const [client, setClient] = useState();
     const { store, actions } = useContext(Context);
     const { id } = useParams();
-    
-    
+
 
     useEffect(() => {
         fetch(store.path + "/admin/client/" + id, {
@@ -29,7 +29,7 @@ const ProfessionalClientPlans = props => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-12">
+                <div className="col-md-12 col-xs-12">
                     {
                         !!client ? (
                             <>
@@ -38,10 +38,10 @@ const ProfessionalClientPlans = props => {
                                 {/* Boton para descargar plantilla */}
                                 <p className='d-inline-flex float-right'> Descargar plantilla de  {store.currentUser.user.role.id == 2 ? 'nutricion ' : 'entrenamiento '} &nbsp;
                                                     <button type="button">{store.currentUser.user.role.id == 3 ?
-                                                    <a href={store.path+'/download/default_profile.png'} target='_blank'><i class="fas fa-file-download"></i></a>
-                                                :
-                                                <a href={store.path+'/download/smolov.pdf'} target='_blank'><i class="fas fa-file-download"></i></a>}
-                                        </button></p>
+                                        <a href={store.path + '/download/default_profile.png'} target='_blank'><i class="fas fa-file-download"></i></a>
+                                        :
+                                        <a href={store.path + '/download/smolov.pdf'} target='_blank'><i class="fas fa-file-download"></i></a>}
+                                    </button></p>
                                 {
                                     client.all_plans.map((plan) => {
                                         const id_num = uid(11)

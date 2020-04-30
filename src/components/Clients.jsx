@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom';
-/* RESPONSIVE LISTO*/
+/* RESPONSIVE */
 
 const Clients = props => {
     const { store, actions } = useContext(Context);

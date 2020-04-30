@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
 import { Link } from 'react-router-dom'
 
-/* RESPOSIVE LISTO*/
+/* RESPOSIVE */
 
 const ClientDetail = props => {
     console.log(props.location.pathname)
@@ -25,13 +25,13 @@ const ClientDetail = props => {
 
                             {
                                 !!store.clients &&
-                                <div class="col-md-12">
+                                <div class="col-md-12 col-xs-12">
                                     <h1 class="text-center">Información detallada del cliente</h1>
                                     <br />
                                     <div class="card-deck">
-                                        <div class="card col-md-11 ml-5">
+                                        <div class="card col-md-11 col-xs-11 ml-5">
                                             <div class="card-deck">
-                                                <div class="col-md-8 mt-3 mb-3 ml-3">
+                                                <div class="col-md-8 col-xs-8 mt-3 mb-3 ml-3">
                                                     <h5>Nombre: {store.clients[0].name}</h5>
                                                     <h5>Apellido: {store.clients[0].last_name}</h5>
                                                     <h5>ID cliente: {store.clients[0].id}</h5>
@@ -40,7 +40,7 @@ const ClientDetail = props => {
                                                     <h5>Inscripción: {store.clients[0].date_created}</h5>
                                                     <h5>Usuario: {store.clients[0].email}</h5>
                                                 </div>
-                                                <div class="col-md-3 mt-4 mr-2">
+                                                <div class="col-md-3 col-xs-3 mt-4 mr-2">
                                                     <img src="https://picsum.photos/200/300" class="img-top rounded-circle" alt="avatar" width="200" height="200" />
                                                 </div>
                                             </div>
