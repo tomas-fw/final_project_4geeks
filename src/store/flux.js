@@ -46,7 +46,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             trainer_email: null,
             nutritionist_email: null,
             comment: null,
-            plan: null
+            plan: null,
+            diet: null,
+            workout:null
 
 
 
@@ -524,10 +526,40 @@ const getState = ({ getStore, getActions, setStore }) => {
                         } else {
                             setStore({
                                 error: null,
+                                diet: null,
+                                workout:null
+                            })
+                        }
+                    })
+            },
+            uploadFile:(e,role_id,plan_id)=>{
+                // e.preventDefault()
+                const store = getStore();
+                let formData = new FormData()
+                formData.append('diet', store.diet)
+                formData.append('workout', store.workout)
+                formData.append('oldfilename', String(store.currentUser.user.dieta))
+                formData.append('oldfilename', String(store.currentUser.user.entrenamiento))
+
+
+                fetch(store.path + '/profesional/' + role_id + '/' + plan_id, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.msg) {
+                            setStore({
+                                error: data
+                            })
+                        } else {
+                            setStore({
+                                error: null,
                                 avatar: null
                             })
                         }
                     })
+
             }
         }
     }

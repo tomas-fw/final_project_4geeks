@@ -31,7 +31,7 @@ const ProfesionalClienteEjercicio = props => {
         }
     }
     const plan = filteredPlanById();
-    const file = !!plan && `${store.path}/static/workouts/${plan.detail.dieta}`;
+    const file = !!plan && `${store.path}/static/workouts/${plan.detail.entrenamiento}`;
     return (
         <div className="container-fluid">
             <div className="row">
@@ -42,7 +42,7 @@ const ProfesionalClienteEjercicio = props => {
                                  <button className="btn btn-outline-info m-2 mb-3 float-left" onClick={() => history.goBack()}>Volver</button>
                                 <h2 className="text-center my-3">Pauta de entrenamiento</h2>
                                 {
-                                    !!plan.detail.workouts ?
+                                    !!plan.detail.entrenamiento ?
                                         <PdfViewer file={file} />
                                         :
                                         <div class="alert alert-warning" role="alert">
