@@ -100,7 +100,7 @@ const ProfessionalProfile = props => {
                         </div>
 
                         {/* // <!-- Modal Foto Perfil --> */}
-                        <div className="modal fade" id="edit-profile-avatar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal fade" id="edit-profile-avatar" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -129,7 +129,7 @@ const ProfessionalProfile = props => {
 
 
                         {/* // <!-- Modal Edit Perfil --> */}
-                        <div className="modal fade" id="edit-profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal fade" id="edit-profile" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">

@@ -101,7 +101,7 @@ const Profile = props => {
                             </div>
                         </div>
                         {/* // <!-- Modal Foto Perfil --> */}
-                        <div className="modal fade" id="edit-profile-avatar-client" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal fade" id="edit-profile-avatar-client" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
