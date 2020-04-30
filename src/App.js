@@ -46,37 +46,37 @@ const App = props => {
       <Router>
       <NavBar />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/team' component={OurTeam} />
-          <Route exact path='/personal-trainers/:role_id/:id' component={ProfessionalDetails}/>
-          <Route exact path='/nutritionists/:role_id/:id' component={ProfessionalDetails}/>
-          <Route exact path='/nutritionists' component={Nutritionists}/>
+          <Route exact path='/' component={Home} /*RESPONSIVE*/ /> 
+          <Route exact path='/team' component={OurTeam} /* RESPONSIVE*/ />
+          <Route exact path='/personal-trainers/:role_id/:id' component={ProfessionalDetails} /* RESPONSIVE*/ />
+          <Route exact path='/nutritionists/:role_id/:id' component={ProfessionalDetails} /* RESPONSIVE*/ />
+          <Route exact path='/nutritionists' component={Nutritionists}  />
           <Route exact path='/personal-trainers' component={PersonalTrainers}/>
-          <Route exact path='/nutritional-education' component={NutritionalEducation} />
-          <Route exact path='/fitness-education' component={FitnessEducation} />
-          <Route exact path='/about' component={About} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/register' component={Register} />
-          <Route exact path='/register/profesional/2' component={FormRegNutri} />
-          <Route exact path='/register/profesional/3' component={FormRegTrainer} />
-          <Route exact path='/profile/client/health-team' component={HealthTeam} />
+          <Route exact path='/nutritional-education' component={NutritionalEducation} /* RESPONSIVE*/ />
+          <Route exact path='/fitness-education' component={FitnessEducation} /* RESPONSIVE*/ />
+          <Route exact path='/about' component={About} /* RESPONSIVE*/ />
+          <Route exact path='/login' component={Login} /* RESPONSIVE*/  />
+          <Route exact path='/register' component={Register}  />
+          <Route exact path='/register/profesional/2' component={FormRegNutri}  />
+          <Route exact path='/register/profesional/3' component={FormRegTrainer}  />
+          <Route exact path='/profile/client/health-team' component={HealthTeam} /* RESPONSIVE */ />
           <Route exact path='/profile/client/nuevo-plan' component={FormIngresoCliente} /*Crear plan, opcion por Javiera*//>
-          <Route exact path='/profile/client/crear-plan' component={CreatePlan}/*Crear plan, opcion por Tomas*/ />
-          <Route exact path='/profile/client/plans' component={ClientPlans} /> 
-          <Route exact path='/profile/client/health-plans' component={HealthPlans} />
-          <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} />
-          <Route exact path='/profile/professional/clients/:id/ficha/:plan_id' component={ProfesionalClienteFicha} />
-          <Route exact path='/profile/professional/clients/:id/plans/:plan_id/diet' component={ProfesionalClienteDieta} />
-          <Route exact path='/profile/professional/clients/:id/plans/:plan_id/training' component={ProfesionalClienteEjercicio} />
-          <Route exact path='/profile/professional/clients' component={Clients} />
-          <Route exact path='/profile/professional' component={ProfessionalProfile} />
-          <Route exact path='/profile' component={Profile} />
-          <Route exact path='/admin/login' component={AdminLogin} />
-          <Route exact path='/admin/profile' component={AdminProfile} />
-          <Route exact path='/admin/client' component={AdminClients} />
-          <Route exact path='/admin/client/:id' component={ClientDetail} />
-          <Route exact path='/admin/profesional' component={AdminProfesionals} />
-          <Route exact path='/admin/profesional/:role_id/:id' component={AdminProfesionalDetail} />
+          <Route exact path='/profile/client/crear-plan' component={CreatePlan} /* RESPONSIVE */ /*Crear plan, opcion por Tomas*/ />
+          <Route exact path='/profile/client/plans' component={ClientPlans} /* RESPONSIVE */ /> 
+          <Route exact path='/profile/client/health-plans' component={HealthPlans} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional/clients/:id/ficha/:plan_id' component={ProfesionalClienteFicha} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional/clients/:id/plans/:plan_id/diet' component={ProfesionalClienteDieta} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional/clients/:id/plans/:plan_id/training' component={ProfesionalClienteEjercicio} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional/clients' component={Clients} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional' component={ProfessionalProfile} /* RESPONSIVE */ />
+          <Route exact path='/profile' component={Profile} /* RESPONSIVE*/ />
+          <Route exact path='/admin/login' component={AdminLogin} /* RESPONSIVE*/ />
+          <Route exact path='/admin/profile' component={AdminProfile} /* RESPONSIVE*/ />
+          <Route exact path='/admin/client' component={AdminClients} /* RESPONSIVE*/ />
+          <Route exact path='/admin/client/:id' component={ClientDetail} /* RESPONSIVE*/ />
+          <Route exact path='/admin/profesional' component={AdminProfesionals} /* RESPONSIVE  */ />
+          <Route exact path='/admin/profesional/:role_id/:id' component={AdminProfesionalDetail} /* RESPONSIVE */ />
           <Route exact path='/client/plan/confirmation' component={AvisoEnvioFormClient} />
           <Route exact path='/profile/professional/clients/contact/nutritionist/:id/:plan_id' component={ChatNutritionist} />
           <Route exact path='/profile/professional/clients/contact/trainer/:id/:plan_id' component={ChatTrainer} />

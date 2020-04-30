@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../store/appContext';
 import { Link, useHistory } from 'react-router-dom';
-/* RESPONSIVE LISTO*/
+/* RESPONSIVE */
 
 const HealthTeam = props => {
     const { store, actions } = useContext(Context);

@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, Link, useHistory } from "react-router-dom";
 import PdfViewer from "./PdfViewer";
+/* RESPONSIVE */
 
 const ProfesionalClienteDieta = props => {
     const [client, setClient] = useState();
@@ -36,7 +37,7 @@ const ProfesionalClienteDieta = props => {
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="col-12">
+                <div className="col-md-12 col-xs-12">
                     {
                         !!client ? (
                             <>

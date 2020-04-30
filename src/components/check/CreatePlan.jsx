@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../../store/appContext'
 import { Link } from 'react-router-dom'
-
+/*  RESPONSIVE */
 
 const CreatePlan = props => {
     const { store, actions } = useContext(Context)
@@ -11,7 +11,7 @@ const CreatePlan = props => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8 offset-md-2">
+                    <div className="col-md-8 col-xs-8 offset-md-2">
 
                         {
                             !!store.trainer_email && !!store.nutritionist_email ?
@@ -347,7 +347,7 @@ const CreatePlan = props => {
                                         <fieldset className="form-group" /*talla*/>
                                             <legend className="col-form pt-0">Cuál es su altura actual?</legend>
                                             <div className="row justify-center">
-                                                <div className="col-sm-7">
+                                                <div className="col-md-7 col-xs-7">
                                                     <input required name='altura' type="text" className="form-control" id="talla" placeholder="Indique su altura en centimetros" onChange={actions.handleChange} />
                                                 </div>
                                             </div>

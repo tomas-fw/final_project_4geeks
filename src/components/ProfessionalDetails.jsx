@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../store/appContext';
 import { useParams, Link } from 'react-router-dom';
+/* RESPONSIVE*/
 
 const ProfessionalDetails = props => {
     const { store, actions } = useContext(Context);
@@ -14,16 +15,16 @@ const ProfessionalDetails = props => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-md-12 col-xs-12">
                         {
                             !!store.profesionals && !!store.profesionals[0] ?
 
                                 <div className="card mt-3 mb-3">
                                     <div className="row no-gutters">
-                                        <div className="col-md-4">
+                                        <div className="col-md-4 col-xs-4">
                                             <img src="https://via.placeholder.com/150" className="card-img team-cards px-3 py-3" alt="..." />
                                         </div>
-                                        <div className="col-md-8">
+                                        <div className="col-md-8 col-xs-8">
                                             <div className="card-body">
                                                 <h3 className="card-title">{store.profesionals[0].name + " " + store.profesionals[0].lastname + ", " + store.profesionals[0].age}</h3>
                                                 <h5 className="card-text">Especialidad:</h5>
@@ -60,7 +61,7 @@ const ProfessionalDetails = props => {
                                 </div>
                         }
                         {
-                            !!store.trainer_email && !!store.nutritionist_email && <small>Haz añadido un nutritionista y un entrenador a tu proximo plan, continuar, haz click <Link to='/profile/client/crear-plan'>Aqui </Link></small>  
+                            !!store.trainer_email && !!store.nutritionist_email && <small>Haz añadido un nutritionista y un entrenador a tu proximo plan, continuar, haz click <Link to='/profile/client/crear-plan'>Aqui </Link></small>
                         }
 
                     </div>

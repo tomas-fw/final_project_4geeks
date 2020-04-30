@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
 import { Link } from 'react-router-dom'
-
+/* RESPONSIVE */
 
 const ProfesionalDetail = props => {
     const { store, actions } = useContext(Context)
@@ -24,14 +24,14 @@ const ProfesionalDetail = props => {
                             {
                                 !!store.profesionals && store.profesionals.length > 0 ?
                                     <>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 col-xs-12">
                                             <h1 class="text-center">Información detallada del Profesional</h1>
                                             <br />
 
                                             <div class="card-deck">
-                                                <div class="card col-md-11 ml-5">
+                                                <div class="card col-md-11 col-xs-11 ml-5">
                                                     <div class="card-deck">
-                                                        <div class="col-md-8 mt-3 mb-3 ml-3">
+                                                        <div class="col-md-8 col-xs-8 mt-3 mb-3 ml-3">
                                                             <h5>Nombre: {store.profesionals[0].name}</h5>
                                                             <h5>Apellido: {store.profesionals[0].lastname}</h5>
                                                             <h5>Descripción: {store.profesionals[0].description ? " " : "Sin información"}</h5>
@@ -44,7 +44,7 @@ const ProfesionalDetail = props => {
                                                             <h5>Título: <Link> {store.profesionals[0].profesional_title} </Link></h5>
                                                             <h5>Antecedentes: <Link> {store.profesionals[0].background} </Link></h5>
                                                         </div>
-                                                        <div class="col-md-3 mt-4 mr-2">
+                                                        <div class="col-md-3 col-xs-3 mt-4 mr-2">
                                                             <img src="https://picsum.photos/200/300" class="img-top rounded-circle" alt="avatar" width="200" height="200" />
                                                         </div>
                                                     </div>

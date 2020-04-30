@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom'
-/* Responsive LISTO */
+/* RESPONSIVE  */
 const AdminProfesionals = props => {
     const { store, actions } = useContext(Context)
     useEffect(() => {
@@ -18,7 +18,7 @@ const AdminProfesionals = props => {
                 <br />
                 <br />
                 <div className="row">
-                    <div className="col-md-5 ml-5">
+                    <div className="col-md-5 col-xs-5 ml-5">
                         <h1 class="text-center">Personal Trainer</h1>
                         {
                             !!store.profesionals && !!store.profesionals.trainers && store.profesionals.trainers.length > 0 ?
@@ -45,9 +45,9 @@ const AdminProfesionals = props => {
                             </div>
                         }
                     </div>
-                    <div className="col-md-1 ml-1"></div>
+                    <div className="col-md-1 col-xs-1 ml-1"></div>
 
-                    <div className="col-md-5 ">
+                    <div className="col-md-5 col-xs-5">
                         <h1 class="text-center">Nutritionists</h1>
                         {
                             !!store.profesionals && !!store.profesionals.nutritionists && store.profesionals.nutritionists.length > 0 ?

@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom';
 
-/* Responsive LISTO */
+/* RESPONSIVE */
 
 const AdminClients = props => {
     const { store, actions } = useContext(Context)
@@ -28,7 +28,7 @@ const AdminClients = props => {
                                     store.clients.map((elem, index) => {
 
                                         return (
-                                            <div class="card col-sm-md-3 border-primary" key={index}>
+                                            <div class="card col-sm-md-3 col-xs-3 border-primary" key={index}>
                                                 <div class="card-header border-primary">{elem.name + ' ' + elem.last_name}</div>
                                                 <div class="card-body">
                                                     <p class="card-text ml-3">ID : {elem.id}</p>

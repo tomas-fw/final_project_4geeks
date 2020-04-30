@@ -1,7 +1,7 @@
 import React from 'react'
 import fitnesseducationtImage from '../images/fitnesseducation.jpg';
 import { useHistory } from 'react-router-dom';
-
+/* RESPONSIVE*/
 const FitnessEducation = props => {
     const history = useHistory();
 
@@ -10,10 +10,10 @@ const FitnessEducation = props => {
              <div className="container">
                 <div className="card my-3 bg-transparent homeCard">
                     <div className="row no-gutters">
-                        <div className="col-md-4">
+                        <div className="col-md-4 col-xs-4">
                             <img src={fitnesseducationtImage} className="card-img" width="250px" height="400px" />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 col-xs-8">
                             <div className="card-body">
                                 <h3 className="card-title font">Deberia obtener una rutina personalizada?</h3>
                                 <p className="font2">Muchas veces cuando asistimos al gimnasio realizamos el ejercicio que más nos conviene en ese momento o el que nos apetece, sin reparar en cuando lo hicimos por última vez, ni en si debe ser ese el ejercicio adecuado para ese día. Ante todo el deporte es orden y parte de este orden pasa por controlar lo que hacemos y los días de la semana en los que lo realizamos, ya que de esta manera nuestros músculos rendirán más y mejor.</p>

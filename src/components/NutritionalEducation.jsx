@@ -1,7 +1,7 @@
 import React from 'react'
 import nutritioneducation from '../images/nutritioneducation.jpg';
 import { useHistory } from 'react-router-dom';
-
+/*RESPONSIVE*/
 const NutritionalEducation = props => {
     const history = useHistory();
 
@@ -10,10 +10,10 @@ const NutritionalEducation = props => {
             <div className="container">
                 <div className="card my-3 bg-transparent homeCard">
                     <div className="row no-gutters">
-                        <div className="col-md-4">
+                        <div className="col-md-4 col-xs-4">
                             <img src={nutritioneducation} className="card-img" width="250px" height="400px" />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 col-xs-8">
                             <div className="card-body">
                                 <h3 className="card-title font">Deberia obtener una dieta personalizada?</h3>
                                 <p className="font2">Lo que comemos todos los días afecta a nuestra salud más de lo que pudiéramos pensar. Afecta a cómo nos sentimos hoy, mañana y en el futuro más lejano. Una buena dieta con los valores nutricionales correctos es uno de los elementos más importantes para llevar un estilo de vida saludable.</p>

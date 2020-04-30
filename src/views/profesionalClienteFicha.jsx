@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, Link, useHistory } from "react-router-dom";
-
+/* RESPONSIVE */
 const ProfesionalClienteFicha = props => {
     const [client, setClient] = useState();
     const { store } = useContext(Context);
@@ -37,7 +37,7 @@ const ProfesionalClienteFicha = props => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-md-12 col-xs-12">
                         {
                             !!client ? (
                                 <>

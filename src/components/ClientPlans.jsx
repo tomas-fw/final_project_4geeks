@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import PlansCard from "./PlansCard";
 import { Link } from "react-router-dom";
-
+/* RESPONSIVE */
 
 const ClientPlans = props => {
     const { store, actions } = useContext(Context)
@@ -11,7 +11,7 @@ const ClientPlans = props => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
+                    <div className="col-md-12 col-xs-12">
                         <h1 classname="text" className="mt-3 text-center font2" >Planes anteriores</h1>
                         <Link to='/profile/' type="button" className="btn btn-outline-info ml-5 font2">Volver a mi perfil</Link>
                         <br />
