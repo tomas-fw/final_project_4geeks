@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             isAuthenticated: false,
             email: null,
             password: null,
+            confirmedPassword: null,
             name: null,
             lastname: null,
             error: null,
@@ -253,6 +254,19 @@ const getState = ({ getStore, getActions, setStore }) => {
             register_client: (e, history) => {
                 e.preventDefault();
                 const store = getStore();
+                if(store.password !== store.confirmedPassword){
+                    setStore({
+                        error: "Contraseñas no son iguales"
+                    })
+                    return;
+                }
+                if(!store.avatar || !store.name || !store.lastname || !store.email || !store.gender ){
+                    setStore({
+                        error: "Debe completar todos los campos"
+                    })
+                    return;
+                }
+
                 let formData = new FormData()
                 formData.append('email', store.email)
                 formData.append('password', store.password)
@@ -290,6 +304,19 @@ const getState = ({ getStore, getActions, setStore }) => {
             register_profesional: (e, role_id, history) => {
                 e.preventDefault();
                 const store = getStore();
+                if(store.password !== store.confirmedPassword){
+                    setStore({
+                        error: "Contraseñas no son iguales"
+                    })
+                    return;
+                }
+                if(!store.avatar || !store.name || !store.lastname || !store.email
+                    || !store.specialties || !store.description || !store.age ){
+                    setStore({
+                        error: "Debe completar todos los campos"
+                    })
+                    return;
+                }
                 let formData = new FormData()
                 formData.append('email', store.email)
                 formData.append('password', store.password)
