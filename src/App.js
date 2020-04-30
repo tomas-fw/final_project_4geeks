@@ -1,12 +1,12 @@
 
 import React from 'react'
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/navBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'
 import Home from './views/Home.jsx'
 import NutritionalEducation from './components/NutritionalEducation.jsx'
-import FitnessEducation from './components/FitnessEducation.jsx'
+import FitnessEducation from './components/fitnesseducation.jsx'
 import Clients from './components/Clients.jsx'
 import injectContext from './store/appContext.js'
 import AdminClients from './views/AdminClients.jsx'
@@ -17,20 +17,20 @@ import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 import AdminLogin from './views/AdminLogin.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
-import Login from './views/Login.jsx'
+import Login from './views/login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
-import ProfessionalProfile from './views/ProfessionalProfile.jsx'
-import Register from './views/Register.jsx'
+import ProfessionalProfile from './views/professionalprofile.jsx'
+import Register from './views/register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile from './views/Profile.jsx'
+import Profile from './views/profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-import FormIngresoCliente from './components/FormIngresoCliente.jsx'
+import FormIngresoCliente from './components/formingresocliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
-import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
+import ProfesionalClienteFicha from './views/profesionalClienteFicha.jsx'
 import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
 import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
 import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
@@ -65,7 +65,7 @@ const App = props => {
           <Route exact path='/profile/client/plans' component={ClientPlans} /> 
           <Route exact path='/profile/client/health-plans' component={HealthPlans} />
           <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} />
-          <Route exact path='/profile/professional/clients/:id/ficha' component={ProfesionalClienteFicha} />
+          <Route exact path='/profile/professional/clients/:id/ficha/:plan_id' component={ProfesionalClienteFicha} />
           <Route exact path='/profile/professional/clients/:id/plans/:plan_id/diet' component={ProfesionalClienteDieta} />
           <Route exact path='/profile/professional/clients/:id/plans/:plan_id/training' component={ProfesionalClienteEjercicio} />
           <Route exact path='/profile/professional/clients' component={Clients} />
