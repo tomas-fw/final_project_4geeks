@@ -9,6 +9,12 @@ const FormRegTrainer = props => {
                 <br />
                 <h1 classname="text-justify-center" >Formulario de registro para entrenador</h1>
                 <br />
+                {
+                    !!store.error &&
+                    <div className="alert alert-danger mt-2" role="alert">
+                        {store.error}
+                    </div>
+                }
                 <form id="loginForm" onSubmit={(e)=>actions.register_profesional(e,3,props.history)}>
                     <div classname="form-group row" >
                         <label for="input">Nombre</label>
@@ -41,6 +47,13 @@ const FormRegTrainer = props => {
                         <input required type="password" className="form-control" id="passordprof" aria-describedby="passordprof" 
                         onChange={actions.handleChange}
                         name="password"/>
+                        <br />
+                    </div>
+                    <div classname="form-group row" >
+                        <label for="input" >Confirme su contraseña</label>
+                        <input required type="password" className="form-control" id="passordprof" aria-describedby="passordprof" 
+                        onChange={actions.handleChange}
+                        name="confirmedPassword"/>
                         <br />
                     </div>
 

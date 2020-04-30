@@ -74,11 +74,11 @@ const NavBar = props => {
                             &&
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" to="/profile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    My perfil profesional
+                                    Mi perfil profesional
                                 </Link>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <Link className="dropdown-item" to="/profile/professional">Mi perfil</Link>
-                                    <Link className="dropdown-item" to="/profile/professional/clients">Mis cliente</Link>
+                                    <Link className="dropdown-item" to="/profile/professional/clients">Mis clientes</Link>
                                     <div className="dropdown-divider"></div>
                                     <Link className="dropdown-item" onClick={() => actions.logout(props.history)}>Logout</Link>
                                 </div>
