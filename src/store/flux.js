@@ -587,7 +587,62 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
 
-            }
+            },
+            getConfirmation: () => {
+                const store = getStore()
+                const data = {
+                    email: store.email
+                }
+                fetch(store.path + '/reset_password/', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                        if (data.success) {
+                            setStore({
+                                email_confirm_success: data.success
+                            })
+                        } else {
+                            alert(data.msg)
+                            setStore({
+                                email_confirm_msg: data.msg,
+                            })
+                        }
+                    })
+            },
+            getPasswordChange: (token, history) => {
+                const store = getStore()
+                const data = {
+                    password: store.password
+                }
+                if(store.password !== store.confirmedPassword){
+                   
+                        alert("Contraseñas no son iguales")
+                    
+                    return;
+                }
+                fetch(store.path + '/reset_password/' + token, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert("Tu contraseña ha sido cambiada exitosamente")
+                        history.push("/login")
+                        setStore({
+                            email: null,
+                            password:null,
+                            confirmedPassword:null
+                        })
+                    })
+                },
         }
     }
 }

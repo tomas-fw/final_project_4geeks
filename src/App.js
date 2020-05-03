@@ -6,7 +6,7 @@ import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'
 import Home from './views/Home.jsx'
 import NutritionalEducation from './components/NutritionalEducation.jsx'
-import FitnessEducation from './components/fitnesseducation.jsx'
+import FitnessEducation from './components/FitnessEducation.jsx'
 import Clients from './components/Clients.jsx'
 import injectContext from './store/appContext.js'
 import AdminClients from './views/AdminClients.jsx'
@@ -17,25 +17,27 @@ import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
 import AdminLogin from './views/AdminLogin.jsx'
 import HealthPlans from './components/HealthPlans.jsx'
-import Login from './views/login.jsx'
+import Login from './views/Login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
-import ProfessionalProfile from './views/professionalprofile.jsx'
-import Register from './views/register.jsx'
+import ProfessionalProfile from './views/ProfessionalProfile.jsx'
+import Register from './views/Register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
 import AdminProfile from './views/AdminProfile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile from './views/profile.jsx'
+import Profile from './views/Profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-import FormIngresoCliente from './components/formingresocliente.jsx'
+import FormIngresoCliente from './components/FormIngresoCliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
-import ProfesionalClienteFicha from './views/profesionalClienteFicha.jsx'
+import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
 import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
 import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
 import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
 import ChatTrainer from './components/ChatTrainer.jsx'
 import ChatNutritionist from './components/ChatNutritionist.jsx'
+import Confirmation from './components/Confirmation.jsx'
+import PasswordRequest from './components/PasswordRequest.jsx'
 
 
 
@@ -80,6 +82,8 @@ const App = props => {
           <Route exact path='/client/plan/confirmation' component={AvisoEnvioFormClient} />
           <Route exact path='/profile/professional/clients/contact/nutritionist/:id/:plan_id' component={ChatNutritionist} />
           <Route exact path='/profile/professional/clients/contact/trainer/:id/:plan_id' component={ChatTrainer} />
+          <Route exact path="/confirmation/:token" component={Confirmation} />
+          <Route exact path="/request_password/" component={PasswordRequest} />
         </Switch>
       </Router>
     </>

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from '../store/appContext'
+import { Link } from 'react-router-dom'
+
 /* RESPONSIVE*/ 
 
 const Login = props => {
@@ -59,6 +61,8 @@ const Login = props => {
 
                             <button type="submit" className="btn btn-info btn-block my-3">Login</button>
                         </form>
+                        <Link to='/request_password'><small>Olvidaste tu contraseña?</small></Link>
+
 
                     </div>
                 </div>
