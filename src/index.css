@@ -35,6 +35,8 @@
 }
 body {
     background-color: aliceblue;
+    font-family: 'Lora', serif; 
+
 }
 .homeImg {
     width: 500px;
