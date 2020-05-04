@@ -8,7 +8,7 @@ const AdminProfile = props => {
         <>
             <div >
                 {
-                    !!store.currentUser ?
+                    !!store.currentUser && store.currentUser.user.role.id === 1 ?
                         <>
                             <div class="container mt-4" id="adminprofile" >
                                 <div className="row" >

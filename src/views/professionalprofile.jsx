@@ -9,7 +9,7 @@ const ProfessionalProfile = props => {
     return (
         <>
             {
-                !!store.currentUser ?
+                !!store.currentUser && (store.currentUser.user.role.id == 3 || store.currentUser.user.role.id == 2) ?
                     <>
                         <div className="container mt-3">
                             <div className="row">

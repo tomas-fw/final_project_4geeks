@@ -58,7 +58,7 @@ const Home = props => {
                     {/* Cards */}
                     <div className="col-md-6 col-xs-6">
                         <div className="card bg-transparent homeCard ml-5">
-                            <img className="card-img-top card-img homeImg" src={nutritionImage} alt="Card image cap" />
+                            <img className="card-img-top card-img homeImg" src={nutritionImage} alt="Card image cap nutritionist" />
                             <div className="card-body">
                                 <h2 className="card-title font">Nutrición</h2>
                                 <p className="card-text font2">Una vida saludable comieza en la cocina</p>
@@ -69,7 +69,7 @@ const Home = props => {
                     </div>
                     <div className="col-md-6 col-xs-6">
                         <div className="card bg-transparent homeCard">
-                            <img className="card-img-top card-img bg-transparent homeImg" src={fitnessImage} alt="Card image cap" />
+                            <img className="card-img-top card-img bg-transparent homeImg" src={fitnessImage} alt="Card image cap trainer" />
                             <div className="card-body">
                                 <h2 className="card-title font">Entrenamiento fisico</h2>
                                 <p className="card-text font2">Nuestro cuerpo está diseñado para estar en movimiento</p>

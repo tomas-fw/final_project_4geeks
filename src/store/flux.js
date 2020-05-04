@@ -588,7 +588,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
 
             },
-            getConfirmation: (role) => {
+            getConfirmation: () => {
                 const store = getStore()
                 const data = {
                     email: store.email

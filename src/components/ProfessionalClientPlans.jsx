@@ -31,16 +31,16 @@ const ProfessionalClientPlans = props => {
             <div className="row">
                 <div className="col-md-12 col-xs-12">
                     {
-                        !!client ? (
+                        !!client && (store.currentUser.user.role.id == 3 || store.currentUser.user.role.id == 2)? (
                             <>
                                 <h3 className="ml-2 mt-3 d-inline-flex">Nombre del cliente: {client.name} {client.last_name}</h3>
 
                                 {/* Boton para descargar plantilla */}
                                 <p className='d-inline-flex float-right'> Descargar plantilla de  {store.currentUser.user.role.id == 2 ? 'nutricion ' : 'entrenamiento '} &nbsp;
                                                     <button type="button">{store.currentUser.user.role.id == 3 ?
-                                        <a href={store.path + '/download/default_profile.png'} target='_blank'><i class="fas fa-file-download"></i></a>
+                                        <a href={store.path + '/download/Pauta_Entrenamiento_fit_good.xlsx'} target='_blank'><i class="fas fa-file-download"></i></a>
                                         :
-                                        <a href={store.path + '/download/smolov.pdf'} target='_blank'><i class="fas fa-file-download"></i></a>}
+                                        <a href={store.path + '/download/Pauta_alimentacion_Fit_Good.docx'} target='_blank'><i class="fas fa-file-download"></i></a>}
                                     </button></p>
                                 {
                                     client.all_plans.map((plan) => {

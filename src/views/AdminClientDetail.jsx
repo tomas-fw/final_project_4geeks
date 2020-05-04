@@ -14,9 +14,9 @@ const ClientDetail = props => {
     return (
         <>
             <div className="cointainer mt-4" id="adminprofile">
-                <Link to='/admin/profile' class="btn btn-danger ml-5 mt-4">Volver a Administrador </Link>
-                <Link to='/admin/client' class="btn btn-primary ml-2 mt-4">Volver a Clientes</Link>
-                <Link to='/admin/profesional' class="btn btn-warning ml-2 mt-4">Volver a Profesionales</Link>
+                <Link to='/admin/profile' className="btn btn-danger ml-5 mt-4">Volver a Administrador </Link>
+                <Link to='/admin/client' className="btn btn-primary ml-2 mt-4">Volver a Clientes</Link>
+                <Link to='/admin/profesional' className="btn btn-warning ml-2 mt-4">Volver a Profesionales</Link>
                 <br />
                 <br />
                 <div className="cointainer" >
@@ -24,14 +24,14 @@ const ClientDetail = props => {
                         <div className="container">
 
                             {
-                                !!store.clients &&
-                                <div class="col-md-12 col-xs-12">
-                                    <h1 class="text-center">Información detallada del cliente</h1>
+                                !!store.clients && store.currentUser.user.role.id === 1 &&
+                                <div className="col-md-12 col-xs-12">
+                                    <h1 className="text-center">Información detallada del cliente</h1>
                                     <br />
-                                    <div class="card-deck">
-                                        <div class="card col-md-11 col-xs-11 ml-5">
-                                            <div class="card-deck">
-                                                <div class="col-md-8 col-xs-8 mt-3 mb-3 ml-3">
+                                    <div className="card-deck">
+                                        <div className="card col-md-11 col-xs-11 ml-5">
+                                            <div className="card-deck">
+                                                <div className="col-md-8 col-xs-8 mt-3 mb-3 ml-3">
                                                     <h5>Nombre: {store.clients[0].name}</h5>
                                                     <h5>Apellido: {store.clients[0].last_name}</h5>
                                                     <h5>ID cliente: {store.clients[0].id}</h5>
@@ -40,19 +40,19 @@ const ClientDetail = props => {
                                                     <h5>Inscripción: {store.clients[0].date_created}</h5>
                                                     <h5>Usuario: {store.clients[0].email}</h5>
                                                 </div>
-                                                <div class="col-md-3 col-xs-3 mt-4 mr-2">
-                                                    <img src="https://picsum.photos/200/300" class="img-top rounded-circle" alt="avatar" width="200" height="200" />
+                                                <div className="col-md-3 col-xs-3 mt-4 mr-2">
+                                                    <img src="https://picsum.photos/200/300" className="img-top rounded-circle" alt="avatar" width="200" height="200" />
                                                 </div>
                                             </div>
 
-                                            <div class="card-header">
+                                            <div className="card-header">
                                                 <form onSubmit={(e) => actions.changeActiveStatus(e, props.location.pathname)}>
-                                                    <div class="form-check-inline" >
-                                                        <input class="form-check-input ml-4" type="radio" name="is_active" id="exampleRadios1" value={!store.clients[0].is_active} onChange={actions.handleChange} />
-                                                        <label class="form-check-label ml-2 mr-5" htmlFor="exampleRadios1">
+                                                    <div className="form-check-inline" >
+                                                        <input className="form-check-input ml-4" type="radio" name="is_active" id="exampleRadios1" value={!store.clients[0].is_active} onChange={actions.handleChange} />
+                                                        <label className="form-check-label ml-2 mr-5" htmlFor="exampleRadios1">
                                                             {!store.clients[0].is_active === true ? "Activate" : "Desactivate"}   </label>
 
-                                                        <button type="submit" class="btn btn-secondary btn-block">Change status</button>
+                                                        <button type="submit" className="btn btn-secondary btn-block">Change status</button>
                                                     </div>
                                                 </form>
                                             </div>
