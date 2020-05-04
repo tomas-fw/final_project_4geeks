@@ -24,14 +24,14 @@ const Clients = props => {
                             !!store.clients ?
                                 filteredClients().map((client, i) => {
                                     return (
-                                        <div key={client.id} className="card border-dark m-3 p-3">
+                                        <div key={client.id} className="card border-info m-3 p-3 bg-transparent">
                                             <div className="row no-gutters">
                                                 <div className="col-md-4 col-xs-4">
                                                     <img src={`${store.path}/static/images/avatar/clients/${client.avatar}`} className="card-img square" alt="..." />
                                                 </div>
                                                 <div className="col-md-8 col-xs-8">
                                                     <div className="card-body">
-                                                        <Link to={`/profile/professional/clients/${client.id}`} className="btn btn-outline-dark float-right">Ver planes de cliente</Link>
+                                                        <Link to={`/profile/professional/clients/${client.id}`} className="btn btn-outline-info float-right">Ver planes de cliente</Link>
                                                         <h5 className="card-title">{client.name + ' ' + client.last_name}</h5>
                                                     </div>
                                                 </div>

@@ -38,7 +38,7 @@ const HealthTeam = props => {
     /* linea 26 llama al ultimo nutri*/
     return (
         <>
-            <div className="container font2">
+            <div className="container my-3">
                 <button onClick={() => history.goBack()} className="btn btn-outline-warning mt-3">Volver</button>
 
                 <h1 className="text-center my-3">Mi equipo de profesionales </h1>

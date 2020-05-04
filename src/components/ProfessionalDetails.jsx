@@ -19,10 +19,10 @@ const ProfessionalDetails = props => {
                         {
                             !!store.profesionals && !!store.profesionals[0] ?
 
-                                <div className="card mt-3 mb-3">
+                                <div className="card mt-3 mb-3 bg-transparent">
                                     <div className="row no-gutters">
                                         <div className="col-md-4 col-xs-4">
-                                            <img src="https://via.placeholder.com/150" className="card-img team-cards px-3 py-3" alt="..." />
+                                            <img src= {`${store.path}/static/images/avatar/${store.profesionals[0].role_id === 2? "nutritionist/" : "trainer/"}${store.profesionals[0].avatar}`} className="card-img team-cards px-3 py-3"/>
                                         </div>
                                         <div className="col-md-8 col-xs-8">
                                             <div className="card-body">
@@ -31,7 +31,6 @@ const ProfessionalDetails = props => {
                                                 <p className="card-text">{store.profesionals[0].specialties}</p>
                                                 <h5 className="card-text">Descripción:</h5>
                                                 <p className="card-text">{store.profesionals[0].description}</p>
-                                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                                 {
                                                     role_id == 2 && store.nutritionist_email !== null && store.nutritionist_email == store.profesionals[0].email ?
                                                         <div class="alert alert-success" role="alert">

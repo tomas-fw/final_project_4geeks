@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { Context } from '../../store/appContext'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 /*  RESPONSIVE */
 
 const CreatePlan = props => {
+    const history = useHistory();
     const { store, actions } = useContext(Context)
 
     return (
@@ -373,6 +374,7 @@ const CreatePlan = props => {
                                 </>
                                 :
                                 <>
+                                 <button onClick={() => history.goBack()} className="btn btn-outline-info mt-3">Volver</button>
                                 <div className="alert alert-warning my-3" role="alert">
                                     Para crear un plan, porfavor elige tu equipo de salud primero
                                 </div>
