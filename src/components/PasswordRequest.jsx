@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
 /* RESPONSIVE */
 const PasswordRequest = props => {
-    const { actions } = useContext(Context)
+    const { store,actions } = useContext(Context)
     // useEffect(() => {
     // }, [actions, token])
     return (
@@ -16,7 +16,27 @@ const PasswordRequest = props => {
                 <div className="col-md-6 col-xs-6"></div>
                 </div>
                 <br/>
-                <button onClick={() => actions.getConfirmation()}>Confirmar</button>
+                <div className="form-check" >
+                                <input className="form-check-input" type="radio" name="role" id="exampleRadios1" value={4} onChange={actions.handleChange} />
+                                <label className="form-check-label" for="exampleRadios1">
+                                    Cliente
+                            </label>
+                            </div>
+                            <div className="form-check">
+                                <input className="form-check-input" type="radio" name="role" id="exampleRadios2" value={3}
+                                    onChange={actions.handleChange} />
+                                <label className="form-check-label" for="exampleRadios2">
+                                    Entrenador
+                            </label>
+                            </div>
+                            <div className="form-check disabled">
+                                <input className="form-check-input" type="radio" name="role" id="exampleRadios3" value={2}
+                                    onChange={actions.handleChange} />
+                                <label className="form-check-label" for="exampleRadios3">
+                                    Nutricionista
+                            </label>
+                            </div>
+                <button onClick={() => actions.getConfirmation()} >Confirmar</button>
             </div>
         </div>
     )

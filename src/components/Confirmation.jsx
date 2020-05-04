@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 /* RESPONSIVE */
 
 const Confirmation = props => {
     const { actions } = useContext(Context)
     let token = props.match.params.token
     const history = useHistory();
+    const {role_id} = useParams()
     // useEffect(() => {
     // }, [actions, token])
     return (
@@ -22,7 +23,7 @@ const Confirmation = props => {
                     <label htmlFor="LoginConsuEmail" className="form-label ">Confirme constraseña</label>
                     <input type="password" name="confirmedPassword" onChange={e => actions.handleChange(e)} className="form-control"></input>
                     <br/>
-                    <button className="float-right" onClick={() => actions.getPasswordChange(token, props.history)}>Enviar</button>
+                    <button className="float-right" onClick={() => actions.getPasswordChange(token, props.history,role_id)}>Enviar</button>
                 </div>
             </div>
         </div>
