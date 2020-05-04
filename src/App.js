@@ -1,6 +1,6 @@
 
 import React from 'react'
-import NavBar from './components/navBar.jsx'
+import NavBar from './components/NavBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'

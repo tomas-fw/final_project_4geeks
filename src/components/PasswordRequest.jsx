@@ -7,9 +7,8 @@ const PasswordRequest = props => {
     // }, [actions, token])
     return (
         <div className="container">
-            <h1 className="mt-2 text-center">Cambia tu contraseña</h1>
-            <hr />
-            <div className="form-group modal-body">
+            <h1 className="my-2 text-center">Cambia tu contraseña</h1>
+            <div className="form-group modal-body offset-md-4">
                 <div className="row">               
                 <div className="col-md-6 col-xs-6"> <label htmlFor="LoginConsuEmail" className="form-label text-muted ml-1">Ingresa tu correo</label>
                  <input type="email" name="email"  onChange={e => actions.handleChange(e)} className="form-control"></input> </div>
@@ -36,7 +35,7 @@ const PasswordRequest = props => {
                                     Nutricionista
                             </label>
                             </div>
-                <button onClick={() => actions.getConfirmation()} >Confirmar</button>
+                <button className="btn btn-outline-info my-3" onClick={() => actions.getConfirmation()} >Confirmar</button>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom';
+import FitGoodImage from '../images/fitgood.jpeg';
 /* RESPONSIVE */
 
 const ProfessionalProfile = props => {
@@ -27,7 +28,7 @@ const ProfessionalProfile = props => {
                                             <h1 className="card-title mt-5">Hola {store.currentUser.user.name} {store.currentUser.user.lastname}!</h1>
                                         </div>
                                         <div className="col-md-2 col-xs-2 " /*imagen extra*/>
-                                            <img src="https://picsum.photos/200/300" className="mt-4" alt="..." width="150" height="150" />
+                                            <img src={FitGoodImage} className="mt-4" width="160" height="100" />
                                         </div>
                                         <div className="col-md-2 col-xs-2 offset-md-10 " /*imagen extra*/>
                                             <button type="button" data-toggle="modal" data-target="#edit-profile">
