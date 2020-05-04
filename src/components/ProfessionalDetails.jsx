@@ -22,7 +22,7 @@ const ProfessionalDetails = props => {
                                 <div className="card mt-3 mb-3 bg-transparent">
                                     <div className="row no-gutters">
                                         <div className="col-md-4 col-xs-4">
-                                            <img src= {`${store.path}/static/images/avatar/${store.profesionals[0].role_id === 2? "nutritionist/" : "trainer/"}${store.profesionals[0].avatar}`} className="card-img team-cards px-3 py-3"/>
+                                            <img src={`${store.path}/static/images/avatar/${store.profesionals[0].role_id === 2 ? "nutritionist/" : "trainer/"}${store.profesionals[0].avatar}`} className="card-img team-cards px-3 py-3" />
                                         </div>
                                         <div className="col-md-8 col-xs-8">
                                             <div className="card-body">
@@ -33,34 +33,44 @@ const ProfessionalDetails = props => {
                                                 <p className="card-text">{store.profesionals[0].description}</p>
                                                 {
                                                     role_id == 2 && store.nutritionist_email !== null && store.nutritionist_email == store.profesionals[0].email ?
-                                                        <div class="alert alert-success" role="alert">
+                                                        <>
+                                                        <div className="alert alert-primary" role="alert">
                                                             {'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
                                                         </div>
+                                                        {
+                                                            !!store.trainer_email && !!store.nutritionist_email ? "" : <Link to="/personal-trainers" className="btn btn-outline-info">Agregar un entrenador</Link>
+                                                        }
+                                                       
+                                                        </>
                                                         :
                                                         role_id == 3 && store.trainer_email !== null && store.trainer_email == store.profesionals[0].email ?
-                                                            <div class="alert alert-success" role="alert">
+                                                            <>
+                                                            <div className="alert alert-primary" role="alert">
                                                                 {'Se ha añadido a ' + store.profesionals[0].name + ' ' + store.profesionals[0].lastname + ' a tu plan'}
                                                             </div>
-                                                            : ''
+                                                            {
+                                                                !!store.trainer_email && !!store.nutritionist_email ? "" :  <Link to="/nutritionists" className="btn btn-outline-info">Agregar un nutricionista</Link>
+                                                            }
+                                                            </>
+                                                            :
+                                                            <div className="form-check-inline" >
+                                                                <input className="form-check-input ml-4" type="radio" name={role_id == 2 ? 'nutritionist_email' : 'trainer_email'} id="exampleRadios1" value={store.profesionals[0].email} onChange={actions.handleChange} />
+                                                                <label className="form-check-label ml-2 mr-5" htmlFor="exampleRadios1">
+                                                                    Añadir a mi plan
+                                                                </label>
+                                                            </div>
                                                 }
-
-                                                <div class="form-check-inline" >
-
-                                                    <input class="form-check-input ml-4" type="radio" name={role_id == 2 ? 'nutritionist_email' : 'trainer_email'} id="exampleRadios1" value={store.profesionals[0].email} onChange={actions.handleChange} />
-                                                    <label class="form-check-label ml-2 mr-5" htmlFor="exampleRadios1">
-                                                        Add to Plan    </label>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 :
-                                <div class="spinner-border text-info" role="status">
-                                    <span class="sr-only">Loading...</span>
+                                <div className="spinner-border text-info" role="status">
+                                    <span className="sr-only">Loading...</span>
                                 </div>
                         }
                         {
-                            !!store.trainer_email && !!store.nutritionist_email && <small>Haz añadido un nutritionista y un entrenador a tu proximo plan, continuar, haz click <Link to='/profile/client/crear-plan'>Aqui </Link></small>
+                            !!store.trainer_email && !!store.nutritionist_email && <small>Has añadido un nutritionista y un entrenador a tu proximo plan, continuar, has click <Link to='/profile/client/crear-plan'> aqui </Link></small>
                         }
 
                     </div>

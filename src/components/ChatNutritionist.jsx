@@ -16,11 +16,12 @@ const ChatNutritionist = props => {
         <>
             <div className="container">
                 <div className="row offset-md-3">
+                    <div className="col-md-12">
+                        <button onClick={() => history.goBack()} className="btn btn-outline-warning mt-3">Volver</button>
+                    </div>
                     {!!store.currentUser && !!store.chat && store.chat.length > 0 ?
                         <>
-                            <div className="col-md-12">
-                            <button onClick={() => history.goBack()} className="btn btn-outline-warning mt-3">Volver</button>
-                            </div>
+
                             <div className="col-md-8 col-xs-8">
                                 <h1 className="my-3">{store.currentUser.user.role.id == 4 ? 'Chat con tu nutricionista' : 'Chat con tu cliente'}</h1>
                                 <h3>{store.currentUser.user.role.id === 4 ? store.chat[0].nutritionist_name + ' ' + store.chat[0].nutritionist_lastname : store.chat[0].client_name + ' ' + store.chat[0].client_lastname}</h3>
@@ -41,7 +42,7 @@ const ChatNutritionist = props => {
                             </div>
                         </>
                         :
-                        <div className="alert alert-warning" role="alert">
+                        <div className="alert alert-warning mt-4" role="alert">
                             No tienes conversaciones en este plan, quieres iniciar una?
             </div>
 
@@ -63,20 +64,20 @@ const ChatNutritionist = props => {
                                 </form>
                             </div>
                             :
-                                <div className="col-md-8 col-xs-8">
-                                    <form onSubmit={(e) => actions.clientSendMessage(e, plan_id, 2, 4,
-                                        store.plan[0].client_email,
-                                        store.plan[0].nutritionist_email
-                                    )}>
-                                        <div className="form-group">
-                                            <label for="exampleInputEmail1">Envia tu mensaje:</label>
-                                            <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Enter email"
-                                                name='comment'
-                                                onChange={actions.handleChange} />
-                                        </div>
-                                        <button type="submit" className="btn btn-outline-success mb-3">Enviar mensaje al cliente</button>
-                                    </form>
-                                </div>
+                            <div className="col-md-8 col-xs-8">
+                                <form onSubmit={(e) => actions.clientSendMessage(e, plan_id, 2, 4,
+                                    store.plan[0].client_email,
+                                    store.plan[0].nutritionist_email
+                                )}>
+                                    <div className="form-group">
+                                        <label for="exampleInputEmail1">Envia tu mensaje:</label>
+                                        <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                                            name='comment'
+                                            onChange={actions.handleChange} />
+                                    </div>
+                                    <button type="submit" className="btn btn-outline-success mb-3">Enviar mensaje al cliente</button>
+                                </form>
+                            </div>
                     }
                 </div>
             </div>

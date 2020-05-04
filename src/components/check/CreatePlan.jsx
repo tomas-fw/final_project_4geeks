@@ -373,23 +373,21 @@ const CreatePlan = props => {
                                                         Acepto los terminos de confidencialidad</label>
                                                 </div>
                                             </div>
-                                            <button type="submit" className="btn btn-primary btn-block">Crear Nuevo Plan</button>
+                                            <button type="submit" className="btn btn-primary btn-block mb-3">Crear Nuevo Plan</button>
 
-                                    </form>
-                                </>
-                                :
-                                <>
-                                 <button onClick={() => history.goBack()} className="btn btn-outline-info mt-3">Volver</button>
-                                <div className="alert alert-warning my-3" role="alert">
-                                    Para crear un plan, porfavor elige tu equipo de salud primero
+                                        </form>
+                                    </>
+                                    :
+                                    <>
+                                        <button onClick={() => history.goBack()} className="btn btn-outline-info mt-3">Volver</button>
+                                        <div className="alert alert-warning my-3" role="alert">
+                                            Para crear un plan, porfavor elige tu equipo de salud primero
                                 </div>
                                         <div>
                                             <Link to="/team" className="btn btn-info mb-3">Ver especialistas</Link>
                                         </div>
                                     </>
                         }
-
-
 
                     </div>
                 </div>

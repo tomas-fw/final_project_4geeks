@@ -16,11 +16,11 @@ const ChatTrainer = props => {
         <>
             <div className="container">
                 <div className="row offset-md-3">
+                    <div className="col-md-12">
+                        <button onClick={() => history.goBack()} className="btn btn-outline-warning mt-3">Volver</button>
+                    </div>
                     {!!store.currentUser && !!store.chat && store.chat.length > 0 ?
                         <>
-                            <div className="col-md-12">
-                                <button onClick={() => history.goBack()} className="btn btn-outline-warning mt-3">Volver</button>
-                            </div>
                             <div className="col-md-8 col-xs-8">
                                 <h1 className="my-3">{store.currentUser.user.role.id == 4 ? 'Chat con tu entrenador' : 'Chat con tu cliente'}</h1>
                                 <h3>{store.currentUser.user.role.id === 4 ? store.chat[0].trainer_name + ' ' + store.chat[0].trainer_lastname : store.chat[0].client_name + ' ' + store.chat[0].client_lastname}</h3>
@@ -40,7 +40,7 @@ const ChatTrainer = props => {
                             </div>
                         </>
                         :
-                        <div className="alert alert-warning" role="alert">
+                        <div className="alert alert-warning mt-4" role="alert">
                             No tienes conversaciones en este plan, quieres iniciar una?
                 </div>
 
@@ -58,7 +58,7 @@ const ChatTrainer = props => {
                                             name='comment'
                                             onChange={actions.handleChange} />
                                     </div>
-                                    <button type="submit" className="btn btn-outline-warning mb-3">Enviar mensaje al Entrenador</button>
+                                    <button type="submit" className="btn btn-outline-warning mb-3">Enviar mensaje al entrenador</button>
                                 </form>
                             </div>
                             :
