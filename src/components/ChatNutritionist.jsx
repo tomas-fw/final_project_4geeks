@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
 import { useParams, Link } from 'react-router-dom'
-/* RESPONSIVE LISTO*/
+/* RESPONSIVE */
 
 const ChatNutritionist = props => {
     const { store, actions } = useContext(Context)
@@ -26,7 +26,7 @@ const ChatNutritionist = props => {
                             {
                                 !!store.chat ? store.chat.map((elem, index) => {
                                     return (
-                                        <div className="card  mt-2">
+                                        <div className="card mt-2">
                                             <div className="card-body">
                                                 <p>{elem.comment}</p>
                                             </div>

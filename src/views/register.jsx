@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Context } from '../store/appContext'
+/* RESPONSIVE*/ 
 
 const Register = props => {
     const { store, actions } = useContext(Context)
@@ -8,7 +9,7 @@ const Register = props => {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4 offset-md-4 font2">
+                    <div className="col-md-4 col-xs-4 offset-md-4 font2">
                         {
                             !!store.error &&
                             <div className="alert alert-danger mt-2" role="alert">

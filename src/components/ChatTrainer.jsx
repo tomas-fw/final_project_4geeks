@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
 import { useParams, Link } from 'react-router-dom'
-/* RESPONSIVE LISTO*/
+/* RESPONSIVE */
 
 const ChatTrainer = props => {
     const { store, actions } = useContext(Context)
