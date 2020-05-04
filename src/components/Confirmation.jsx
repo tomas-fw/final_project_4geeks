@@ -1,20 +1,29 @@
 import React, { useContext, useEffect } from 'react'
 import { Context } from '../store/appContext'
+import { useHistory } from 'react-router-dom'
+/* RESPONSIVE */
+
 const Confirmation = props => {
     const { actions } = useContext(Context)
     let token = props.match.params.token
+    const history = useHistory();
     // useEffect(() => {
     // }, [actions, token])
     return (
         <div className="container">
-            <h1>Crea Nueva Contraseña</h1>
+            <h1 className="mt-2">Crear nueva contraseña</h1>
             <hr />
-            <div className="form-group modal-body">
-                <label htmlFor="LoginConsuEmail" className="form-label text-muted">Ingrese Nueva Contraseña</label>
-                <input type="password" name="password"  onChange={e => actions.handleChange(e)} className="form-control"></input>
-                <label htmlFor="LoginConsuEmail" className="form-label text-muted">Confirmar Constraseña</label>
-                <input type="password" name="confirmedPassword"  onChange={e => actions.handleChange(e)} className="form-control"></input>
-                <button onClick={() => actions.getPasswordChange(token, props.history)}>Confirmar</button>
+            <div className="row">
+                <div className="col-md-3 col-xs-3"></div>
+                <div className="col-md-6 col-xs-6 form-group modal-body">
+                    <label htmlFor="LoginConsuEmail" className="form-label ">Ingrese nueva contraseña</label>
+                    <input type="password" name="password" className="col-md-6 col-xs-6" onChange={e => actions.handleChange(e)} className="form-control"></input>
+                    <br/>
+                    <label htmlFor="LoginConsuEmail" className="form-label ">Confirme constraseña</label>
+                    <input type="password" name="confirmedPassword" onChange={e => actions.handleChange(e)} className="form-control"></input>
+                    <br/>
+                    <button className="float-right" onClick={() => actions.getPasswordChange(token, props.history)}>Enviar</button>
+                </div>
             </div>
         </div>
     )
