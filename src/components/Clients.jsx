@@ -21,7 +21,7 @@ const Clients = props => {
                     <div className="col-md-12 col-xs-12">
                         <h1 className="text-center font2">Mis clientes</h1>
                         {
-                            !!store.clients ?
+                            !!store.clients && (store.currentUser.user.role.id == 3 || store.currentUser.user.role.id == 2) ?
                                 filteredClients().map((client, i) => {
                                     return (
                                         <div key={client.id} className="card border-info m-3 p-3 bg-transparent">

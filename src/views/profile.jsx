@@ -9,7 +9,7 @@ const Profile = props => {
     return (
         <>
             {
-                !!store.currentUser ?
+                !!store.currentUser && store.currentUser.user.role.id == 4 ?
                     <>
                         <div className="container my-3">
                             <div className="row">

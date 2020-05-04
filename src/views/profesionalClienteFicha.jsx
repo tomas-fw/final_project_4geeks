@@ -39,7 +39,7 @@ const ProfesionalClienteFicha = props => {
                 <div className="row">
                     <div className="col-md-12 col-xs-12">
                         {
-                            !!client ? (
+                            !!client && (store.currentUser.user.role.id == 3 || store.currentUser.user.role.id == 2)? (
                                 <>
                                     <button className="btn btn-outline-info m-2 mb-3 float-left" onClick={() => history.goBack()}>Volver</button>
                                     <h3 className="text-center my-3">Ficha de {client.name} {client.last_name}</h3>
