@@ -588,12 +588,15 @@ const getState = ({ getStore, getActions, setStore }) => {
                     })
 
             },
-            getConfirmation: () => {
+            getConfirmation: (role) => {
                 const store = getStore()
                 const data = {
                     email: store.email
                 }
-                fetch(store.path + '/reset_password/', {
+                if(store.role == null){
+                    alert('Tienes que escoger el tipo de cuenta')
+                }
+                fetch(store.path + '/reset_password/'+store.role, {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
@@ -614,7 +617,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            getPasswordChange: (token, history) => {
+            getPasswordChange: (token, history,role_id) => {
                 const store = getStore()
                 const data = {
                     password: store.password
@@ -625,7 +628,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     
                     return;
                 }
-                fetch(store.path + '/reset_password/' + token, {
+                fetch(store.path + '/reset_password/' + role_id +'/'+ token, {
                     method: 'POST',
                     body: JSON.stringify(data),
                     headers: {
