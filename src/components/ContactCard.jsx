@@ -35,13 +35,9 @@ const ContactCard = props => {
 								}
 							</div>
 							<h5 className="card-title">{professional.name} {professional.lastname}</h5>
-							<p className="card-text">{professional.specialties}</p>
-							{
-								!!store.currentUser && store.currentUser.user.role.name === 'client' &&
-								<>
-									<p className="small">{professional.description}</p>
-								</>
-							}
+							<p className="card-text">Especialidad: {professional.specialties}</p>
+							<p className="card-text">Descripcion: {professional.description}</p>
+							
 						</div>
 					</div>
 				</div>
