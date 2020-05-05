@@ -12,7 +12,7 @@ const Confirmation = props => {
     // }, [actions, token])
     return (
         <div className="container">
-            <h1 className="mt-2">Crear nueva contraseña</h1>
+            <h1 className="mt-2 offset-md-3">Crear nueva contraseña</h1>
             <hr />
             <div className="row">
                 <div className="col-md-3 col-xs-3"></div>
