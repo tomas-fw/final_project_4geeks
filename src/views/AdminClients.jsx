@@ -33,7 +33,7 @@ const AdminClients = props => {
                                                     <p className="card-text ml-3">ID : {elem.id}</p>
                                                     <p className="card-text ml-3">Inscripción : {elem.date_created}</p>
                                                     <p className="card-text ml-3">Email : {elem.email}</p>
-                                                    <p className="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p>
+                                                    {/* <p className="card-text ml-3">Status : {elem.is_active ? "Active" : "Inactive"}</p> */}
                                                     <Link to={"/admin/client/" + elem.id} className={"btn btn-info text-white text-center list-group-item-action " + (elem.is_active)}> Más información</Link>
                                                 </div>
                                             </div>
