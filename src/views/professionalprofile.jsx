@@ -80,7 +80,14 @@ const ProfessionalProfile = props => {
                                                                         <h5 className="card-text">El plan que enviaste es: </h5>
                                                                     </div>
                                                                     <div className="col-md-5 col-xs-5 ">
-                                                                        <h5> {store.currentUser.user.planes_id.length > 0 ? elem.all_plans.dieta : ''}</h5>
+                                                                        {
+                                                                            store.currentUser.user.role.id === 2 ?
+                                                                                <h5> {store.currentUser.user.planes_id.length > 0 ? elem.all_plans.dieta : ''}</h5>
+                                                                                :
+                                                                                <h5> {store.currentUser.user.planes_id.length > 0 ? elem.all_plans.entrenamiento : ''}</h5>
+
+                                                                        }
+
                                                                     </div>
                                                                 </div>
                                                                 <br />
@@ -141,20 +148,20 @@ const ProfessionalProfile = props => {
                                         </button>
                                     </div>
                                     <div className="modal-body">
-                                        <form onSubmit={(e)=>actions.editProfesionalProfile(e,store.currentUser.user.role.id, store.currentUser.user.role.id == 2 ? store.currentUser.user.nutritionist_id : store.currentUser.user.trainer_id)}>
+                                        <form onSubmit={(e) => actions.editProfesionalProfile(e, store.currentUser.user.role.id, store.currentUser.user.role.id == 2 ? store.currentUser.user.nutritionist_id : store.currentUser.user.trainer_id)}>
                                             <div className="form-group">
                                                 <label for="exampleInputEmail1">Descripción</label>
                                                 <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Editar descripción"
                                                     name='description'
-                                                    onChange={actions.handleChange} 
-                                                    defaultValue={store.currentUser.user.description}/>
+                                                    onChange={actions.handleChange}
+                                                    defaultValue={store.currentUser.user.description} />
                                             </div>
                                             <div className="form-group">
                                                 <label for="exampleInputEmail1">Especialidades</label>
-                                                <textarea  rows='3' className="form-control" id="exampleInputEmail1" placeholder="Editar especialidades"
+                                                <textarea rows='3' className="form-control" id="exampleInputEmail1" placeholder="Editar especialidades"
                                                     name='specialties'
-                                                    onChange={actions.handleChange} 
-                                                    defaultValue={store.currentUser.user.specialties}/>
+                                                    onChange={actions.handleChange}
+                                                    defaultValue={store.currentUser.user.specialties} />
                                             </div>
                                             <div className="form-group">
                                                 <label for="exampleInputEmail1">Edad</label>
@@ -162,7 +169,7 @@ const ProfessionalProfile = props => {
                                                     name='age'
                                                     onChange={actions.handleChange}
                                                     defaultValue={store.currentUser.user.age} />
-                                                </div>
+                                            </div>
 
 
                                             <button type="submit" className="btn btn-primary">Guardar Cambios</button>
