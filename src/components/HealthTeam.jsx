@@ -41,7 +41,7 @@ const HealthTeam = props => {
             <div className="container my-3">
                 <button onClick={() => history.goBack()} className="btn btn-outline-warning mt-3">Volver</button>
 
-                <h1 className="text-center my-3">Mi equipo de profesionales </h1>
+                <h1 className="text-center my-3">Mi equipo de salud </h1>
 
                 {
                     store.currentUser === null ?

@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/navBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'
 import Home from './views/Home.jsx'
 import NutritionalEducation from './components/NutritionalEducation.jsx'
-import FitnessEducation from './components/FitnessEducation.jsx'
+import FitnessEducation from './components/fitnesseducation.jsx'
 import Clients from './components/Clients.jsx'
 import injectContext from './store/appContext.js'
 import AdminClients from './views/AdminClients.jsx'
@@ -14,21 +14,22 @@ import ClientDetail from './views/AdminClientDetail.jsx'
 import FormRegNutri from './components/FormingRegNutri.jsx'
 import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
-import AdminLogin from './views/AdminLogin.jsx'
-import HealthPlans from './components/HealthPlans.jsx'
-import Login from './views/Login.jsx'
+import AdminLogin from './views/adminlogin.jsx'
+import HealthPlans from './components/healthplans.jsx'
+import Login from './views/login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
-import ProfessionalProfile from './views/Professionalprofile.jsx'
-import Register from './views/Register.jsx'
+import ProfessionalProfile from './views/professionalprofile.jsx'
+import Register from './views/register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
-import AdminProfile from './views/AdminProfile.jsx'
+import AdminProfile from './views/adminprofile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile from './views/Profile.jsx'
+import Profile from './views/profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-import FormIngresoCliente from './components/FormIngresoCliente.jsx'
+import FormIngresoCliente from './components/formingresocliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
+import ProfesionalClienteFicha from './views/profesionalClienteFicha.jsx'
 import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
 import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
 import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
@@ -36,8 +37,10 @@ import ChatTrainer from './components/ChatTrainer.jsx'
 import ChatNutritionist from './components/ChatNutritionist.jsx'
 import Confirmation from './components/Confirmation.jsx'
 import PasswordRequest from './components/PasswordRequest.jsx'
-import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
+import InstruccionesProf from './components/instruccionesProf.jsx'
+import InstruccionesClient from './components/instructivoClient.jsx'
 import Contact from './components/Contact.jsx'
+
 
 
 
@@ -66,11 +69,13 @@ const App = props => {
           <Route exact path='/profile/client/crear-plan' component={CreatePlan} /* RESPONSIVE */ /*Crear plan, opcion por Tomas*/ />
           <Route exact path='/profile/client/plans' component={ClientPlans} /* RESPONSIVE */ /> 
           <Route exact path='/profile/client/health-plans' component={HealthPlans} /* RESPONSIVE */ />
+          <Route exact path='/profile/ayuda' component={InstruccionesClient}  />
           <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id/ficha/:plan_id' component={ProfesionalClienteFicha} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id/plans/:plan_id/diet' component={ProfesionalClienteDieta} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id/plans/:plan_id/training' component={ProfesionalClienteEjercicio} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients' component={Clients} /* RESPONSIVE */ />
+          <Route exact path='/profile/professional/ayuda' component={InstruccionesProf}   />
           <Route exact path='/profile/professional' component={ProfessionalProfile} /* RESPONSIVE */ />
           <Route exact path='/profile' component={Profile} /* RESPONSIVE*/ />
           <Route exact path='/admin/login' component={AdminLogin} /* RESPONSIVE*/ />
