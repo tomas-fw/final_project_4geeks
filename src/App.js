@@ -1,4 +1,3 @@
-
 import React from 'react'
 import NavBar from './components/navBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
@@ -40,6 +39,8 @@ import Confirmation from './components/Confirmation.jsx'
 import PasswordRequest from './components/PasswordRequest.jsx'
 import InstruccionesProf from './components/instruccionesProf.jsx'
 import InstruccionesClient from './components/instructivoClient.jsx'
+import Contact from './components/Contact.jsx'
+
 
 
 
@@ -88,6 +89,7 @@ const App = props => {
           <Route exact path='/profile/professional/clients/contact/trainer/:id/:plan_id' component={ChatTrainer} /* RESPONSIVE*/  />
           <Route exact path="/confirmation/:role_id/:token" component={Confirmation} /* RESPONSIVE */ />
           <Route exact path="/request_password/" component={PasswordRequest} /* RESPONSIVE */ />
+          <Route exact path="/contact-us" component={Contact} /* RESPONSIVE */ />
         </Switch>
       </Router>
     </>

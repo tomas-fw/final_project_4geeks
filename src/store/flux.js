@@ -155,7 +155,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -177,7 +177,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -285,7 +285,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -340,7 +340,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -414,7 +414,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -472,7 +472,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            clientSendMessage: (e, plan_id, sender_role_id, reciever_role_id, client_email, profesional_email) => {
+            clientSendMessage: (e, plan_id, sender_role_id, reciever_role_id, client_email, profesional_email,sender) => {
                 e.preventDefault()
                 const store = getStore();
                 fetch(store.path + '/contact/profesional/' + sender_role_id + '/' + reciever_role_id + '/' + plan_id, {
@@ -482,7 +482,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                         plan_id: plan_id,
                         client_email: client_email,
                         trainer_email: profesional_email,
-                        nutritionist_email: profesional_email
+                        nutritionist_email: profesional_email,
+                        sender:sender
                     }),
                     headers: {
                         'Content-Type': 'application/json'
@@ -520,7 +521,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -548,7 +549,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -577,7 +578,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     .then(data => {
                         if (data.msg) {
                             setStore({
-                                error: data
+                                error: data.msg
                             })
                         } else {
                             setStore({
@@ -645,7 +646,39 @@ const getState = ({ getStore, getActions, setStore }) => {
                             confirmedPassword:null
                         })
                     })
-                },
+            },
+            contactUs:e=>{                
+                e.preventDefault();
+                const store = getStore();
+                fetch(store.path + '/contact-us',{
+                    method: 'POST',
+                    body: JSON.stringify({
+                        name: store.name,
+                        email: store.email,
+                        message : store.comment
+                    }),
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(resp =>resp.json())
+                .then(data =>{
+                        if(data.msg){
+                        setStore({
+                            errors: data.msg
+                        })
+                    }else{
+                        setStore({
+                            name: null,
+                            email:null,
+                            message:null,
+                            error:null,
+                            success:data
+                            
+                        })
+                    }
+                })
+            },
         }
     }
 }

@@ -12,7 +12,7 @@ const AdminProfesionals = props => {
 
         <div class="container mt-4" id="adminprofile">
             {
-                !!store.currenUser && store.currenUser.user.role.id === 1 ?
+                store.currenUser !== null ?
                     <>
                         <Link to='/admin/profile' class="btn btn-danger mt-3 ml-4">Volver a Administrador</Link>
                         <Link to='/admin/client' class="btn btn-primary mt-3 ml-4">Ir a Clientes</Link>
