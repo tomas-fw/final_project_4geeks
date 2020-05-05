@@ -443,7 +443,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                                 tabaco: null
                             })
                             // window.location.reload()
-                            history.push('/client/plan/confirmation')
+                            history.push('/confirm-account')
                             // sessionStorage.setItem('currentUser', JSON.stringify(data))
                             // sessionStorage.setItem('isAuthenticated', true)
 

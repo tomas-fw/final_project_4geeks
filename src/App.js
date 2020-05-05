@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './components/navBar.jsx'
+import NavBar from './components/NavBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import About from './views/About.jsx'
 import OurTeam from './views/OurTeam.jsx'
@@ -14,22 +14,22 @@ import ClientDetail from './views/AdminClientDetail.jsx'
 import FormRegNutri from './components/FormingRegNutri.jsx'
 import FormRegTrainer from './components/FormingRegTrainer.jsx'
 import AdminProfesionalDetail from './views/AdminProfesionalDetail.jsx'
-import AdminLogin from './views/adminlogin.jsx'
+import AdminLogin from './views/AdminLogin.jsx'
 import HealthPlans from './components/healthplans.jsx'
-import Login from './views/login.jsx'
+import Login from './views/Login.jsx'
 import PersonalTrainers from './components/PersonalTrainers.jsx'
-import ProfessionalProfile from './views/professionalprofile.jsx'
-import Register from './views/register.jsx'
+import ProfessionalProfile from './views/ProfessionalProfile.jsx'
+import Register from './views/Register.jsx'
 import ProfessionalDetails from './components/ProfessionalDetails.jsx'
-import AdminProfile from './views/adminprofile.jsx'
+import AdminProfile from './views/AdminProfile.jsx'
 import HealthTeam from './components/HealthTeam.jsx'
 import Nutritionists from './components/Nutritionists.jsx'
-import Profile from './views/profile.jsx'
+import Profile from './views/Profile.jsx'
 import ClientPlans from './components/ClientPlans.jsx'
-import FormIngresoCliente from './components/formingresocliente.jsx'
+import FormIngresoCliente from './components/FormIngresoCliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
-import ProfesionalClienteFicha from './views/profesionalClienteFicha.jsx'
+import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
 import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
 import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
 import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
@@ -40,6 +40,7 @@ import PasswordRequest from './components/PasswordRequest.jsx'
 import InstruccionesProf from './components/instruccionesProf.jsx'
 import InstruccionesClient from './components/instructivoClient.jsx'
 import Contact from './components/Contact.jsx'
+import AccountConfirm from './views/AccountConfirm.jsx'
 
 
 
@@ -90,6 +91,7 @@ const App = props => {
           <Route exact path="/confirmation/:role_id/:token" component={Confirmation} /* RESPONSIVE */ />
           <Route exact path="/request_password/" component={PasswordRequest} /* RESPONSIVE */ />
           <Route exact path="/contact-us" component={Contact} /* RESPONSIVE */ />
+          <Route exact path="/confirm-account" component={AccountConfirm} /* RESPONSIVE */ />
         </Switch>
       </Router>
     </>
