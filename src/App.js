@@ -1,4 +1,3 @@
-
 import React from 'react'
 import NavBar from './components/navBar.jsx'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
@@ -30,7 +29,6 @@ import ClientPlans from './components/ClientPlans.jsx'
 import FormIngresoCliente from './components/FormIngresoCliente.jsx'
 import CreatePlan from './components/check/CreatePlan.jsx'
 import AvisoEnvioFormClient from './components/check/SentPlan.jsx'
-import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
 import ProfesionalClienteDieta from './components/ProfesionalClienteDieta.jsx'
 import ProfesionalClienteEjercicio from './components/ProfesionalClienteEjercicio.jsx'
 import ProfessionalClientPlans from './components/ProfessionalClientPlans.jsx'
@@ -38,6 +36,8 @@ import ChatTrainer from './components/ChatTrainer.jsx'
 import ChatNutritionist from './components/ChatNutritionist.jsx'
 import Confirmation from './components/Confirmation.jsx'
 import PasswordRequest from './components/PasswordRequest.jsx'
+import ProfesionalClienteFicha from './views/ProfesionalClienteFicha.jsx'
+import Contact from './components/Contact.jsx'
 
 
 
@@ -84,6 +84,7 @@ const App = props => {
           <Route exact path='/profile/professional/clients/contact/trainer/:id/:plan_id' component={ChatTrainer} /* RESPONSIVE*/  />
           <Route exact path="/confirmation/:role_id/:token" component={Confirmation} /* RESPONSIVE */ />
           <Route exact path="/request_password/" component={PasswordRequest} /* RESPONSIVE */ />
+          <Route exact path="/contact-us" component={Contact} /* RESPONSIVE */ />
         </Switch>
       </Router>
     </>
