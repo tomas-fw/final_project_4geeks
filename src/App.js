@@ -70,13 +70,13 @@ const App = props => {
           <Route exact path='/profile/client/crear-plan' component={CreatePlan} /* RESPONSIVE */ /*Crear plan, opcion por Tomas*/ />
           <Route exact path='/profile/client/plans' component={ClientPlans} /* RESPONSIVE */ /> 
           <Route exact path='/profile/client/health-plans' component={HealthPlans} /* RESPONSIVE */ />
-          <Route exact path='/profile/ayuda' component={InstruccionesClient}  />
+          <Route exact path='/profile/ayuda' component={InstruccionesClient}  /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id' component={ProfessionalClientPlans} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id/ficha/:plan_id' component={ProfesionalClienteFicha} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id/plans/:plan_id/diet' component={ProfesionalClienteDieta} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients/:id/plans/:plan_id/training' component={ProfesionalClienteEjercicio} /* RESPONSIVE */ />
           <Route exact path='/profile/professional/clients' component={Clients} /* RESPONSIVE */ />
-          <Route exact path='/profile/professional/ayuda' component={InstruccionesProf}   />
+          <Route exact path='/profile/professional/ayuda' component={InstruccionesProf} /* RESPONSIVE */  />
           <Route exact path='/profile/professional' component={ProfessionalProfile} /* RESPONSIVE */ />
           <Route exact path='/profile' component={Profile} /* RESPONSIVE*/ />
           <Route exact path='/admin/login' component={AdminLogin} /* RESPONSIVE*/ />

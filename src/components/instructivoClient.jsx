@@ -31,7 +31,7 @@ const InstruccionesClient = props => {
     return (
         <>
             <button className="btn btn-info ml-5 mt-3 m-2 mb-3 float-left" onClick={() => history.goBack()}>Volver a mi perfíl</button>
-            <h1 className="text-center mt-2 mb-4">¿Necesitas ayuda?</h1>
+            <h1 className="text-center mt-2 mb-4 mr-5">¿Necesitas ayuda?</h1>
             <div className="row">
                 <div className="col-md-1 col-xs-1"></div>
                 <div className="card col-md-10 col-xs-10" >
@@ -41,9 +41,9 @@ const InstruccionesClient = props => {
                             <h2 className="card-title mt-2">¿Quieres contratar un nuevo plan?</h2>
                         </div>
                         <div className="card-body">
-                            <div class="alert alert-danger" role="alert">
+                            {/* <div class="alert alert-danger" role="alert">
                                 <h4>Si tienes un plan activo no puedes contratar otro plan</h4>
-                            </div>
+                            </div> */}
                             <h3>Activa tu plan:</h3>
                             <h4 className="mt-4 ml-4">1) En tu perfil haz click en el boton "Contratar un nuevo plan"</h4>
                             <img src={perfilclientenuevoplan1} className="mt-3 ml-4 mb-4" width="1200px" height="600px" />
