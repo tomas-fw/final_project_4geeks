@@ -87,8 +87,8 @@ const ProfessionalClientPlans = props => {
                                                                             name={store.currentUser.user.role.id == 2 ? 'diet' : 'workout'}
                                                                             onChange={actions.handleChangeFiles}
                                                                         />
-                                                                        <input type="text" value={plan.detail.dieta} id="" />
-                                                                        <input type="text" value={plan.detail.entrenamiento} id="" />
+                                                                        <input type="hidden" value={plan.detail.dieta} id="" />
+                                                                        <input type="hidden" value={plan.detail.entrenamiento} id="" />
                                                                     </div>
 
 

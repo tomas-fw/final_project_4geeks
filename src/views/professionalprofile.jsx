@@ -76,7 +76,7 @@ const ProfessionalProfile = props => {
 
                                                                 <div className="row" /*plan*/>
                                                                     <div className="col-md-1 col-xs-1"></div>
-                                                                    <div className="col-md-5 col-xs-5 ml-3">
+                                                                    {/* <div className="col-md-5 col-xs-5 ml-3">
                                                                         <h5 className="card-text">El plan que enviaste es: </h5>
                                                                     </div>
                                                                     <div className="col-md-5 col-xs-5 ">
@@ -88,7 +88,7 @@ const ProfessionalProfile = props => {
 
                                                                         }
 
-                                                                    </div>
+                                                                    </div> */}
                                                                 </div>
                                                                 <br />
                                                             </div>
