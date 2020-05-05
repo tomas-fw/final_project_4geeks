@@ -29,6 +29,7 @@ const ChatTrainer = props => {
                                         return (
                                             <div className="card mt-2">
                                                 <div className="card-body">
+                                                    <small>{elem.sender} dice:</small>
                                                     <p>{elem.comment}</p>
                                                 </div>
                                             </div>
@@ -50,7 +51,8 @@ const ChatTrainer = props => {
                             <div className="col-md-8 col-xs-8">
                                 <form onSubmit={(e) => actions.clientSendMessage(e, plan_id, 4, 3,
                                     store.plan[0].client_email,
-                                    store.plan[0].trainer_email
+                                    store.plan[0].trainer_email,
+                                    store.plan[0].client_name +' '+ store.plan[0].client_lastname
                                 )}>
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Envia tu mensaje:</label>
@@ -65,7 +67,8 @@ const ChatTrainer = props => {
                             <div className="col-md-8 col-xs-8">
                                 <form onSubmit={(e) => actions.clientSendMessage(e, plan_id, 3, 4,
                                     store.plan[0].client_email,
-                                    store.plan[0].trainer_email
+                                    store.plan[0].trainer_email,
+                                    store.plan[0].trainer_name +' '+ store.plan[0].trainer_last_name
                                 )}>
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Envia tu mensaje:</label>

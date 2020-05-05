@@ -30,6 +30,7 @@ const ChatNutritionist = props => {
                                         return (
                                             <div className="card mt-2">
                                                 <div className="card-body">
+                                                <small>{elem.sender} dice:</small>
                                                     <p>{elem.comment}</p>
                                                 </div>
                                             </div>
@@ -53,6 +54,8 @@ const ChatNutritionist = props => {
                                 <form onSubmit={(e) => actions.clientSendMessage(e, plan_id, 4, 2,
                                     store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.client_email,
                                     store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.nutritionist_email,
+                                    store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.client_name + ' '+
+                                    store.currentUser.user.planes_id[store.currentUser.user.planes_id.length - 1].all_plans.client_lastname,
                                 )}>
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Envia tu mensaje:</label>
@@ -67,7 +70,8 @@ const ChatNutritionist = props => {
                             <div className="col-md-8 col-xs-8">
                                 <form onSubmit={(e) => actions.clientSendMessage(e, plan_id, 2, 4,
                                     store.plan[0].client_email,
-                                    store.plan[0].nutritionist_email
+                                    store.plan[0].nutritionist_email,
+                                    store.plan[0].nutritionist_name +' '+ store.plan[0].nutritionist_last_name
                                 )}>
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Envia tu mensaje:</label>

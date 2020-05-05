@@ -472,7 +472,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         }
                     })
             },
-            clientSendMessage: (e, plan_id, sender_role_id, reciever_role_id, client_email, profesional_email) => {
+            clientSendMessage: (e, plan_id, sender_role_id, reciever_role_id, client_email, profesional_email,sender) => {
                 e.preventDefault()
                 const store = getStore();
                 fetch(store.path + '/contact/profesional/' + sender_role_id + '/' + reciever_role_id + '/' + plan_id, {
@@ -482,7 +482,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                         plan_id: plan_id,
                         client_email: client_email,
                         trainer_email: profesional_email,
-                        nutritionist_email: profesional_email
+                        nutritionist_email: profesional_email,
+                        sender:sender
                     }),
                     headers: {
                         'Content-Type': 'application/json'
