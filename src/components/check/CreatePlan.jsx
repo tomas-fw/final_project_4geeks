@@ -145,19 +145,19 @@ const CreatePlan = props => {
                                                         </div>
                                                         <div className="custom-control custom-switch">
                                                             <input type="checkbox" id="sys3" name="sintomas" value='Polidipsia' className="custom-control-input" onChange={actions.handleChange} />
-                                                            <label className="custom-control-label" htmlFor="sys3">Polidipsia</label>
+                                                            <label className="custom-control-label" htmlFor="sys3">Mucha sed durante todo el día</label>
                                                         </div>
                                                         <div className="custom-control custom-switch">
                                                             <input type="checkbox" id="sys4" name="sintomas" value='Fotopsia' className="custom-control-input" onChange={actions.handleChange} />
-                                                            <label className="custom-control-label" htmlFor="sys4">Fotopsia</label>
+                                                            <label className="custom-control-label" htmlFor="sys4">Veo puntitos negros flotando como moscas</label>
                                                         </div>
                                                         <div className="custom-control custom-switch">
                                                             <input type="checkbox" id="sys5" name="sintomas" value='Poliurea' className="custom-control-input" onChange={actions.handleChange} />
-                                                            <label className="custom-control-label" htmlFor="sys5">Poliurea</label>
+                                                            <label className="custom-control-label" htmlFor="sys5">Voy más de 7 veces a orinar durante el dia</label>
                                                         </div>
                                                         <div className="custom-control custom-switch">
                                                             <input type="checkbox" id="sys6" name="sintomas" value='Polifagia' className="custom-control-input" onChange={actions.handleChange} />
-                                                            <label className="custom-control-label" htmlFor="sys6">Polifagia</label>
+                                                            <label className="custom-control-label" htmlFor="sys6">A pesar de comer, el hambre no disminuye</label>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-4 col-xs-4">
