@@ -59,7 +59,7 @@ const ChatNutritionist = props => {
                                 )}>
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Envia tu mensaje:</label>
-                                        <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                                        <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Escribe Aqui"
                                             name='comment'
                                             onChange={actions.handleChange} />
                                     </div>
@@ -75,7 +75,7 @@ const ChatNutritionist = props => {
                                 )}>
                                     <div className="form-group">
                                         <label for="exampleInputEmail1">Envia tu mensaje:</label>
-                                        <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                                        <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Escribe Aqui"
                                             name='comment'
                                             onChange={actions.handleChange} />
                                     </div>
