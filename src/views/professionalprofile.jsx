@@ -25,7 +25,12 @@ const ProfessionalProfile = props => {
 
                                         </div>
                                         <div className="col-md-7 col-xs-7" /*saludo */>
-                                            <h1 className="card-title mt-5">Hola {store.currentUser.user.name} {store.currentUser.user.lastname}!</h1>
+                                            <h1 className="card-title text-center mt-3">Hola {store.currentUser.user.name} {store.currentUser.user.lastname}!</h1>
+                                       <br/>
+                                        <h5 className="">Edad:  {store.currentUser.user.age} años</h5>
+                                        <h5 className="">Especialidades:  {store.currentUser.user.specialties}</h5>
+                                        <h5 className="">Descripción:  {store.currentUser.user.description}</h5>
+                                        <h5 className="">Fecha de inscripción:  {store.currentUser.user.created}</h5>
                                         </div>
                                         <div className="col-md-2 col-xs-2 " /*imagen extra*/>
                                             <img src={FitGoodImage} className="mt-4" width="160" height="100" />
