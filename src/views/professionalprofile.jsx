@@ -143,15 +143,15 @@ const ProfessionalProfile = props => {
                                     <div className="modal-body">
                                         <form onSubmit={(e)=>actions.editProfesionalProfile(e,store.currentUser.user.role.id, store.currentUser.user.role.id == 2 ? store.currentUser.user.nutritionist_id : store.currentUser.user.trainer_id)}>
                                             <div className="form-group">
-                                                <label for="exampleInputEmail1">Descripcion</label>
-                                                <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                                                <label for="exampleInputEmail1">Descripción</label>
+                                                <textarea autoFocus rows='3' className="form-control" id="exampleInputEmail1" placeholder="Editar descripción"
                                                     name='description'
                                                     onChange={actions.handleChange} 
                                                     defaultValue={store.currentUser.user.description}/>
                                             </div>
                                             <div className="form-group">
                                                 <label for="exampleInputEmail1">Especialidades</label>
-                                                <textarea  rows='3' className="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                                                <textarea  rows='3' className="form-control" id="exampleInputEmail1" placeholder="Editar especialidades"
                                                     name='specialties'
                                                     onChange={actions.handleChange} 
                                                     defaultValue={store.currentUser.user.specialties}/>
