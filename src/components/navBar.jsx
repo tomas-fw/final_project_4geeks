@@ -62,6 +62,7 @@ const NavBar = props => {
                                     </Link>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <Link className="dropdown-item" to="/profile">Mi perfil </Link>
+                                        <Link className="dropdown-item" to="/profile/ayuda">Paso a paso </Link>
                                         {/* <Link className="dropdown-item" to="/profile/client/health-team">My health team</Link> */}
                                         <div className="dropdown-divider"></div>
                                         <Link className="dropdown-item" onClick={() => actions.logout(props.history)}>Logout</Link>
@@ -79,6 +80,7 @@ const NavBar = props => {
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <Link className="dropdown-item" to="/profile/professional">Mi perfil</Link>
                                     <Link className="dropdown-item" to="/profile/professional/clients">Mis clientes</Link>
+                                    <Link className="dropdown-item" to="/profile/professional/ayuda">Paso a paso</Link>
                                     <div className="dropdown-divider"></div>
                                     <Link className="dropdown-item" onClick={() => actions.logout(props.history)}>Logout</Link>
                                 </div>
