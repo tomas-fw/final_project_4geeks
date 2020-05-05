@@ -15,7 +15,7 @@ const ProfessionalDetails = props => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12 col-xs-12">
+                    <div className="col-md-12 col-xs-12 my-5">
                         {
                             !!store.profesionals && !!store.profesionals[0] ?
 
