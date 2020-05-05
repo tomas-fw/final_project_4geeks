@@ -9,7 +9,7 @@ const Clients = props => {
         actions.adminLoadClients("/admin/client")
     }, [])
     const filteredClients = () => {
-        if(!store.clients) return;
+        if (!store.clients) return;
 
         const clientIds = store.currentUser.user.planes_id.map((plan) => plan.all_plans.client_id);
         return store.clients.filter((client) => clientIds.includes(client.id))
@@ -40,7 +40,9 @@ const Clients = props => {
                                     )
                                 })
                                 :
-                                <h1>Loading...</h1>
+                                <div className="spinner-border m-5" role="status">
+                                    <span className="sr-only">Loading...</span>
+                                </div>
                         }
                     </div>
                 </div>
