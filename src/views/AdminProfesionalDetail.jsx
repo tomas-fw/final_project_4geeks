@@ -12,7 +12,7 @@ const ProfesionalDetail = props => {
         <>
             {
                 !!store.currentUser && store.currentUser.user.role.id === 1 ?
-                    <div className="cointainer mt-4" id="adminprofile">
+                    <div className="container mt-4" id="adminprofile">
 
                         <Link to='/admin/profile' className="btn btn-danger mt-3 ml-5">Volver a Administrador </Link>
                         <Link to='/admin/profesional' className="btn btn-warning mt-3 ml-3">Ir a Profesionales</Link>
@@ -43,8 +43,8 @@ const ProfesionalDetail = props => {
                                                                     <h5>Fecha de registro: {store.profesionals[0].register_date}</h5>
                                                                     <h5>Profesional: {store.profesionals[0].role_id}</h5>
                                                                     <h5>Especialidades: {store.profesionals[0].specialties}</h5>
-                                                                    <h5>Título: <Link> {store.profesionals[0].profesional_title} </Link></h5>
-                                                                    <h5>Antecedentes: <Link> {store.profesionals[0].background} </Link></h5>
+                                                                    <h5>Título: <a href={`${store.path}/static/images/profesional_title/${store.profesionals[0].role_id === 2 ? 'nutritionist' : 'trainer'}/${store.profesionals[0].profesional_title}`} target="_blank"> {store.profesionals[0].profesional_title} </a></h5>
+                                                                    <h5>Antecedentes: <a href={`${store.path}/static/images/background/${store.profesionals[0].role_id === 2 ? 'nutritionist' : 'trainer'}/${store.profesionals[0].background}`} target="_blank"> {store.profesionals[0].background} </a></h5>
                                                                 </div>
                                                                 <div className="col-md-3 col-xs-3 mt-4 mr-2">
                                                                     <img src="https://picsum.photos/200/300" className="img-top rounded-circle" alt="avatar" width="200" height="200" />
